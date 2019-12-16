@@ -1,0 +1,10 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/框架/Fly.Framework/IBB360.Framework.Common/obj/Debug/Fly.Framework.Common.csprojAssemblyReference.cache
+/框架/.vs/Fly.Program/v16/Server/sqlite3/storage.ide-shm
+/框架/.vs/Fly.Program/v16/Server/sqlite3/storage.ide-wal
+.dll
+.pdb
+.cache
