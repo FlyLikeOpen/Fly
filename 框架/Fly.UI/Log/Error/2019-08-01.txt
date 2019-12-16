@@ -1,0 +1,2033 @@
+
+** [2019-08-01 10:16:57.390] - Begin **************************************************************
+[LogID]: 4c46eada-8c90-46d8-8430-bcdb61c8d303
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/purchases/submitwarehousing/
+[RequestReferer]: http://local.wmslocal.com/purchases/instockcountresult/?requestid=ffdb5f3b-d3c1-42f6-87f1-51d5287c5dad
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'NextTaskLocationId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+    [WMSLocal.Inventory].[dbo].[LocationTransferTask]
+(
+    [Id]
+    ,[SourceId]
+    ,[ItemId]
+    ,[FromIds]
+    ,[FromIdType]
+    ,[ToIds]
+    ,[ToIdType]
+    ,[Qty]
+    ,[NextTaskLocationId]
+    ,[Status]
+    ,[CreatedOn]
+    ,[CreatedBy]
+)
+
+    SELECT 'c3ad705d-0e02-4f0d-910e-1c2038d35808' AS [Id], '8bbb0b0c-31cc-4e8b-a7e7-a397cbf99d20' AS [SourceId], '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId], '023dad13-27de-4b28-a822-6e9f8bc009a9' AS [FromIds], 0 AS [FromIdType], '0,1' AS [ToIds], 1 AS [ToIdType], 200 AS [Qty], NULL AS [NextTaskLocationId], 0 AS [Status], '2019-08-01 10:16:57' AS [CreatedOn], '042f7049-1930-481e-8825-fae4f325a3ca' AS [CreatedBy]
+ ---> System.Data.SqlClient.SqlException: 列名 'NextTaskLocationId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.CreateTasks(List`1 tasks) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 828
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.InnerCreate(LocationTransferTaskSource taskSource) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 786
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.Create(LocationTransferTaskSource taskSource, Boolean isCreateInventoryTask) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 27
+   在 IBB360.WMSLocal.APIImpls.Purchases.InStockRequestApi.InStock(Guid id) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Purchases\InStockRequestApi.cs:行号 239
+   在 IBB360.WMSLocal.UI.Controllers.PurchasesController.SubmitWarehousing(Guid requestId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\PurchasesController.cs:行号 65
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:16:57.367
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 6
+[StackTrace]: 
+** [2019-08-01 10:16:57.390] - End ****************************************************************
+
+** [2019-08-01 10:27:34.861] - Begin **************************************************************
+[LogID]: b5259d7d-be1e-48eb-8fd5-abb274aac238
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxgetallsuggestlocations/
+[RequestReferer]: http://local.wmslocal.com/inventory/mobiletask/?pagetitle=%E5%85%A5%E5%BA%93&taskid=c4eac21d-e64b-4c25-acfd-4909ffb81634&tasktypesstr=[0]
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 对象名 'WMSLocal.Sales.dbo.WavePickingLocation' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+DECLARE  @merchantId UNIQUEIDENTIFIER
+SET ROWCOUNT 1
+SELECT @merchantId = [MerchantId] FROM [WMSLocal.Base].[dbo].[Location] WHERE [Id] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+SET ROWCOUNT 0
+SELECT DISTINCT
+    l.*
+    ,CASE WHEN l.[MerchantId]=@merchantId THEN 0 ELSE 1 END AS [RowNo]
+FROM 
+    [WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK)
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON z.[Id] = l.[ZoneId]
+
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Item] i WITH(NOLOCK) ON i.[MerchantId]=l.[MerchantId]
+LEFT JOIN
+(
+    --子查询不能使用的库位
+	SELECT DISTINCT
+        l.[Id]
+	FROM 
+		[WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK) 
+	INNER JOIN
+		[WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON l.[ZoneId] = z.[Id]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingLocation] wl WITH(NOLOCK) ON l.[Id] = wl.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingOrder] wo WITH(NOLOCK) ON l.[Id] = wo.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePicking] wp WITH(NOLOCK) ON wl.[WavePickingId] = wp.[Id] OR wo.[WavePickingId] = wp.[Id]
+	LEFT JOIN
+		[WMSLocal.Inventory].[dbo].[LocationInventory] li WITH(NOLOCK) ON li.[LocationId] = l.[Id]
+	LEFT JOIN 
+        [WMSLocal.Inventory].[dbo].[LocationInventory] li2 WITH(NOLOCK) ON li2.[ItemId]=li.[ItemId]
+			AND li2.[ItemId]='57509a39-3501-46b4-8803-880842a8969b' 
+			AND li2.[LocationId] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+    LEFT JOIN
+        [WMSLocal.Inventory].[dbo].[LocationLockLog] lk WITH(NOLOCK) ON l.[Id] = lk.[LocationId] AND lk.[Status]=0
+	WHERE 
+		(li2.[Id] IS NOT NULL AND ISNULL(li.[ExpiryDate],'1990-01-01')<>ISNULL(li2.[ExpiryDate],'1990-01-01')) --效期不一致
+		OR li.[InventoryType] <> li2.[InventoryType] --库存类型不一致
+		-- OR (z.[Type] <> 2 AND l.[MerchantId] <> @merchantId) 
+		OR (li.[Id] IS NOT NULL AND l.[MerchantId] <> @merchantId) --库位有库存但商家不一致
+        OR (wp.[Id] IS NOT NULL AND wp.[Status] <> 3)  --库位已被执行中的波次拣货占用
+        OR (lk.[Id] IS NOT NULL AND (lk.[TaskId] IS NULL OR (lk.[TaskId] IS NOT NULL AND lk.[TaskId] <> @taskId)))
+) a ON l.[Id] = a.[Id]
+WHERE 
+    a.[Id] IS NULL AND l.[Status]= 1 AND z.[Type] IN (0,1) AND l.[Id] NOT IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+ORDER BY
+    [RowNo]
+<<SQL Parameter(s)>> :
+@taskId [Guid] : c4eac21d-e64b-4c25-acfd-4909ffb81634 [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 对象名 'WMSLocal.Sales.dbo.WavePickingLocation' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, IEnumerable`1 locationIds, IEnumerable`1 zoneTypes, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 639
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, String locationIdsStr, String zoneTypesStr, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 555
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 536
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxGetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 35
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:27:34.858
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 20
+[StackTrace]: 
+** [2019-08-01 10:27:34.861] - End ****************************************************************
+
+** [2019-08-01 10:28:26.723] - Begin **************************************************************
+[LogID]: 685b21d0-fefa-4f88-8cc5-74bd2743853f
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxgetallsuggestlocations/
+[RequestReferer]: http://local.wmslocal.com/inventory/mobiletask/?pagetitle=%E5%85%A5%E5%BA%93&taskid=c4eac21d-e64b-4c25-acfd-4909ffb81634&tasktypesstr=[0]
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 对象名 'WMSLocal.Sales.dbo.WavePickingLocation' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+DECLARE  @merchantId UNIQUEIDENTIFIER
+SET ROWCOUNT 1
+SELECT @merchantId = [MerchantId] FROM [WMSLocal.Base].[dbo].[Location] WHERE [Id] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+SET ROWCOUNT 0
+SELECT DISTINCT
+    l.*
+    ,CASE WHEN l.[MerchantId]=@merchantId THEN 0 ELSE 1 END AS [RowNo]
+FROM 
+    [WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK)
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON z.[Id] = l.[ZoneId]
+
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Item] i WITH(NOLOCK) ON i.[MerchantId]=l.[MerchantId]
+LEFT JOIN
+(
+    --子查询不能使用的库位
+	SELECT DISTINCT
+        l.[Id]
+	FROM 
+		[WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK) 
+	INNER JOIN
+		[WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON l.[ZoneId] = z.[Id]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingLocation] wl WITH(NOLOCK) ON l.[Id] = wl.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingOrder] wo WITH(NOLOCK) ON l.[Id] = wo.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePicking] wp WITH(NOLOCK) ON wl.[WavePickingId] = wp.[Id] OR wo.[WavePickingId] = wp.[Id]
+	LEFT JOIN
+		[WMSLocal.Inventory].[dbo].[LocationInventory] li WITH(NOLOCK) ON li.[LocationId] = l.[Id]
+	LEFT JOIN 
+        [WMSLocal.Inventory].[dbo].[LocationInventory] li2 WITH(NOLOCK) ON li2.[ItemId]=li.[ItemId]
+			AND li2.[ItemId]='57509a39-3501-46b4-8803-880842a8969b' 
+			AND li2.[LocationId] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+    LEFT JOIN
+        [WMSLocal.Inventory].[dbo].[LocationLockLog] lk WITH(NOLOCK) ON l.[Id] = lk.[LocationId] AND lk.[Status]=0
+	WHERE 
+		(li2.[Id] IS NOT NULL AND ISNULL(li.[ExpiryDate],'1990-01-01')<>ISNULL(li2.[ExpiryDate],'1990-01-01')) --效期不一致
+		OR li.[InventoryType] <> li2.[InventoryType] --库存类型不一致
+		-- OR (z.[Type] <> 2 AND l.[MerchantId] <> @merchantId) 
+		OR (li.[Id] IS NOT NULL AND l.[MerchantId] <> @merchantId) --库位有库存但商家不一致
+        OR (wp.[Id] IS NOT NULL AND wp.[Status] <> 3)  --库位已被执行中的波次拣货占用
+        OR (lk.[Id] IS NOT NULL AND (lk.[TaskId] IS NULL OR (lk.[TaskId] IS NOT NULL AND lk.[TaskId] <> @taskId)))
+) a ON l.[Id] = a.[Id]
+WHERE 
+    a.[Id] IS NULL AND l.[Status]= 1 AND z.[Type] IN (0,1) AND l.[Id] NOT IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+ORDER BY
+    [RowNo]
+<<SQL Parameter(s)>> :
+@taskId [Guid] : c4eac21d-e64b-4c25-acfd-4909ffb81634 [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 对象名 'WMSLocal.Sales.dbo.WavePickingLocation' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, IEnumerable`1 locationIds, IEnumerable`1 zoneTypes, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 639
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, String locationIdsStr, String zoneTypesStr, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 555
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 536
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxGetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 35
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:28:26.720
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 28
+[StackTrace]: 
+** [2019-08-01 10:28:26.723] - End ****************************************************************
+
+** [2019-08-01 10:29:23.290] - Begin **************************************************************
+[LogID]: 7c121ae3-1084-401d-9b81-ac4ce360c1bb
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxgetallsuggestlocations/
+[RequestReferer]: http://local.wmslocal.com/inventory/mobiletask/?pagetitle=%E5%85%A5%E5%BA%93&taskid=c4eac21d-e64b-4c25-acfd-4909ffb81634&tasktypesstr=[0]
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 对象名 'WMSLocal.Sales.dbo.WavePickingLocation' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+DECLARE  @merchantId UNIQUEIDENTIFIER
+SET ROWCOUNT 1
+SELECT @merchantId = [MerchantId] FROM [WMSLocal.Base].[dbo].[Location] WHERE [Id] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+SET ROWCOUNT 0
+SELECT DISTINCT
+    l.*
+    ,CASE WHEN l.[MerchantId]=@merchantId THEN 0 ELSE 1 END AS [RowNo]
+FROM 
+    [WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK)
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON z.[Id] = l.[ZoneId]
+
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Item] i WITH(NOLOCK) ON i.[MerchantId]=l.[MerchantId]
+LEFT JOIN
+(
+    --子查询不能使用的库位
+	SELECT DISTINCT
+        l.[Id]
+	FROM 
+		[WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK) 
+	INNER JOIN
+		[WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON l.[ZoneId] = z.[Id]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingLocation] wl WITH(NOLOCK) ON l.[Id] = wl.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingOrder] wo WITH(NOLOCK) ON l.[Id] = wo.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePicking] wp WITH(NOLOCK) ON wl.[WavePickingId] = wp.[Id] OR wo.[WavePickingId] = wp.[Id]
+	LEFT JOIN
+		[WMSLocal.Inventory].[dbo].[LocationInventory] li WITH(NOLOCK) ON li.[LocationId] = l.[Id]
+	LEFT JOIN 
+        [WMSLocal.Inventory].[dbo].[LocationInventory] li2 WITH(NOLOCK) ON li2.[ItemId]=li.[ItemId]
+			AND li2.[ItemId]='57509a39-3501-46b4-8803-880842a8969b' 
+			AND li2.[LocationId] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+    LEFT JOIN
+        [WMSLocal.Inventory].[dbo].[LocationLockLog] lk WITH(NOLOCK) ON l.[Id] = lk.[LocationId] AND lk.[Status]=0
+	WHERE 
+		(li2.[Id] IS NOT NULL AND ISNULL(li.[ExpiryDate],'1990-01-01')<>ISNULL(li2.[ExpiryDate],'1990-01-01')) --效期不一致
+		OR li.[InventoryType] <> li2.[InventoryType] --库存类型不一致
+		-- OR (z.[Type] <> 2 AND l.[MerchantId] <> @merchantId) 
+		OR (li.[Id] IS NOT NULL AND l.[MerchantId] <> @merchantId) --库位有库存但商家不一致
+        OR (wp.[Id] IS NOT NULL AND wp.[Status] <> 3)  --库位已被执行中的波次拣货占用
+        OR (lk.[Id] IS NOT NULL AND (lk.[TaskId] IS NULL OR (lk.[TaskId] IS NOT NULL AND lk.[TaskId] <> @taskId)))
+) a ON l.[Id] = a.[Id]
+WHERE 
+    a.[Id] IS NULL AND l.[Status]= 1 AND z.[Type] IN (0,1) AND l.[Id] NOT IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+ORDER BY
+    [RowNo]
+<<SQL Parameter(s)>> :
+@taskId [Guid] : c4eac21d-e64b-4c25-acfd-4909ffb81634 [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 对象名 'WMSLocal.Sales.dbo.WavePickingLocation' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, IEnumerable`1 locationIds, IEnumerable`1 zoneTypes, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 639
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, String locationIdsStr, String zoneTypesStr, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 555
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 536
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxGetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 35
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:29:23.288
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 28
+[StackTrace]: 
+** [2019-08-01 10:29:23.290] - End ****************************************************************
+
+** [2019-08-01 10:37:44.013] - Begin **************************************************************
+[LogID]: 0f9de8eb-a031-4fa1-93d8-a3380cb4f03c
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxgetallsuggestlocations/
+[RequestReferer]: http://local.wmslocal.com/inventory/mobiletask/?pagetitle=%E5%85%A5%E5%BA%93&taskid=c4eac21d-e64b-4c25-acfd-4909ffb81634&tasktypesstr=[0]
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'Status' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+DECLARE  @merchantId UNIQUEIDENTIFIER
+SET ROWCOUNT 1
+SELECT @merchantId = [MerchantId] FROM [WMSLocal.Base].[dbo].[Location] WHERE [Id] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+SET ROWCOUNT 0
+SELECT DISTINCT
+    l.*
+    ,CASE WHEN l.[MerchantId]=@merchantId THEN 0 ELSE 1 END AS [RowNo]
+FROM 
+    [WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK)
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON z.[Id] = l.[ZoneId]
+
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Item] i WITH(NOLOCK) ON i.[MerchantId]=l.[MerchantId]
+LEFT JOIN
+(
+    --子查询不能使用的库位
+	SELECT DISTINCT
+        l.[Id]
+	FROM 
+		[WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK) 
+	INNER JOIN
+		[WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON l.[ZoneId] = z.[Id]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingLocation] wl WITH(NOLOCK) ON l.[Id] = wl.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingOrder] wo WITH(NOLOCK) ON l.[Id] = wo.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePicking] wp WITH(NOLOCK) ON wl.[WavePickingId] = wp.[Id] OR wo.[WavePickingId] = wp.[Id]
+	LEFT JOIN
+		[WMSLocal.Inventory].[dbo].[LocationInventory] li WITH(NOLOCK) ON li.[LocationId] = l.[Id]
+	LEFT JOIN 
+        [WMSLocal.Inventory].[dbo].[LocationInventory] li2 WITH(NOLOCK) ON li2.[ItemId]=li.[ItemId]
+			AND li2.[ItemId]='57509a39-3501-46b4-8803-880842a8969b' 
+			AND li2.[LocationId] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+    LEFT JOIN
+        [WMSLocal.Inventory].[dbo].[LocationLockLog] lk WITH(NOLOCK) ON l.[Id] = lk.[LocationId] AND lk.[Status]=0
+	WHERE 
+		(li2.[Id] IS NOT NULL AND ISNULL(li.[ExpiryDate],'1990-01-01')<>ISNULL(li2.[ExpiryDate],'1990-01-01')) --效期不一致
+		OR li.[InventoryType] <> li2.[InventoryType] --库存类型不一致
+		-- OR (z.[Type] <> 2 AND l.[MerchantId] <> @merchantId) 
+		OR (li.[Id] IS NOT NULL AND l.[MerchantId] <> @merchantId) --库位有库存但商家不一致
+        OR (wp.[Id] IS NOT NULL AND wp.[Status] <> 3)  --库位已被执行中的波次拣货占用
+        OR (lk.[Id] IS NOT NULL AND (lk.[TaskId] IS NULL OR (lk.[TaskId] IS NOT NULL AND lk.[TaskId] <> @taskId)))
+) a ON l.[Id] = a.[Id]
+WHERE 
+    a.[Id] IS NULL AND l.[Status]= 1 AND z.[Type] IN (0,1) AND l.[Id] NOT IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+ORDER BY
+    [RowNo]
+<<SQL Parameter(s)>> :
+@taskId [Guid] : c4eac21d-e64b-4c25-acfd-4909ffb81634 [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'Status' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, IEnumerable`1 locationIds, IEnumerable`1 zoneTypes, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 639
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, String locationIdsStr, String zoneTypesStr, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 555
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 536
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxGetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 35
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:37:44.011
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 5
+[StackTrace]: 
+** [2019-08-01 10:37:44.013] - End ****************************************************************
+
+** [2019-08-01 10:39:34.979] - Begin **************************************************************
+[LogID]: f8c5f521-6010-4d42-8c7f-c2ffd604cfc1
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxgetallsuggestlocations/
+[RequestReferer]: http://local.wmslocal.com/inventory/mobiletask/?pagetitle=%E5%85%A5%E5%BA%93&taskid=c4eac21d-e64b-4c25-acfd-4909ffb81634&tasktypesstr=[0]
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'Status' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+DECLARE  @merchantId UNIQUEIDENTIFIER
+SET ROWCOUNT 1
+SELECT @merchantId = [MerchantId] FROM [WMSLocal.Base].[dbo].[Location] WHERE [Id] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+SET ROWCOUNT 0
+SELECT DISTINCT
+    l.*
+    ,CASE WHEN l.[MerchantId]=@merchantId THEN 0 ELSE 1 END AS [RowNo]
+FROM 
+    [WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK)
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON z.[Id] = l.[ZoneId]
+
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Item] i WITH(NOLOCK) ON i.[MerchantId]=l.[MerchantId]
+LEFT JOIN
+(
+    --子查询不能使用的库位
+	SELECT DISTINCT
+        l.[Id]
+	FROM 
+		[WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK) 
+	INNER JOIN
+		[WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON l.[ZoneId] = z.[Id]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingLocation] wl WITH(NOLOCK) ON l.[Id] = wl.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingOrder] wo WITH(NOLOCK) ON l.[Id] = wo.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePicking] wp WITH(NOLOCK) ON wl.[WavePickingId] = wp.[Id] OR wo.[WavePickingId] = wp.[Id]
+	LEFT JOIN
+		[WMSLocal.Inventory].[dbo].[LocationInventory] li WITH(NOLOCK) ON li.[LocationId] = l.[Id]
+	LEFT JOIN 
+        [WMSLocal.Inventory].[dbo].[LocationInventory] li2 WITH(NOLOCK) ON li2.[ItemId]=li.[ItemId]
+			AND li2.[ItemId]='57509a39-3501-46b4-8803-880842a8969b' 
+			AND li2.[LocationId] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+    LEFT JOIN
+        [WMSLocal.Inventory].[dbo].[LocationLockLog] lk WITH(NOLOCK) ON l.[Id] = lk.[LocationId] AND lk.[Status]=0
+	WHERE 
+		(li2.[Id] IS NOT NULL AND ISNULL(li.[ExpiryDate],'1990-01-01')<>ISNULL(li2.[ExpiryDate],'1990-01-01')) --效期不一致
+		OR li.[InventoryType] <> li2.[InventoryType] --库存类型不一致
+		-- OR (z.[Type] <> 2 AND l.[MerchantId] <> @merchantId) 
+		OR (li.[Id] IS NOT NULL AND l.[MerchantId] <> @merchantId) --库位有库存但商家不一致
+        OR (wp.[Id] IS NOT NULL AND wp.[Status] <> 3)  --库位已被执行中的波次拣货占用
+        OR (lk.[Id] IS NOT NULL AND (lk.[TaskId] IS NULL OR (lk.[TaskId] IS NOT NULL AND lk.[TaskId] <> @taskId)))
+) a ON l.[Id] = a.[Id]
+WHERE 
+    a.[Id] IS NULL AND l.[Status]= 1 AND z.[Type] IN (0,1) AND l.[Id] NOT IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+ORDER BY
+    [RowNo]
+<<SQL Parameter(s)>> :
+@taskId [Guid] : c4eac21d-e64b-4c25-acfd-4909ffb81634 [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'Status' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, IEnumerable`1 locationIds, IEnumerable`1 zoneTypes, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 639
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, String locationIdsStr, String zoneTypesStr, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 555
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 536
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxGetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 35
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:39:34.976
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 18
+[StackTrace]: 
+** [2019-08-01 10:39:34.979] - End ****************************************************************
+
+** [2019-08-01 10:40:35.917] - Begin **************************************************************
+[LogID]: 118a1c90-dd57-4a75-9ca4-ed9917040c0e
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxgetallsuggestlocations/
+[RequestReferer]: http://local.wmslocal.com/inventory/mobiletask/?pagetitle=%E5%85%A5%E5%BA%93&taskid=c4eac21d-e64b-4c25-acfd-4909ffb81634&tasktypesstr=[0]
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'Status' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+DECLARE  @merchantId UNIQUEIDENTIFIER
+SET ROWCOUNT 1
+SELECT @merchantId = [MerchantId] FROM [WMSLocal.Base].[dbo].[Location] WHERE [Id] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+SET ROWCOUNT 0
+SELECT DISTINCT
+    l.*
+    ,CASE WHEN l.[MerchantId]=@merchantId THEN 0 ELSE 1 END AS [RowNo]
+FROM 
+    [WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK)
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON z.[Id] = l.[ZoneId]
+
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Item] i WITH(NOLOCK) ON i.[MerchantId]=l.[MerchantId]
+LEFT JOIN
+(
+    --子查询不能使用的库位
+	SELECT DISTINCT
+        l.[Id]
+	FROM 
+		[WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK) 
+	INNER JOIN
+		[WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON l.[ZoneId] = z.[Id]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingLocation] wl WITH(NOLOCK) ON l.[Id] = wl.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingOrder] wo WITH(NOLOCK) ON l.[Id] = wo.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePicking] wp WITH(NOLOCK) ON wl.[WavePickingId] = wp.[Id] OR wo.[WavePickingId] = wp.[Id]
+	LEFT JOIN
+		[WMSLocal.Inventory].[dbo].[LocationInventory] li WITH(NOLOCK) ON li.[LocationId] = l.[Id]
+	LEFT JOIN 
+        [WMSLocal.Inventory].[dbo].[LocationInventory] li2 WITH(NOLOCK) ON li2.[ItemId]=li.[ItemId]
+			AND li2.[ItemId]='57509a39-3501-46b4-8803-880842a8969b' 
+			AND li2.[LocationId] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+    LEFT JOIN
+        [WMSLocal.Inventory].[dbo].[LocationLockLog] lk WITH(NOLOCK) ON l.[Id] = lk.[LocationId] AND lk.[Status]=0
+	WHERE 
+		(li2.[Id] IS NOT NULL AND ISNULL(li.[ExpiryDate],'1990-01-01')<>ISNULL(li2.[ExpiryDate],'1990-01-01')) --效期不一致
+		OR li.[InventoryType] <> li2.[InventoryType] --库存类型不一致
+		-- OR (z.[Type] <> 2 AND l.[MerchantId] <> @merchantId) 
+		OR (li.[Id] IS NOT NULL AND l.[MerchantId] <> @merchantId) --库位有库存但商家不一致
+        OR (wp.[Id] IS NOT NULL AND wp.[Status] <> 3)  --库位已被执行中的波次拣货占用
+        OR (lk.[Id] IS NOT NULL AND (lk.[TaskId] IS NULL OR (lk.[TaskId] IS NOT NULL AND lk.[TaskId] <> @taskId)))
+) a ON l.[Id] = a.[Id]
+WHERE 
+    a.[Id] IS NULL AND l.[Status]= 1 AND z.[Type] IN (0,1) AND l.[Id] NOT IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+ORDER BY
+    [RowNo]
+<<SQL Parameter(s)>> :
+@taskId [Guid] : c4eac21d-e64b-4c25-acfd-4909ffb81634 [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'Status' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, IEnumerable`1 locationIds, IEnumerable`1 zoneTypes, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 639
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, String locationIdsStr, String zoneTypesStr, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 555
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 536
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxGetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 35
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:40:35.914
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 23
+[StackTrace]: 
+** [2019-08-01 10:40:35.917] - End ****************************************************************
+
+** [2019-08-01 10:41:08.807] - Begin **************************************************************
+[LogID]: 3cefb639-d511-452a-9aaf-8e3c2ee90de1
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxgetallsuggestlocations/
+[RequestReferer]: http://local.wmslocal.com/inventory/mobiletask/?pagetitle=%E5%85%A5%E5%BA%93&taskid=c4eac21d-e64b-4c25-acfd-4909ffb81634&tasktypesstr=[0]
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'Status' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+DECLARE  @merchantId UNIQUEIDENTIFIER
+SET ROWCOUNT 1
+SELECT @merchantId = [MerchantId] FROM [WMSLocal.Base].[dbo].[Location] WHERE [Id] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+SET ROWCOUNT 0
+SELECT DISTINCT
+    l.*
+    ,CASE WHEN l.[MerchantId]=@merchantId THEN 0 ELSE 1 END AS [RowNo]
+FROM 
+    [WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK)
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON z.[Id] = l.[ZoneId]
+
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Item] i WITH(NOLOCK) ON i.[MerchantId]=l.[MerchantId]
+LEFT JOIN
+(
+    --子查询不能使用的库位
+	SELECT DISTINCT
+        l.[Id]
+	FROM 
+		[WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK) 
+	INNER JOIN
+		[WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON l.[ZoneId] = z.[Id]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingLocation] wl WITH(NOLOCK) ON l.[Id] = wl.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingOrder] wo WITH(NOLOCK) ON l.[Id] = wo.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePicking] wp WITH(NOLOCK) ON wl.[WavePickingId] = wp.[Id] OR wo.[WavePickingId] = wp.[Id]
+	LEFT JOIN
+		[WMSLocal.Inventory].[dbo].[LocationInventory] li WITH(NOLOCK) ON li.[LocationId] = l.[Id]
+	LEFT JOIN 
+        [WMSLocal.Inventory].[dbo].[LocationInventory] li2 WITH(NOLOCK) ON li2.[ItemId]=li.[ItemId]
+			AND li2.[ItemId]='57509a39-3501-46b4-8803-880842a8969b' 
+			AND li2.[LocationId] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+    LEFT JOIN
+        [WMSLocal.Inventory].[dbo].[LocationLockLog] lk WITH(NOLOCK) ON l.[Id] = lk.[LocationId] AND lk.[Status]=0
+	WHERE 
+		(li2.[Id] IS NOT NULL AND ISNULL(li.[ExpiryDate],'1990-01-01')<>ISNULL(li2.[ExpiryDate],'1990-01-01')) --效期不一致
+		OR li.[InventoryType] <> li2.[InventoryType] --库存类型不一致
+		-- OR (z.[Type] <> 2 AND l.[MerchantId] <> @merchantId) 
+		OR (li.[Id] IS NOT NULL AND l.[MerchantId] <> @merchantId) --库位有库存但商家不一致
+        OR (wp.[Id] IS NOT NULL AND wp.[Status] <> 3)  --库位已被执行中的波次拣货占用
+        OR (lk.[Id] IS NOT NULL AND (lk.[TaskId] IS NULL OR (lk.[TaskId] IS NOT NULL AND lk.[TaskId] <> @taskId)))
+) a ON l.[Id] = a.[Id]
+WHERE 
+    a.[Id] IS NULL AND l.[Status]= 1 AND z.[Type] IN (0,1) AND l.[Id] NOT IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+ORDER BY
+    [RowNo]
+<<SQL Parameter(s)>> :
+@taskId [Guid] : c4eac21d-e64b-4c25-acfd-4909ffb81634 [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'Status' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, IEnumerable`1 locationIds, IEnumerable`1 zoneTypes, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 639
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, String locationIdsStr, String zoneTypesStr, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 555
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 536
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxGetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 35
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:41:08.803
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 34
+[StackTrace]: 
+** [2019-08-01 10:41:08.807] - End ****************************************************************
+
+** [2019-08-01 10:41:21.575] - Begin **************************************************************
+[LogID]: 076457e8-8c3c-4878-aafe-9a62432c4330
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxgetallsuggestlocations/
+[RequestReferer]: http://local.wmslocal.com/inventory/mobiletask/?pagetitle=%E5%85%A5%E5%BA%93&taskid=c4eac21d-e64b-4c25-acfd-4909ffb81634&tasktypesstr=[0]
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'Status' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+DECLARE  @merchantId UNIQUEIDENTIFIER
+SET ROWCOUNT 1
+SELECT @merchantId = [MerchantId] FROM [WMSLocal.Base].[dbo].[Location] WHERE [Id] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+SET ROWCOUNT 0
+SELECT DISTINCT
+    l.*
+    ,CASE WHEN l.[MerchantId]=@merchantId THEN 0 ELSE 1 END AS [RowNo]
+FROM 
+    [WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK)
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON z.[Id] = l.[ZoneId]
+
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Item] i WITH(NOLOCK) ON i.[MerchantId]=l.[MerchantId]
+LEFT JOIN
+(
+    --子查询不能使用的库位
+	SELECT DISTINCT
+        l.[Id]
+	FROM 
+		[WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK) 
+	INNER JOIN
+		[WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON l.[ZoneId] = z.[Id]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingLocation] wl WITH(NOLOCK) ON l.[Id] = wl.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingOrder] wo WITH(NOLOCK) ON l.[Id] = wo.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePicking] wp WITH(NOLOCK) ON wl.[WavePickingId] = wp.[Id] OR wo.[WavePickingId] = wp.[Id]
+	LEFT JOIN
+		[WMSLocal.Inventory].[dbo].[LocationInventory] li WITH(NOLOCK) ON li.[LocationId] = l.[Id]
+	LEFT JOIN 
+        [WMSLocal.Inventory].[dbo].[LocationInventory] li2 WITH(NOLOCK) ON li2.[ItemId]=li.[ItemId]
+			AND li2.[ItemId]='57509a39-3501-46b4-8803-880842a8969b' 
+			AND li2.[LocationId] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+    LEFT JOIN
+        [WMSLocal.Inventory].[dbo].[LocationLockLog] lk WITH(NOLOCK) ON l.[Id] = lk.[LocationId] AND lk.[Status]=0
+	WHERE 
+		(li2.[Id] IS NOT NULL AND ISNULL(li.[ExpiryDate],'1990-01-01')<>ISNULL(li2.[ExpiryDate],'1990-01-01')) --效期不一致
+		OR li.[InventoryType] <> li2.[InventoryType] --库存类型不一致
+		-- OR (z.[Type] <> 2 AND l.[MerchantId] <> @merchantId) 
+		OR (li.[Id] IS NOT NULL AND l.[MerchantId] <> @merchantId) --库位有库存但商家不一致
+        OR (wp.[Id] IS NOT NULL AND wp.[Status] <> 3)  --库位已被执行中的波次拣货占用
+        OR (lk.[Id] IS NOT NULL AND (lk.[TaskId] IS NULL OR (lk.[TaskId] IS NOT NULL AND lk.[TaskId] <> @taskId)))
+) a ON l.[Id] = a.[Id]
+WHERE 
+    a.[Id] IS NULL AND l.[Status]= 1 AND z.[Type] IN (0,1) AND l.[Id] NOT IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+ORDER BY
+    [RowNo]
+<<SQL Parameter(s)>> :
+@taskId [Guid] : c4eac21d-e64b-4c25-acfd-4909ffb81634 [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'Status' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, IEnumerable`1 locationIds, IEnumerable`1 zoneTypes, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 639
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, String locationIdsStr, String zoneTypesStr, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 555
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 536
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxGetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 35
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:41:21.572
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 35
+[StackTrace]: 
+** [2019-08-01 10:41:21.575] - End ****************************************************************
+
+** [2019-08-01 10:47:08.846] - Begin **************************************************************
+[LogID]: b85b548c-51a6-4e54-806a-a34b15c2ba48
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxgetallsuggestlocations/
+[RequestReferer]: http://local.wmslocal.com/inventory/mobiletask/?pagetitle=%E5%85%A5%E5%BA%93&taskid=c4eac21d-e64b-4c25-acfd-4909ffb81634&tasktypesstr=[0]
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'Status' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+DECLARE  @merchantId UNIQUEIDENTIFIER
+SET ROWCOUNT 1
+SELECT @merchantId = [MerchantId] FROM [WMSLocal.Base].[dbo].[Location] WHERE [Id] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+SET ROWCOUNT 0
+SELECT DISTINCT
+    l.*
+    ,CASE WHEN l.[MerchantId]=@merchantId THEN 0 ELSE 1 END AS [RowNo]
+FROM 
+    [WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK)
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON z.[Id] = l.[ZoneId]
+
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Item] i WITH(NOLOCK) ON i.[MerchantId]=l.[MerchantId]
+LEFT JOIN
+(
+    --子查询不能使用的库位
+	SELECT DISTINCT
+        l.[Id]
+	FROM 
+		[WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK) 
+	INNER JOIN
+		[WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON l.[ZoneId] = z.[Id]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingLocation] wl WITH(NOLOCK) ON l.[Id] = wl.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingOrder] wo WITH(NOLOCK) ON l.[Id] = wo.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePicking] wp WITH(NOLOCK) ON wl.[WavePickingId] = wp.[Id] OR wo.[WavePickingId] = wp.[Id]
+	LEFT JOIN
+		[WMSLocal.Inventory].[dbo].[LocationInventory] li WITH(NOLOCK) ON li.[LocationId] = l.[Id]
+	LEFT JOIN 
+        [WMSLocal.Inventory].[dbo].[LocationInventory] li2 WITH(NOLOCK) ON li2.[ItemId]=li.[ItemId]
+			AND li2.[ItemId]='57509a39-3501-46b4-8803-880842a8969b' 
+			AND li2.[LocationId] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+    LEFT JOIN
+        [WMSLocal.Inventory].[dbo].[LocationLockLog] lk WITH(NOLOCK) ON l.[Id] = lk.[LocationId] AND lk.[Status]=0
+	WHERE 
+		(li2.[Id] IS NOT NULL AND ISNULL(li.[ExpiryDate],'1990-01-01')<>ISNULL(li2.[ExpiryDate],'1990-01-01')) --效期不一致
+		OR li.[InventoryType] <> li2.[InventoryType] --库存类型不一致
+		-- OR (z.[Type] <> 2 AND l.[MerchantId] <> @merchantId) 
+		OR (li.[Id] IS NOT NULL AND l.[MerchantId] <> @merchantId) --库位有库存但商家不一致
+        OR (wp.[Id] IS NOT NULL AND wp.[Status] <> 3)  --库位已被执行中的波次拣货占用
+        OR (lk.[Id] IS NOT NULL AND (lk.[TaskId] IS NULL OR (lk.[TaskId] IS NOT NULL AND lk.[TaskId] <> @taskId)))
+) a ON l.[Id] = a.[Id]
+WHERE 
+    a.[Id] IS NULL AND l.[Status]= 1 AND z.[Type] IN (0,1) AND l.[Id] NOT IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+ORDER BY
+    [RowNo]
+<<SQL Parameter(s)>> :
+@taskId [Guid] : c4eac21d-e64b-4c25-acfd-4909ffb81634 [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'Status' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, IEnumerable`1 locationIds, IEnumerable`1 zoneTypes, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 639
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, String locationIdsStr, String zoneTypesStr, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 555
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 536
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxGetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 35
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:47:08.844
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 5
+[StackTrace]: 
+** [2019-08-01 10:47:08.846] - End ****************************************************************
+
+** [2019-08-01 10:47:44.144] - Begin **************************************************************
+[LogID]: 9c950e28-177a-488b-92a7-a54029c2823a
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxgetallsuggestlocations/
+[RequestReferer]: http://local.wmslocal.com/inventory/mobiletask/?pagetitle=%E5%85%A5%E5%BA%93&taskid=c4eac21d-e64b-4c25-acfd-4909ffb81634&tasktypesstr=[0]
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'Status' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+DECLARE  @merchantId UNIQUEIDENTIFIER
+SET ROWCOUNT 1
+SELECT @merchantId = [MerchantId] FROM [WMSLocal.Base].[dbo].[Location] WHERE [Id] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+SET ROWCOUNT 0
+SELECT DISTINCT
+    l.*
+    ,CASE WHEN l.[MerchantId]=@merchantId THEN 0 ELSE 1 END AS [RowNo]
+FROM 
+    [WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK)
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON z.[Id] = l.[ZoneId]
+
+INNER JOIN 
+    [WMSLocal.Base].[dbo].[Item] i WITH(NOLOCK) ON i.[MerchantId]=l.[MerchantId]
+LEFT JOIN
+(
+    --子查询不能使用的库位
+	SELECT DISTINCT
+        l.[Id]
+	FROM 
+		[WMSLocal.Base].[dbo].[Location] l WITH(NOLOCK) 
+	INNER JOIN
+		[WMSLocal.Base].[dbo].[Zone] z WITH(NOLOCK) ON l.[ZoneId] = z.[Id]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingLocation] wl WITH(NOLOCK) ON l.[Id] = wl.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePickingOrder] wo WITH(NOLOCK) ON l.[Id] = wo.[LocationId]
+    LEFT JOIN
+        [WMSLocal.Sales].[dbo].[WavePicking] wp WITH(NOLOCK) ON wl.[WavePickingId] = wp.[Id] OR wo.[WavePickingId] = wp.[Id]
+	LEFT JOIN
+		[WMSLocal.Inventory].[dbo].[LocationInventory] li WITH(NOLOCK) ON li.[LocationId] = l.[Id]
+	LEFT JOIN 
+        [WMSLocal.Inventory].[dbo].[LocationInventory] li2 WITH(NOLOCK) ON li2.[ItemId]=li.[ItemId]
+			AND li2.[ItemId]='57509a39-3501-46b4-8803-880842a8969b' 
+			AND li2.[LocationId] IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+    LEFT JOIN
+        [WMSLocal.Inventory].[dbo].[LocationLockLog] lk WITH(NOLOCK) ON l.[Id] = lk.[LocationId] AND lk.[Status]=0
+	WHERE 
+		(li2.[Id] IS NOT NULL AND ISNULL(li.[ExpiryDate],'1990-01-01')<>ISNULL(li2.[ExpiryDate],'1990-01-01')) --效期不一致
+		OR li.[InventoryType] <> li2.[InventoryType] --库存类型不一致
+		-- OR (z.[Type] <> 2 AND l.[MerchantId] <> @merchantId) 
+		OR (li.[Id] IS NOT NULL AND l.[MerchantId] <> @merchantId) --库位有库存但商家不一致
+        OR (wp.[Id] IS NOT NULL AND wp.[Status] <> 3)  --库位已被执行中的波次拣货占用
+        OR (lk.[Id] IS NOT NULL AND (lk.[TaskId] IS NULL OR (lk.[TaskId] IS NOT NULL AND lk.[TaskId] <> @taskId)))
+) a ON l.[Id] = a.[Id]
+WHERE 
+    a.[Id] IS NULL AND l.[Status]= 1 AND z.[Type] IN (0,1) AND l.[Id] NOT IN ('023dad13-27de-4b28-a822-6e9f8bc009a9')
+ORDER BY
+    [RowNo]
+<<SQL Parameter(s)>> :
+@taskId [Guid] : c4eac21d-e64b-4c25-acfd-4909ffb81634 [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'Status' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, IEnumerable`1 locationIds, IEnumerable`1 zoneTypes, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 639
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid itemId, String locationIdsStr, String zoneTypesStr, Int32 qty, Nullable`1 taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 555
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.GetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 536
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxGetAllSuggestLocations(Guid taskId, Boolean isFrom) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 35
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:47:44.141
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 23
+[StackTrace]: 
+** [2019-08-01 10:47:44.144] - End ****************************************************************
+
+** [2019-08-01 10:53:21.263] - Begin **************************************************************
+[LogID]: 68b4fd04-f261-423c-8dba-fb54d67fcf7d
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxsubmittask/
+[RequestReferer]: http://local.wmslocal.com/inventory/mobiletask/?pagetitle=%E5%85%A5%E5%BA%93&taskid=c4eac21d-e64b-4c25-acfd-4909ffb81634&tasktypesstr=[0]
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'Status' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+SELECT
+	TOP(1) d.[Id],d.[IdNumber]
+FROM
+	[WMSLocal.Inventory].[dbo].[LocationInventory] AS a WITH(NOLOCK)
+LEFT JOIN
+	[WMSLocal.Sales].[dbo].[WavePickingLocation] AS b WITH(NOLOCK)
+		ON a.[LocationId] = b.[LocationId]
+LEFT JOIN
+	[WMSLocal.Sales].[dbo].[WavePickingOrder] AS c WITH(NOLOCK)
+		ON a.[LocationId] = c.[LocationId]
+LEFT JOIN
+	[WMSLocal.Sales].[dbo].[WavePicking] AS d WITH(NOLOCK)
+		ON b.[WavePickingId] = d.[Id] OR c.[WavePickingId] = d.[Id]
+WHERE
+	d.[Id] IS NOT NULL 
+    AND d.[Id] <> '00000000-0000-0000-0000-000000000000'
+    AND d.[Status] < 3
+	AND a.[LocationId] = '023dad13-27de-4b28-a822-6e9f8bc009a9'
+ ---> System.Data.SqlClient.SqlException: 列名 'Status' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReaderAll(Action`1 action, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 29
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReaderAll(Action`1 action, DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 56
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.CheckWavePickingLocation(Guid wavePickingId, Location location) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 1191
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.FromLocationCheck(Location fromLocation, Item item, Int32 qty, Nullable`1 wavePickingId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 893
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.InventoryMoveCheck(Location fromLocation, Location toLocation, Item item, Int32 qty, Nullable`1 wavePickingId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 725
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.InventoryMoveCheck(String fromLocationCode, String toLocationCode, String barcode, Int32 qty, Nullable`1 wavePickingId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 1052
+   在 IBB360.WMSLocal.APIImpls.Inventory.LocationTransferTaskApi.LocationTransferTask(Guid taskId, String fromLocationCode, String toLocationCode, String barcode, Int32 qty) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\LocationTransferTaskApi.cs:行号 347
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxSubmitTask(String fromLocationCode, String toLocationCode, String barcode, Int32 qty, Guid taskId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 28
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 10:53:21.261
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 35
+[StackTrace]: 
+** [2019-08-01 10:53:21.263] - End ****************************************************************
+
+** [2019-08-01 11:30:19.015] - Begin **************************************************************
+[LogID]: 3fd50f7c-164e-4f4e-b66c-7caa1fbc8f5b
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 11:30:19.003
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 10
+[StackTrace]: 
+** [2019-08-01 11:30:19.015] - End ****************************************************************
+
+** [2019-08-01 12:37:15.060] - Begin **************************************************************
+[LogID]: 14768861-5c8d-4182-99da-a1ac45f1630f
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 12:37:15.034
+[ProcessID]: 8344
+[ProcessName]: w3wp
+[ThreadID]: 23
+[StackTrace]: 
+** [2019-08-01 12:37:15.060] - End ****************************************************************
+
+** [2019-08-01 14:11:46.358] - Begin **************************************************************
+[LogID]: 1e899519-a25b-4154-851e-18f47b5d8e44
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 14:11:46.331
+[ProcessID]: 8736
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-08-01 14:11:46.358] - End ****************************************************************
+
+** [2019-08-01 14:30:14.369] - Begin **************************************************************
+[LogID]: b8a7df3f-e562-454b-a047-8f4b735562ca
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/so/print/?LocationCode=C-01-11
+[RequestReferer]: http://local.wmslocal.com/so/print/?LocationCode=Harry2019080100001
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 对象名 'WMSLocal.Sales.dbo.SingleWaveOrderPrint' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+SELECT
+    b.[Id] AS [SOId]
+    ,b.[WHOrderNo]
+    ,CASE WHEN b.[Status] < 88
+    THEN
+        0
+    ELSE
+        CASE WHEN c.[PrintStatus] = 2
+        THEN
+            2
+        ELSE
+            1
+        END
+    END AS [SoOutStockAndPrintStatus]
+    ,c.[PrintStatus]
+    ,c.[UpdatedOn]
+FROM
+    [WMSLocal.Sales].[dbo].[WavePickingOrder] a WITH(NOLOCK)
+INNER JOIN
+    [WMSLocal.Sales].[dbo].[SO] b WITH(NOLOCK) ON a.[SOId]=b.[Id]
+LEFT JOIN
+    [WMSLocal.Sales].[dbo].[SingleWaveOrderPrint] c WITH(NOLOCK) ON b.[Id]=c.[SOId]
+WHERE 1=1
+    AND a.[WavePickingId]=@singleWaveId
+<<SQL Parameter(s)>> :
+@singleWaveId [Guid] : 9754929d-f45a-4fdd-a4d9-044c7b7adb1b [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 对象名 'WMSLocal.Sales.dbo.SingleWaveOrderPrint' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.GetSOPrintInfoForSingleWave(Nullable`1 singleWaveId, IEnumerable`1 soIds, IEnumerable`1 printStatusList, IEnumerable`1 soStatusList) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 825
+   在 ASP._Page_Views_SO_Print_cshtml.Execute() 位置 d:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Views\SO\Print.cshtml:行号 53
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 14:30:14.347
+[ProcessID]: 18500
+[ProcessName]: w3wp
+[ThreadID]: 29
+[StackTrace]: 
+** [2019-08-01 14:30:14.369] - End ****************************************************************
+
+** [2019-08-01 15:47:29.561] - Begin **************************************************************
+[LogID]: c7d41f6a-2311-43ca-944a-6625cb0cbbfe
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 15:47:29.502
+[ProcessID]: 18500
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-08-01 15:47:29.561] - End ****************************************************************
+
+** [2019-08-01 16:54:48.638] - Begin **************************************************************
+[LogID]: ee9887a0-3e9f-46ad-8b50-40163b2902e3
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 16:54:48.599
+[ProcessID]: 30736
+[ProcessName]: w3wp
+[ThreadID]: 10
+[StackTrace]: 
+** [2019-08-01 16:54:48.638] - End ****************************************************************
+
+** [2019-08-01 16:56:39.296] - Begin **************************************************************
+[LogID]: 6d151324-88cf-4c05-8b16-d5c969a53c81
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0()
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 16:56:39.262
+[ProcessID]: 30736
+[ProcessName]: w3wp
+[ThreadID]: 23
+[StackTrace]: 
+** [2019-08-01 16:56:39.296] - End ****************************************************************
+
+** [2019-08-01 17:23:17.350] - Begin **************************************************************
+[LogID]: 43deee10-95b9-473b-9fd8-08215df30a72
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: JobId为UpdateAllAdminUserDataFromERP的TimerJob执行发生程序异常：
+
+System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 IBB360.Framework.Common.HelperUtility.HttpGet(String url, Encoding encoding, String contentType, String userAgent, String host, String referer) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Common\HelperUtility.cs:行号 643
+   在 IBB360.WMSLocal.APIImpls.Common.StaffUserApi.UpdateAllAdminUserDataFromERP(String appId, String serviceUrl) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\StaffUserApi.cs:行号 947
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass6_0.<RegisterJobs>b__2(Object state) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 92
+   在 IBB360.Framework.Common.TimerJob.<>c__DisplayClass1_0.<RegisterJob>b__0(Object s) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Common\AsynQueue\TimerJob.cs:行号 90
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 17:23:17.269
+[ProcessID]: 32736
+[ProcessName]: iisexpress
+[ThreadID]: 12
+[StackTrace]: 
+** [2019-08-01 17:23:17.350] - End ****************************************************************
+
+** [2019-08-01 17:24:46.970] - Begin **************************************************************
+[LogID]: 5832e0cc-505c-4206-89dd-f2ce5e5fdea0
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://localhost:34742/so/soshippingpackages/?batchprintrecheck=false&merchantid=&merchantorderno=&time_from=2014-07-23%2015:00:00&time_to=2019-08-01%2015:00:00&whorderno=
+[RequestReferer]: http://localhost:34742/so/soshippingpackages/?batchprintrecheck=false&merchantid=&merchantorderno=6023FCCF-59BC-46C1-A89A-04354805ED63&time_from=2014-07-23%2015:00:00&time_to=2019-08-01%2015:00:00&whorderno=
+[UserHostName]: ::1
+[UserHostAddress]: ::1
+[OperatorUser]: [Harry] harry
+[Content]: System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Views_SO_SOShippingPackages_cshtml.Execute() 位置 d:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Views\SO\SOShippingPackages.cshtml:行号 49
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.RunPage()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 17:24:46.911
+[ProcessID]: 32736
+[ProcessName]: iisexpress
+[ThreadID]: 24
+[StackTrace]: 
+** [2019-08-01 17:24:46.970] - End ****************************************************************
+
+** [2019-08-01 17:38:19.610] - Begin **************************************************************
+[LogID]: dab80deb-1774-4a29-9a86-fa3ba85a3227
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://localhost:34742/so/soshippingpackages/
+[RequestReferer]: http://localhost:34742/
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 多次为 'ibbx' 指定了列 'Id'。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+SELECT TOP 50
+	*
+FROM
+(
+
+SELECT
+a.[Id]
+,a.[SOId]
+,b.[WHOrderNo]
+,b.[MerchantOrderNo]
+,a.[CompanyId]
+,d.[DisplayName] AS [MerchantName]
+,c.[Name] AS [CompanyName]
+,a.[TrackingNo]
+,a.[TrackingInfo]
+,a.[Received]
+,a.[CreatedOn]
+,a.[CreatedBy]
+,a.[UpdatedOn]
+,a.[Extension]
+,a.[Weight]
+,f.[Id],
+    ROW_NUMBER() OVER(ORDER BY a.[CreatedOn] DESC) AS [RowNo]
+FROM
+    
+    [WMSLocal.Sales].[dbo].[SOShippingPackage] a WITH(NOLOCK)
+INNER JOIN
+    [WMSLocal.Sales].[dbo].[SO] b WITH(NOLOCK) ON a.[SOId]=b.[Id]
+LEFT JOIN
+    [WMSLocal.Base].[dbo].[ThirdPartyCompany] c WITH(NOLOCK) ON a.[CompanyId]=c.[Id]
+LEFT JOIN
+    [WMSLocal.Base].[dbo].[Merchant] d WITH(NOLOCK) ON b.[MerchantId]=d.[Id]
+LEFT JOIN
+    [WMSLocal.Sales].[dbo].[SOProcessLog] e WITH(NOLOCK) ON a.[SOId]=e.[SOId]
+INNER JOIN
+	[WMSLocal.Base].[dbo].[StaffUser] f WITH(NOLOCK) ON e.[ProcessedBy]=f.[Id]
+WHERE 1=1
+    AND a.[CreatedOn]>='2019-07-31 15:00:00'
+    AND a.[CreatedOn]<'2019-08-01 15:00:00'
+) AS ibbx
+WHERE
+	ibbx.[RowNo]>0
+	AND ibbx.[RowNo]<=50
+ORDER BY
+	ibbx.[RowNo]ASC
+ ---> System.Data.SqlClient.SqlException: 多次为 'ibbx' 指定了列 'Id'。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.Query(Nullable`1 packageId, Nullable`1 soId, String whOrderNo, String merchantOrderNo, Nullable`1 merchantId, Nullable`1 createdFrom, Nullable`1 createdTo, Int32 pageIndex, Int32 pageSize, Int32& totalCount, Boolean fillItems) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 94
+   在 ASP._Page_Views_SO_SOShippingPackages_cshtml.Execute() 位置 d:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Views\SO\SOShippingPackages.cshtml:行号 56
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.RunPage()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 17:38:19.549
+[ProcessID]: 32692
+[ProcessName]: iisexpress
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-08-01 17:38:19.610] - End ****************************************************************
+
+** [2019-08-01 17:47:30.994] - Begin **************************************************************
+[LogID]: d8fbbc8b-5140-4360-a525-1ccef1c3ae7f
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   在 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 175
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 17:47:30.601
+[ProcessID]: 18288
+[ProcessName]: w3wp
+[ThreadID]: 10
+[StackTrace]: 
+** [2019-08-01 17:47:30.994] - End ****************************************************************
+
+** [2019-08-01 18:11:20.907] - Begin **************************************************************
+[LogID]: 1135342a-c43b-42f0-a0cf-b816d1925c6a
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   在 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 175
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 18:11:20.726
+[ProcessID]: 18288
+[ProcessName]: w3wp
+[ThreadID]: 40
+[StackTrace]: 
+** [2019-08-01 18:11:20.907] - End ****************************************************************
+
+** [2019-08-01 18:11:34.754] - Begin **************************************************************
+[LogID]: 921e10b0-04cd-4fbc-a55d-70dad80a1c2e
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/so/soshippingpackages/
+[RequestReferer]: http://local.wmslocal.com/
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'SOId' 无效。
+列名 'RowNo' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : SELECT COUNT(*) 
+FROM
+    
+    [WMSLocal.Sales].[dbo].[SOShippingPackage] a WITH(NOLOCK)
+INNER JOIN
+    [WMSLocal.Sales].[dbo].[SO] AS b WITH(NOLOCK) 
+        ON a.[SOId]=b.[Id]
+LEFT JOIN
+    [WMSLocal.Base].[dbo].[ThirdPartyCompany] AS c WITH(NOLOCK) 
+        ON a.[CompanyId]=c.[Id]
+LEFT JOIN
+    [WMSLocal.Base].[dbo].[Merchant] AS d WITH(NOLOCK) 
+        ON b.[MerchantId]=d.[Id]
+INNER JOIN
+(
+	SELECT
+		[SOId],
+		[ProcessedOn],
+		ROW_NUMBER() OVER(PARTITION BY [SOId] ORDER BY [ProcessedOn] DESC) AS [RowNo]
+	FROM
+		[WMSLocal.Sales].[dbo].[SOProcessLog]  WITH(NOLOCK)
+	WHERE
+		[ProcessLogType]=10030
+) AS e
+	ON a.[SOId]=c.[SOId] AND c.[RowNo]=1
+WHERE 1=1
+    AND a.[CreatedOn]>='2019-07-31 15:00:00'
+    AND a.[CreatedOn]<'2019-08-01 15:00:00'
+ ---> System.Data.SqlClient.SqlException: 列名 'SOId' 无效。
+列名 'RowNo' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteScalar(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 137
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteScalar(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 143
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteScalar(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 67
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteScalar(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteScalar[TResult](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 72
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.Query(Nullable`1 packageId, Nullable`1 soId, String whOrderNo, String merchantOrderNo, Nullable`1 merchantId, Nullable`1 operatorId, Nullable`1 createdFrom, Nullable`1 createdTo, Int32 pageIndex, Int32 pageSize, Int32& totalCount, Boolean fillItems) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 109
+   在 ASP._Page_Views_SO_SOShippingPackages_cshtml.Execute() 位置 d:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Views\SO\SOShippingPackages.cshtml:行号 59
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 18:11:34.748
+[ProcessID]: 18288
+[ProcessName]: w3wp
+[ThreadID]: 40
+[StackTrace]: 
+** [2019-08-01 18:11:34.754] - End ****************************************************************
+
+** [2019-08-01 18:12:11.557] - Begin **************************************************************
+[LogID]: 1a5cf17b-68eb-4a7d-9fd8-18fe5f72dd24
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/so/soshippingpackages/
+[RequestReferer]: http://local.wmslocal.com/inventory/inventorytask/?assignedid=ee744f33-8598-4f46-a301-e5a68a55fb9c&assignedtime_from=&assignedtime_to=&createdtime_from=&createdtime_to=&description=&idnumber=&operatoruserid=
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'SOId' 无效。
+列名 'RowNo' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : SELECT COUNT(*) 
+FROM
+    
+    [WMSLocal.Sales].[dbo].[SOShippingPackage] a WITH(NOLOCK)
+INNER JOIN
+    [WMSLocal.Sales].[dbo].[SO] AS b WITH(NOLOCK) 
+        ON a.[SOId]=b.[Id]
+LEFT JOIN
+    [WMSLocal.Base].[dbo].[ThirdPartyCompany] AS c WITH(NOLOCK) 
+        ON a.[CompanyId]=c.[Id]
+LEFT JOIN
+    [WMSLocal.Base].[dbo].[Merchant] AS d WITH(NOLOCK) 
+        ON b.[MerchantId]=d.[Id]
+INNER JOIN
+(
+	SELECT
+		[SOId],
+		[ProcessedOn],
+		ROW_NUMBER() OVER(PARTITION BY [SOId] ORDER BY [ProcessedOn] DESC) AS [RowNo]
+	FROM
+		[WMSLocal.Sales].[dbo].[SOProcessLog]  WITH(NOLOCK)
+	WHERE
+		[ProcessLogType]=10030
+) AS e
+	ON a.[SOId]=c.[SOId] AND c.[RowNo]=1
+WHERE 1=1
+    AND a.[CreatedOn]>='2019-07-31 15:00:00'
+    AND a.[CreatedOn]<'2019-08-01 15:00:00'
+ ---> System.Data.SqlClient.SqlException: 列名 'SOId' 无效。
+列名 'RowNo' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteScalar(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 137
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteScalar(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 143
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteScalar(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 67
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteScalar(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteScalar[TResult](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 72
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.Query(Nullable`1 packageId, Nullable`1 soId, String whOrderNo, String merchantOrderNo, Nullable`1 merchantId, Nullable`1 operatorId, Nullable`1 createdFrom, Nullable`1 createdTo, Int32 pageIndex, Int32 pageSize, Int32& totalCount, Boolean fillItems) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 109
+   在 ASP._Page_Views_SO_SOShippingPackages_cshtml.Execute() 位置 d:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Views\SO\SOShippingPackages.cshtml:行号 59
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 18:12:11.551
+[ProcessID]: 18288
+[ProcessName]: w3wp
+[ThreadID]: 37
+[StackTrace]: 
+** [2019-08-01 18:12:11.557] - End ****************************************************************
+
+** [2019-08-01 18:13:16.341] - Begin **************************************************************
+[LogID]: 90ccac15-92fc-4fe2-8fcf-e3e89b06fcbe
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: JobId为UpdateAllAdminUserDataFromERP的TimerJob执行发生程序异常：
+
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 SNIReadSyncOverAsync(SNI_ConnWrapper* , SNI_Packet** , Int32 )
+   在 SNINativeMethodWrapper.SNIReadSyncOverAsync(SafeHandle pConn, IntPtr& packet, Int32 timeout)
+   在 System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   在 System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   在 System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   在 System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlBulkCopy.RunParser(BulkCopySimpleResultSet bulkCopyHandler)
+   在 System.Data.SqlClient.SqlBulkCopy.CreateAndExecuteInitialQueryAsync(BulkCopySimpleResultSet& result)
+   在 System.Data.SqlClient.SqlBulkCopy.WriteToServerInternalRestAsync(CancellationToken cts, TaskCompletionSource`1 source)
+   在 System.Data.SqlClient.SqlBulkCopy.WriteToServerInternalAsync(CancellationToken ctoken)
+   在 System.Data.SqlClient.SqlBulkCopy.WriteRowSourceToServerAsync(Int32 columnCount, CancellationToken ctoken)
+   在 System.Data.SqlClient.SqlBulkCopy.WriteToServer(DataTable table, DataRowState rowState)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.BulkInsert(String connStrKey, String tableName, DataTable table, Int32 bulkCopyTimeoutSeconds) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 345
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.BulkInsert(String tableName, DataTable table, Int32 bulkCopyTimeoutSeconds) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 183
+   在 IBB360.WMSLocal.APIImpls.Common.StaffUserApi.UpdateAllAdminUserDataFromERP(String appId, String serviceUrl) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\StaffUserApi.cs:行号 1255
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass6_0.<RegisterJobs>b__2(Object state) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 92
+   在 IBB360.Framework.Common.TimerJob.<>c__DisplayClass1_0.<RegisterJob>b__0(Object s)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 18:13:16.190
+[ProcessID]: 18288
+[ProcessName]: w3wp
+[ThreadID]: 43
+[StackTrace]: 
+** [2019-08-01 18:13:16.341] - End ****************************************************************
+
+** [2019-08-01 18:13:16.496] - Begin **************************************************************
+[LogID]: e43c565d-e3b6-4740-8d87-e4827c5e9a78
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: JobId为UpdateAllAdminUserDataFromERP的TimerJob执行发生程序异常[外围异常]：
+
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 IBB360.Framework.Common.TimerJob.<>c__DisplayClass1_0.<RegisterJob>b__0(Object s)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 18:13:16.351
+[ProcessID]: 18288
+[ProcessName]: w3wp
+[ThreadID]: 43
+[StackTrace]: 
+** [2019-08-01 18:13:16.496] - End ****************************************************************
+
+** [2019-08-01 18:13:25.853] - Begin **************************************************************
+[LogID]: 13323da4-07a3-4acb-a22a-bfcc20e6824e
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/so/soshippingpackages/
+[RequestReferer]: http://local.wmslocal.com/inventory/inventorytask/?assignedid=ee744f33-8598-4f46-a301-e5a68a55fb9c&assignedtime_from=&assignedtime_to=&createdtime_from=&createdtime_to=&description=&idnumber=&operatoruserid=
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'ProcessedBy' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+SELECT TOP 50
+	*
+FROM
+(
+
+SELECT
+a.[Id]
+,a.[SOId]
+,b.[WHOrderNo]
+,b.[MerchantOrderNo]
+,a.[CompanyId]
+,d.[DisplayName] AS [MerchantName]
+,c.[Name] AS [CompanyName]
+,a.[TrackingNo]
+,a.[TrackingInfo]
+,a.[Received]
+,a.[CreatedOn]
+,a.[CreatedBy]
+,a.[UpdatedOn]
+,a.[Extension]
+,a.[Weight]
+,e.[ProcessedBy],
+    ROW_NUMBER() OVER(ORDER BY a.[CreatedOn] DESC) AS [RowNo]
+FROM
+    
+    [WMSLocal.Sales].[dbo].[SOShippingPackage] a WITH(NOLOCK)
+INNER JOIN
+    [WMSLocal.Sales].[dbo].[SO] AS b WITH(NOLOCK) 
+        ON a.[SOId]=b.[Id]
+LEFT JOIN
+    [WMSLocal.Base].[dbo].[ThirdPartyCompany] AS c WITH(NOLOCK) 
+        ON a.[CompanyId]=c.[Id]
+LEFT JOIN
+    [WMSLocal.Base].[dbo].[Merchant] AS d WITH(NOLOCK) 
+        ON b.[MerchantId]=d.[Id]
+INNER JOIN
+(
+	SELECT
+		[SOId],
+		[ProcessedOn],
+		ROW_NUMBER() OVER(PARTITION BY [SOId] ORDER BY [ProcessedOn] DESC) AS [RowNo]
+	FROM
+		[WMSLocal.Sales].[dbo].[SOProcessLog]  WITH(NOLOCK)
+	WHERE
+		[ProcessLogType]=10030
+) AS e
+	ON a.[SOId]=e.[SOId] AND e.[RowNo]=1
+WHERE 1=1
+    AND a.[CreatedOn]>='2019-07-31 15:00:00'
+    AND a.[CreatedOn]<'2019-08-01 15:00:00'
+) AS ibbx
+WHERE
+	ibbx.[RowNo]>0
+	AND ibbx.[RowNo]<=50
+ORDER BY
+	ibbx.[RowNo]ASC
+ ---> System.Data.SqlClient.SqlException: 列名 'ProcessedBy' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.Query(Nullable`1 packageId, Nullable`1 soId, String whOrderNo, String merchantOrderNo, Nullable`1 merchantId, Nullable`1 operatorId, Nullable`1 createdFrom, Nullable`1 createdTo, Int32 pageIndex, Int32 pageSize, Int32& totalCount, Boolean fillItems) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 110
+   在 ASP._Page_Views_SO_SOShippingPackages_cshtml.Execute() 位置 d:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Views\SO\SOShippingPackages.cshtml:行号 59
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 18:13:25.831
+[ProcessID]: 18288
+[ProcessName]: w3wp
+[ThreadID]: 42
+[StackTrace]: 
+** [2019-08-01 18:13:25.853] - End ****************************************************************
+
+** [2019-08-01 18:14:10.542] - Begin **************************************************************
+[LogID]: 997c81c4-5ac2-40d6-bc84-57778f8e4aec
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0()
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 18:14:10.533
+[ProcessID]: 18288
+[ProcessName]: w3wp
+[ThreadID]: 38
+[StackTrace]: 
+** [2019-08-01 18:14:10.542] - End ****************************************************************
+
+** [2019-08-01 18:48:25.542] - Begin **************************************************************
+[LogID]: ea9c3ef3-aefb-4bf7-9253-d06bf389feb9
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.137
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-08-01 18:48:25.507
+[ProcessID]: 18288
+[ProcessName]: w3wp
+[ThreadID]: 37
+[StackTrace]: 
+** [2019-08-01 18:48:25.542] - End ****************************************************************

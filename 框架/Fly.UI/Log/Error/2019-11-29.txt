@@ -1,0 +1,97 @@
+
+** [2019-11-29 14:32:54.681] - Begin **************************************************************
+[LogID]: dad463d7-2c0d-40d2-87a5-32f1b4b1d741
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-11-29 14:32:54.651
+[ProcessID]: 23224
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-11-29 14:32:54.681] - End ****************************************************************
+
+** [2019-11-29 17:08:10.295] - Begin **************************************************************
+[LogID]: c97795e1-b123-47ef-b546-e7c171fca47d
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-11-29 17:08:10.270
+[ProcessID]: 30648
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-11-29 17:08:10.295] - End ****************************************************************
+
+** [2019-11-29 17:08:10.769] - Begin **************************************************************
+[LogID]: a97b4d2e-cc84-4b5c-9f28-244fd9665019
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: JobId为UpdateAllAdminUserDataFromERP的TimerJob执行发生程序异常：
+
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Net.UnsafeNclNativeMethods.OSSOCK.recv(IntPtr socketHandle, Byte* pinnedBuffer, Int32 len, SocketFlags socketFlags)
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, SocketError& errorCode)
+   在 System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   在 System.Net.PooledStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   在 System.Net.Connection.SyncRead(HttpWebRequest request, Boolean userRetrievedStream, Boolean probeRead)
+   在 System.Net.ConnectStream.ProcessWriteCallDone(ConnectionReturnResult returnResult)
+   在 System.Net.ConnectStream.CallDone(ConnectionReturnResult returnResult)
+   在 System.Net.ConnectStream.CloseInternal(Boolean internalCall, Boolean aborting)
+   在 System.Net.ConnectStream.System.Net.ICloseEx.CloseEx(CloseExState closeState)
+   在 System.Net.HttpWebRequest.EndWriteHeaders_Part2()
+   在 System.Net.HttpWebRequest.EndWriteHeaders(Boolean async)
+   在 System.Net.HttpWebRequest.WriteHeadersCallback(WebExceptionStatus errorStatus, ConnectStream stream, Boolean async)
+   在 System.Net.ConnectStream.WriteHeaders(Boolean async)
+   在 System.Net.HttpWebRequest.EndSubmitRequest()
+   在 System.Net.Connection.SubmitRequest(HttpWebRequest request, Boolean forcedsubmit)
+   在 System.Net.ServicePoint.SubmitRequest(HttpWebRequest request, String connName)
+   在 System.Net.HttpWebRequest.SubmitRequest(ServicePoint servicePoint)
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 IBB360.Framework.Common.HelperUtility.HttpGet(String url, Encoding encoding, String contentType, String userAgent, String host, String referer, IDictionary`2 customHeaders) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Common\HelperUtility.cs:行号 703
+   在 IBB360.WMSLocal.APIImpls.Common.StaffUserApi.UpdateAllAdminUserDataFromERP(String appId, String serviceUrl) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\StaffUserApi.cs:行号 947
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass6_0.<RegisterJobs>b__2(Object state) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 92
+   在 IBB360.Framework.Common.TimerJob.<>c__DisplayClass1_0.<RegisterJob>b__0(Object s) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Common\AsynQueue\TimerJob.cs:行号 90
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-11-29 17:08:10.639
+[ProcessID]: 30648
+[ProcessName]: w3wp
+[ThreadID]: 34
+[StackTrace]: 
+** [2019-11-29 17:08:10.769] - End ****************************************************************
+
+** [2019-11-29 17:08:10.902] - Begin **************************************************************
+[LogID]: aea300c9-7206-42d9-9701-cf4693a9cbcd
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: JobId为UpdateAllAdminUserDataFromERP的TimerJob执行发生程序异常[外围异常]：
+
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 IBB360.Framework.Common.TimerJob.<>c__DisplayClass1_0.<RegisterJob>b__0(Object s) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Common\AsynQueue\TimerJob.cs:行号 91
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-11-29 17:08:10.778
+[ProcessID]: 30648
+[ProcessName]: w3wp
+[ThreadID]: 34
+[StackTrace]: 
+** [2019-11-29 17:08:10.902] - End ****************************************************************

@@ -1,0 +1,100 @@
+
+** [2019-10-26 10:20:01.058] - Begin **************************************************************
+[LogID]: e9893365-72f6-4307-b0fa-3af102aef1ef
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-26 10:20:01.000
+[ProcessID]: 6680
+[ProcessName]: w3wp
+[ThreadID]: 9
+[StackTrace]: 
+** [2019-10-26 10:20:01.058] - End ****************************************************************
+
+** [2019-10-26 10:43:59.115] - Begin **************************************************************
+[LogID]: 2bdd85d9-2d35-4bcd-83d0-cba5abb81aeb
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-26 10:43:59.095
+[ProcessID]: 6680
+[ProcessName]: w3wp
+[ThreadID]: 6
+[StackTrace]: 
+** [2019-10-26 10:43:59.115] - End ****************************************************************
+
+** [2019-10-26 11:52:21.267] - Begin **************************************************************
+[LogID]: be7ce2bf-8c69-4539-9187-966e3b33ef4f
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-26 11:52:21.229
+[ProcessID]: 23460
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-10-26 11:52:21.267] - End ****************************************************************
+
+** [2019-10-26 14:18:33.031] - Begin **************************************************************
+[LogID]: 942c2fb8-1afc-402e-81bf-a04faf6dce47
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-26 14:18:32.991
+[ProcessID]: 21268
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-10-26 14:18:33.031] - End ****************************************************************
+
+** [2019-10-26 16:57:05.121] - Begin **************************************************************
+[LogID]: 76d7dcd5-078c-4727-902a-c2f516152cf6
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-26 16:57:05.094
+[ProcessID]: 31736
+[ProcessName]: w3wp
+[ThreadID]: 11
+[StackTrace]: 
+** [2019-10-26 16:57:05.121] - End ****************************************************************

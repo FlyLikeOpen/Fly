@@ -1,0 +1,343 @@
+
+** [2019-12-05 10:28:17.683] - Begin **************************************************************
+[LogID]: 7c75f6a4-27d7-4649-8bbf-267552ceea90
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 10:28:17.640
+[ProcessID]: 17048
+[ProcessName]: w3wp
+[ThreadID]: 12
+[StackTrace]: 
+** [2019-12-05 10:28:17.683] - End ****************************************************************
+
+** [2019-12-05 10:50:58.857] - Begin **************************************************************
+[LogID]: 80cac67f-c53f-4f25-b5c0-c6c6f60ada00
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 10:50:58.818
+[ProcessID]: 19540
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-12-05 10:50:58.857] - End ****************************************************************
+
+** [2019-12-05 10:53:11.175] - Begin **************************************************************
+[LogID]: cc199c4e-e7e4-4de5-8c26-e7cc6c4c4d1d
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/inventory/ajaxassigntask/
+[RequestReferer]: http://local.wmslocal.com/inventory/inventorytask/
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 对象名 'WMSLocal.Base.dbo.StaffUserCanPasteFakeCode' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+SELECT
+	a.*,
+    b.[WorkWeChatUserId]
+FROM
+	[WMSLocal.Base].[dbo].[StaffUser] AS a WITH(NOLOCK)
+LEFT JOIN
+    [WMSLocal.Base].[dbo].[StaffUserWorkWeChat] AS b WITH(NOLOCK)
+        ON a.[Id]=b.[UserId]
+INNER JOIN
+	[WMSLocal.Base].[dbo].[StaffUserCanPasteFakeCode] AS c WITH(NOLOCK)
+		ON a.[Id]=c.[StaffUserId]
+WHERE
+    c.[Status]=1
+ ---> System.Data.SqlClient.SqlException: 对象名 'WMSLocal.Base.dbo.StaffUserCanPasteFakeCode' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 67
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 82
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteReader(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 24
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteList[T](Func`2 converter, DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 125
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 162
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteEntityList[T](DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 167
+   在 IBB360.WMSLocal.APIImpls.Common.StaffUserApi.GetAllStaffUserCanPasteFakeCode() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\StaffUserApi.cs:行号 1352
+   在 IBB360.WMSLocal.APIImpls.Inventory.InventoryTaskApi.AssignTasks(IEnumerable`1 taskIds, Guid operatorUserId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Inventory\InventoryTaskApi.cs:行号 268
+   在 IBB360.WMSLocal.UI.Controllers.InventoryController.AjaxAssignTask(List`1 ids, Guid userId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\InventoryController.cs:行号 22
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 10:53:11.156
+[ProcessID]: 19540
+[ProcessName]: w3wp
+[ThreadID]: 10
+[StackTrace]: 
+** [2019-12-05 10:53:11.175] - End ****************************************************************
+
+** [2019-12-05 11:27:12.200] - Begin **************************************************************
+[LogID]: 42cf6e33-6de3-4fc0-b4a1-1f699b22cf28
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 11:27:12.192
+[ProcessID]: 19540
+[ProcessName]: w3wp
+[ThreadID]: 18
+[StackTrace]: 
+** [2019-12-05 11:27:12.200] - End ****************************************************************
+
+** [2019-12-05 12:02:27.441] - Begin **************************************************************
+[LogID]: 57a03036-8c6a-4df6-83ef-67cf99194a8b
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/so/ajaxprint/
+[RequestReferer]: http://local.wmslocal.com/so/print/?LocationCode=A-01-26
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: System.ApplicationException: 订单Id为41a21fea-bf79-4f7d-af99-a77e7ab2f58f中，有包裹并没有找到快递单号信息
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.<>c__DisplayClass18_0.<PackageToSOShippingPackage>b__1(Package r) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 373
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Linq.Enumerable.Any[TSource](IEnumerable`1 source)
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 405
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 401
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.SOOutStock(Guid soId, IEnumerable`1 packages, Nullable`1 userId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 1167
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.TryOutStockAndGetExpressSheets(SO so, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 206
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.GetShippingLabelForBSWH(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 150
+   在 IBB360.WMSLocal.UI.Controllers.SOController.AjaxPrint(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\SOController.cs:行号 172
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 12:02:27.438
+[ProcessID]: 23692
+[ProcessName]: w3wp
+[ThreadID]: 8
+[StackTrace]: 
+** [2019-12-05 12:02:27.441] - End ****************************************************************
+
+** [2019-12-05 12:22:41.674] - Begin **************************************************************
+[LogID]: b1004b76-0757-4e90-91c7-91e6e974c374
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 12:22:41.655
+[ProcessID]: 23692
+[ProcessName]: w3wp
+[ThreadID]: 6
+[StackTrace]: 
+** [2019-12-05 12:22:41.674] - End ****************************************************************
+
+** [2019-12-05 18:55:08.829] - Begin **************************************************************
+[LogID]: 4ae4bdf4-971e-4d54-b2de-7473af41b10f
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 18:55:08.793
+[ProcessID]: 15952
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-12-05 18:55:08.829] - End ****************************************************************
+
+** [2019-12-05 19:37:19.748] - Begin **************************************************************
+[LogID]: c56e68a1-dd67-4c85-bfdb-69425cef9b9d
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 19:37:19.711
+[ProcessID]: 21524
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-12-05 19:37:19.748] - End ****************************************************************
+
+** [2019-12-05 20:08:27.593] - Begin **************************************************************
+[LogID]: 88fbf411-f32d-40b3-b136-8b4239db33fa
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/so/ajaxprint/
+[RequestReferer]: http://local.wmslocal.com/so/print/?LocationCode=A-01-24
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: System.ApplicationException: 订单Id为5967f4f5-7dd9-4bfa-9266-ba4994d53e62中，有包裹并没有找到快递单号信息
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.<>c__DisplayClass18_0.<PackageToSOShippingPackage>b__1(Package r) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 373
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Linq.Enumerable.Any[TSource](IEnumerable`1 source)
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 405
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 401
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.SOOutStock(Guid soId, IEnumerable`1 packages, Nullable`1 userId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 1167
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.TryOutStockAndGetExpressSheets(SO so, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 206
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.GetShippingLabelForBSWH(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 150
+   在 IBB360.WMSLocal.UI.Controllers.SOController.AjaxPrint(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\SOController.cs:行号 172
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 20:08:27.586
+[ProcessID]: 21524
+[ProcessName]: w3wp
+[ThreadID]: 22
+[StackTrace]: 
+** [2019-12-05 20:08:27.593] - End ****************************************************************
+
+** [2019-12-05 20:12:15.182] - Begin **************************************************************
+[LogID]: c2ce7e0e-e26c-4c7b-a215-36a266c3f9f2
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://local.wmslocal.com/so/ajaxprint/
+[RequestReferer]: http://local.wmslocal.com/so/print/?LocationCode=A-01-24
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: System.ApplicationException: 订单Id为5967f4f5-7dd9-4bfa-9266-ba4994d53e62中，有包裹并没有找到快递单号信息
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.<>c__DisplayClass18_0.<PackageToSOShippingPackage>b__1(Package r) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 373
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Linq.Enumerable.Any[TSource](IEnumerable`1 source)
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 405
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 401
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.SOOutStock(Guid soId, IEnumerable`1 packages, Nullable`1 userId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 1167
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.TryOutStockAndGetExpressSheets(SO so, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 206
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.GetShippingLabelForBSWH(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 150
+   在 IBB360.WMSLocal.UI.Controllers.SOController.AjaxPrint(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Controllers\SOController.cs:行号 172
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 20:12:15.169
+[ProcessID]: 21524
+[ProcessName]: w3wp
+[ThreadID]: 28
+[StackTrace]: 
+** [2019-12-05 20:12:15.182] - End ****************************************************************
+
+** [2019-12-05 20:18:07.781] - Begin **************************************************************
+[LogID]: f27550ed-061c-49d7-a9f5-96e441f179bf
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 20:18:07.781
+[ProcessID]: 21524
+[ProcessName]: w3wp
+[ThreadID]: 9
+[StackTrace]: 
+** [2019-12-05 20:18:07.781] - End ****************************************************************

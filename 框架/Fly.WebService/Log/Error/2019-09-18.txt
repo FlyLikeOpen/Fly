@@ -1,0 +1,1287 @@
+
+** [2019-09-18 00:11:16.856] - Begin **************************************************************
+[LogID]: 9ff997e5-caf3-465b-a7d5-9789a59a798c
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 00:11:16.840
+[ProcessID]: 79496
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-09-18 00:11:16.856] - End ****************************************************************
+
+** [2019-09-18 09:31:14.677] - Begin **************************************************************
+[LogID]: 40ce415d-1e29-42de-89f1-966f8fd27e06
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 09:31:14.661
+[ProcessID]: 79496
+[ProcessName]: w3wp
+[ThreadID]: 41
+[StackTrace]: 
+** [2019-09-18 09:31:14.677] - End ****************************************************************
+
+** [2019-09-18 10:03:19.634] - Begin **************************************************************
+[LogID]: dd833a23-6580-4233-8c2d-014e9c5c4de2
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 10:03:19.563
+[ProcessID]: 81900
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-09-18 10:03:19.634] - End ****************************************************************
+
+** [2019-09-18 10:36:28.697] - Begin **************************************************************
+[LogID]: 7f7f5105-a110-4d3c-b58f-74450a31fce5
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 10:36:28.623
+[ProcessID]: 84424
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-09-18 10:36:28.697] - End ****************************************************************
+
+** [2019-09-18 11:11:30.168] - Begin **************************************************************
+[LogID]: fddf2e16-af3b-4f02-9d0c-8d80f95f3e2e
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 11:11:30.107
+[ProcessID]: 90092
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-09-18 11:11:30.168] - End ****************************************************************
+
+** [2019-09-18 11:47:30.363] - Begin **************************************************************
+[LogID]: 652f872b-95a2-4c13-859d-ef691b086e25
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 11:47:30.281
+[ProcessID]: 91052
+[ProcessName]: w3wp
+[ThreadID]: 10
+[StackTrace]: 
+** [2019-09-18 11:47:30.363] - End ****************************************************************
+
+** [2019-09-18 12:23:31.869] - Begin **************************************************************
+[LogID]: 338a1c86-316f-4c8a-93a3-c5bbd5f16717
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 12:23:31.777
+[ProcessID]: 87916
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-09-18 12:23:31.869] - End ****************************************************************
+
+** [2019-09-18 13:00:42.514] - Begin **************************************************************
+[LogID]: dad91601-a343-4dc1-8984-6bbaedb5b408
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 13:00:42.444
+[ProcessID]: 74428
+[ProcessName]: w3wp
+[ThreadID]: 11
+[StackTrace]: 
+** [2019-09-18 13:00:42.514] - End ****************************************************************
+
+** [2019-09-18 13:38:46.814] - Begin **************************************************************
+[LogID]: 7fad8352-22fc-4453-81ba-3868c5e76c73
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 13:38:46.730
+[ProcessID]: 82516
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-09-18 13:38:46.814] - End ****************************************************************
+
+** [2019-09-18 14:18:46.872] - Begin **************************************************************
+[LogID]: fe37710f-26d3-41ba-bba6-297dcd9a9496
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 14:18:46.791
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-09-18 14:18:46.872] - End ****************************************************************
+
+** [2019-09-18 14:20:48.586] - Begin **************************************************************
+[LogID]: 8c0eee7b-5341-42b0-a979-f1c6ed9262f4
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 14:20:48.575
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 12
+[StackTrace]: 
+** [2019-09-18 14:20:48.586] - End ****************************************************************
+
+** [2019-09-18 14:20:59.413] - Begin **************************************************************
+[LogID]: 7b16d33c-4e1b-40eb-bfff-881b03ed35c5
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 14:20:59.401
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 9
+[StackTrace]: 
+** [2019-09-18 14:20:59.413] - End ****************************************************************
+
+** [2019-09-18 14:22:59.155] - Begin **************************************************************
+[LogID]: 701b8cbd-cf24-4334-ac9a-5cb6ea0fc3ce
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 14:22:59.146
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 22
+[StackTrace]: 
+** [2019-09-18 14:22:59.155] - End ****************************************************************
+
+** [2019-09-18 14:25:59.450] - Begin **************************************************************
+[LogID]: 75fb3865-c48b-4631-881a-9987e6b23e3f
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 14:25:59.441
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 18
+[StackTrace]: 
+** [2019-09-18 14:25:59.450] - End ****************************************************************
+
+** [2019-09-18 14:29:59.485] - Begin **************************************************************
+[LogID]: 1fb9efa5-ed53-4605-b7f5-64e3d2af5b03
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 14:29:59.477
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 13
+[StackTrace]: 
+** [2019-09-18 14:29:59.485] - End ****************************************************************
+
+** [2019-09-18 14:33:59.572] - Begin **************************************************************
+[LogID]: d4f50628-4265-4fbc-befa-f80161d0541e
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 14:33:59.564
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 32
+[StackTrace]: 
+** [2019-09-18 14:33:59.572] - End ****************************************************************
+
+** [2019-09-18 14:38:59.739] - Begin **************************************************************
+[LogID]: 3a40e669-c318-4750-8d3f-003f00f9a9fa
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 14:38:59.725
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 35
+[StackTrace]: 
+** [2019-09-18 14:38:59.739] - End ****************************************************************
+
+** [2019-09-18 14:45:00.414] - Begin **************************************************************
+[LogID]: fcd295b2-0ba9-43fa-a52b-126ee34240de
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 14:45:00.401
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 39
+[StackTrace]: 
+** [2019-09-18 14:45:00.414] - End ****************************************************************
+
+** [2019-09-18 14:53:00.349] - Begin **************************************************************
+[LogID]: faa8b009-2f95-40da-a7de-a93f55fff385
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 14:53:00.340
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 38
+[StackTrace]: 
+** [2019-09-18 14:53:00.349] - End ****************************************************************
+
+** [2019-09-18 14:59:42.082] - Begin **************************************************************
+[LogID]: 5ed8cdd7-f49c-4168-8437-2f3cfdd0d77b
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 14:59:42.065
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 38
+[StackTrace]: 
+** [2019-09-18 14:59:42.082] - End ****************************************************************
+
+** [2019-09-18 15:01:42.856] - Begin **************************************************************
+[LogID]: fdc26a41-8740-4749-99ce-770fd232d24c
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 15:01:42.844
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 37
+[StackTrace]: 
+** [2019-09-18 15:01:42.856] - End ****************************************************************
+
+** [2019-09-18 15:11:42.847] - Begin **************************************************************
+[LogID]: 390a550a-bfad-459e-8c77-3dd643427de7
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 15:11:42.834
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 39
+[StackTrace]: 
+** [2019-09-18 15:11:42.847] - End ****************************************************************
+
+** [2019-09-18 15:22:43.108] - Begin **************************************************************
+[LogID]: c0959c1f-c83b-41ed-9749-1b306666a4c3
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 15:22:43.085
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 39
+[StackTrace]: 
+** [2019-09-18 15:22:43.108] - End ****************************************************************
+
+** [2019-09-18 15:33:43.333] - Begin **************************************************************
+[LogID]: d2f1cdec-d1fc-4cb8-ba3e-9f971e546ac8
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 15:33:43.324
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 31
+[StackTrace]: 
+** [2019-09-18 15:33:43.333] - End ****************************************************************
+
+** [2019-09-18 15:40:43.507] - Begin **************************************************************
+[LogID]: 42ee3ca4-4620-4da3-a10d-52a5342b12dd
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 15:40:43.494
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 30
+[StackTrace]: 
+** [2019-09-18 15:40:43.507] - End ****************************************************************
+
+** [2019-09-18 15:45:43.598] - Begin **************************************************************
+[LogID]: 7d0b83b7-5974-4ea1-a7e1-6ba6344cb399
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 15:45:43.586
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 33
+[StackTrace]: 
+** [2019-09-18 15:45:43.598] - End ****************************************************************
+
+** [2019-09-18 15:58:43.863] - Begin **************************************************************
+[LogID]: d95c2a79-8daa-4534-a2f2-6339228fce26
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 15:58:43.852
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 13
+[StackTrace]: 
+** [2019-09-18 15:58:43.863] - End ****************************************************************
+
+** [2019-09-18 16:12:44.144] - Begin **************************************************************
+[LogID]: 8935972d-7edc-4d5e-8505-fd95203f3a5d
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 16:12:44.134
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 53
+[StackTrace]: 
+** [2019-09-18 16:12:44.144] - End ****************************************************************
+
+** [2019-09-18 16:22:44.347] - Begin **************************************************************
+[LogID]: 773dfe75-5964-445f-b1cb-5e0a7b88372c
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 16:22:44.325
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 55
+[StackTrace]: 
+** [2019-09-18 16:22:44.347] - End ****************************************************************
+
+** [2019-09-18 16:27:44.465] - Begin **************************************************************
+[LogID]: f3914247-c783-46b2-8499-c06c74ff283b
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 16:27:44.451
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 58
+[StackTrace]: 
+** [2019-09-18 16:27:44.465] - End ****************************************************************
+
+** [2019-09-18 16:43:44.716] - Begin **************************************************************
+[LogID]: 4d7736b1-34f9-46ab-8885-0992b187d0b9
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 16:43:44.707
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 50
+[StackTrace]: 
+** [2019-09-18 16:43:44.716] - End ****************************************************************
+
+** [2019-09-18 17:00:44.954] - Begin **************************************************************
+[LogID]: 94bf65f0-7b5c-4e9e-a593-e75e10e4fba7
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 17:00:44.945
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 48
+[StackTrace]: 
+** [2019-09-18 17:00:44.954] - End ****************************************************************
+
+** [2019-09-18 17:05:45.026] - Begin **************************************************************
+[LogID]: 5cd5d58a-11f0-4cc3-95e4-c85ed859cf62
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 17:05:45.017
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 82
+[StackTrace]: 
+** [2019-09-18 17:05:45.026] - End ****************************************************************
+
+** [2019-09-18 17:18:45.593] - Begin **************************************************************
+[LogID]: 5c92724f-4a48-4397-9824-004651f1efe2
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 17:18:45.580
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 85
+[StackTrace]: 
+** [2019-09-18 17:18:45.593] - End ****************************************************************
+
+** [2019-09-18 17:37:45.754] - Begin **************************************************************
+[LogID]: fe57e14f-1993-4f90-9f54-c809c6f7d394
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 17:37:45.746
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 78
+[StackTrace]: 
+** [2019-09-18 17:37:45.754] - End ****************************************************************
+
+** [2019-09-18 17:49:45.977] - Begin **************************************************************
+[LogID]: ea6d2a4c-a8d0-488d-aa5e-aea73a51982e
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 17:49:45.968
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 47
+[StackTrace]: 
+** [2019-09-18 17:49:45.977] - End ****************************************************************
+
+** [2019-09-18 17:57:46.151] - Begin **************************************************************
+[LogID]: 846c90e8-b30d-4998-a705-1028539dd558
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 17:57:46.142
+[ProcessID]: 89788
+[ProcessName]: w3wp
+[ThreadID]: 52
+[StackTrace]: 
+** [2019-09-18 17:57:46.151] - End ****************************************************************
+
+** [2019-09-18 18:18:48.503] - Begin **************************************************************
+[LogID]: bfc8f89a-9b89-499e-9be0-4332cd06ad7b
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 18:18:48.441
+[ProcessID]: 98568
+[ProcessName]: w3wp
+[ThreadID]: 10
+[StackTrace]: 
+** [2019-09-18 18:18:48.503] - End ****************************************************************
+
+** [2019-09-18 18:34:46.869] - Begin **************************************************************
+[LogID]: f93b5a5a-c410-425d-bf77-879cb5756822
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: System.ApplicationException: 订单上具有唯一性的属性数据在系统中已有存在，不能重复创建
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 369
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-18 18:34:46.860
+[ProcessID]: 98568
+[ProcessName]: w3wp
+[ThreadID]: 51
+[StackTrace]: 
+** [2019-09-18 18:34:46.869] - End ****************************************************************

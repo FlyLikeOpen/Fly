@@ -1,0 +1,2640 @@
+
+** [2019-10-10 09:28:12.417] - Begin **************************************************************
+[LogID]: 261999aa-b17e-4388-98fd-a8e53639f784
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+	[WMSLocal.Sales].[dbo].[SO]
+(
+	[Id]
+	,[WHOrderNo]
+	,[MerchantId]
+	,[MerchantOrderNo]
+	,[StockId]
+	,[Status]
+	,[InventoryType]
+	,[Type]
+	,[BatchCode]
+	,[CCode]
+	,[ExpressCompanyCode]
+	,[ExpressTrackingNo]
+	,[PaymentCompanyCode]
+	,[PaymentTransactionNo]
+	,[BuyerRegNo]
+	,[BuyerIdCardType]
+	,[BuyerIdCardNo]
+	,[BuyerIdCardName]
+	,[BuyerPhone]
+	,[PayerIdCardType]
+	,[PayerIdCardNo]
+	,[PayerIdCardName]
+	,[ReceiverName]
+	,[ReceiverProvince]
+	,[ReceiverCity]
+	,[ReceiverDistrict]
+	,[ReceiverStreetAddress]
+	,[ReceiverZipCode]
+	,[ReceiverPhone]
+	,[GoodsFeeAmt]
+	,[ShippingFeeAmt]
+	,[InsuredFeeAmt]
+	,[DiscountAmt]
+	,[TaxFeeAmt]
+	,[ActuralPaidAmt]
+    ,[ItemPriceIncludeTax]
+	,[RemarkForCustoms]
+	,[RemarkForWarehouse]
+	,[OriginalPackageState]
+	,[NeedFakedCode]
+	,[ExtensionFields]
+	,[CreatedBy]
+	,[CreatedOn]
+    ,[MarkerPen]
+    ,[ExchangeOffice]
+    ,[PlatformMerchantId]
+)
+SELECT TOP 1
+	@Id AS [Id],
+	@WHOrderNo AS [WHOrderNo],
+	@MerchantId AS [MerchantId],
+	@MerchantOrderNo AS [MerchantOrderNo],
+	@StockId AS [StockId],
+	@Status AS [Status],
+	@InventoryType AS [InventoryType],
+	@Type AS [Type],
+	@BatchCode AS [BatchCode],
+	@CCode AS [CCode],
+	@ExpressCompanyCode AS [ExpressCompanyCode],
+	@ExpressTrackingNo AS [ExpressTrackingNo],
+	@PaymentCompanyCode AS [PaymentCompanyCode],
+	@PaymentTransactionNo AS [PaymentTransactionNo],
+	@BuyerRegNo AS [BuyerRegNo],
+	@BuyerIdCardType AS [BuyerIdCardType],
+	@BuyerIdCardNo AS [BuyerIdCardNo],
+	@BuyerIdCardName AS [BuyerIdCardName],
+	@BuyerPhone AS [BuyerPhone],
+	@PayerIdCardType AS [PayerIdCardType],
+	@PayerIdCardNo AS [PayerIdCardNo],
+	@PayerIdCardName AS [PayerIdCardName],
+	@ReceiverName AS [ReceiverName],
+	@ReceiverProvince AS [ReceiverProvince],
+	@ReceiverCity AS [ReceiverCity],
+	@ReceiverDistrict AS [ReceiverDistrict],
+	@ReceiverStreetAddress AS [ReceiverStreetAddress],
+	@ReceiverZipCode AS [ReceiverZipCode],
+	@ReceiverPhone AS [ReceiverPhone],
+	@GoodsFeeAmt AS [GoodsFeeAmt],
+	@ShippingFeeAmt AS [ShippingFeeAmt],
+	@InsuredFeeAmt AS [InsuredFeeAmt],
+	@DiscountAmt AS [DiscountAmt],
+	@TaxFeeAmt AS [TaxFeeAmt],
+	@ActuralPaidAmt AS [ActuralPaidAmt],
+    @ItemPriceIncludeTax AS [ItemPriceIncludeTax],
+	@RemarkForCustoms AS [RemarkForCustoms],
+	@RemarkForWarehouse AS [RemarkForWarehouse],
+	@OriginalPackageState AS [OriginalPackageState],
+	@NeedFakedCode AS [NeedFakedCode],
+	@ExtensionFields AS [ExtensionFields],
+	@CreatedBy AS [CreatedBy],
+	GETDATE() AS [CreatedOn],
+    @MarkerPen AS [MarkerPen],
+    @ExchangeOffice AS [ExchangeOffice],
+    @PlatformMerchantId AS [PlatformMerchantId]
+WHERE
+	NOT EXISTS
+	(
+		SELECT TOP 1
+			1
+		FROM
+			[WMSLocal.Sales].[dbo].[SO] WITH(NOLOCK)
+		WHERE
+			[WHOrderNo]=@WHOrderNo
+			OR ([PlatformMerchantId]=@PlatformMerchantId AND [MerchantOrderNo]=@MerchantOrderNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [PaymentTransactionNo] IS NOT NULL AND @PaymentTransactionNo IS NOT NULL AND [PaymentTransactionNo]=@PaymentTransactionNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [ExpressTrackingNo] IS NOT NULL AND @ExpressTrackingNo IS NOT NULL AND [ExpressTrackingNo]=@ExpressTrackingNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [CCode] IS NOT NULL AND @CCode IS NOT NULL AND [CCode]=@CCode AND [Status]<>-1)
+	)
+IF @@ROWCOUNT>0
+BEGIN
+    INSERT INTO
+	    [WMSLocal.Sales].[dbo].[SOItem]
+    (
+	    [Id]
+	    ,[SOId]
+	    ,[ItemId]
+	    ,[UnitPrice]
+        ,[DeclaredUnitPrice]
+	    ,[Qty]
+        ,[TaxRate]
+        ,[SummaryTaxAmt]
+	    ,[MinExpiryDate]
+	    ,[MaxExpiryDate]
+	    ,[PickingPriority]
+        ,[RemarkForWarehouse]
+    )
+    SELECT
+        '44a39172-f2db-4664-9318-b0f65f991606' AS [Id],
+        @Id AS [SOId],
+        '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId],
+        10.00 AS [UnitPrice],
+        10.00 AS [DeclaredUnitPrice],
+        5 AS [Qty],
+        0.091000 AS [TaxRate],
+        4.55 AS [SummaryTaxAmt],
+        NULL AS [MinExpiryDate],
+        NULL AS [MaxExpiryDate],
+        0 AS [PickingPriority],
+        '' AS [RemarkForWarehouse]
+END
+<<SQL Parameter(s)>> :
+@Id [Guid] : 77bbf095-4c35-45a6-8c33-7c6fdfea04e4 [System.Guid]
+@WHOrderNo [String] : Harry2019091800004 [System.String]
+@MerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+@MerchantOrderNo [String] : 998 [System.String]
+@StockId [Guid] : c64b4f64-7262-4b9a-9770-c82649042726 [System.Guid]
+@Status [Int32] : 1 [System.Int32]
+@InventoryType [Int32] : 0 [System.Int32]
+@Type [Int32] : 2 [System.Int32]
+@BatchCode [String] :  [System.DBNull]
+@CCode [String] : 517 [System.String]
+@ExpressCompanyCode [String] : YUNDA [System.String]
+@ExpressTrackingNo [String] :  [System.DBNull]
+@PaymentCompanyCode [String] : Alipay [System.String]
+@PaymentTransactionNo [String] : 13209 [System.String]
+@BuyerRegNo [String] : 1297deee4fb14d5997c664a17fb699e5 [System.String]
+@BuyerIdCardType [String] : 1 [System.String]
+@BuyerIdCardNo [String] : 620422199311153212 [System.String]
+@BuyerIdCardName [String] : 问问 [System.String]
+@BuyerPhone [String] : 18012122112 [System.String]
+@PayerIdCardType [String] : 1 [System.String]
+@PayerIdCardNo [String] :  [System.DBNull]
+@PayerIdCardName [String] :  [System.DBNull]
+@ReceiverName [String] : 我去去 [System.String]
+@ReceiverProvince [String] : 吉林省 [System.String]
+@ReceiverCity [String] : 吉林市 [System.String]
+@ReceiverDistrict [String] : 桦甸市 [System.String]
+@ReceiverStreetAddress [String] : 亲亲 [System.String]
+@ReceiverZipCode [String] :  [System.DBNull]
+@ReceiverPhone [String] : 18012122112 [System.String]
+@GoodsFeeAmt [Decimal] : 50.00 [System.Decimal]
+@ShippingFeeAmt [Decimal] : 0.00 [System.Decimal]
+@InsuredFeeAmt [Decimal] : 0.00 [System.Decimal]
+@DiscountAmt [Decimal] : 0.00 [System.Decimal]
+@TaxFeeAmt [Decimal] : 4.55 [System.Decimal]
+@ActuralPaidAmt [Decimal] : 54.55 [System.Decimal]
+@ItemPriceIncludeTax [Boolean] : False [System.Boolean]
+@RemarkForCustoms [String] :  [System.DBNull]
+@RemarkForWarehouse [String] :  [System.String]
+@OriginalPackageState [Int32] : 0 [System.Int32]
+@NeedFakedCode [Boolean] : False [System.Boolean]
+@ExtensionFields [String] :  [System.DBNull]
+@CreatedBy [Guid] : 5a4797a5-1e6c-4791-9b4f-c236f05172d3 [System.Guid]
+@MarkerPen [String] :  [System.DBNull]
+@ExchangeOffice [String] :  [System.DBNull]
+@PlatformMerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 364
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 127.0.0.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-10 09:28:12.261
+[ProcessID]: 7804
+[ProcessName]: w3wp
+[ThreadID]: 6
+[StackTrace]: 
+** [2019-10-10 09:28:12.417] - End ****************************************************************
+
+** [2019-10-10 09:28:12.620] - Begin **************************************************************
+[LogID]: 351c4c69-8961-4156-9897-a0c0416ba2ad
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+	[WMSLocal.Sales].[dbo].[SO]
+(
+	[Id]
+	,[WHOrderNo]
+	,[MerchantId]
+	,[MerchantOrderNo]
+	,[StockId]
+	,[Status]
+	,[InventoryType]
+	,[Type]
+	,[BatchCode]
+	,[CCode]
+	,[ExpressCompanyCode]
+	,[ExpressTrackingNo]
+	,[PaymentCompanyCode]
+	,[PaymentTransactionNo]
+	,[BuyerRegNo]
+	,[BuyerIdCardType]
+	,[BuyerIdCardNo]
+	,[BuyerIdCardName]
+	,[BuyerPhone]
+	,[PayerIdCardType]
+	,[PayerIdCardNo]
+	,[PayerIdCardName]
+	,[ReceiverName]
+	,[ReceiverProvince]
+	,[ReceiverCity]
+	,[ReceiverDistrict]
+	,[ReceiverStreetAddress]
+	,[ReceiverZipCode]
+	,[ReceiverPhone]
+	,[GoodsFeeAmt]
+	,[ShippingFeeAmt]
+	,[InsuredFeeAmt]
+	,[DiscountAmt]
+	,[TaxFeeAmt]
+	,[ActuralPaidAmt]
+    ,[ItemPriceIncludeTax]
+	,[RemarkForCustoms]
+	,[RemarkForWarehouse]
+	,[OriginalPackageState]
+	,[NeedFakedCode]
+	,[ExtensionFields]
+	,[CreatedBy]
+	,[CreatedOn]
+    ,[MarkerPen]
+    ,[ExchangeOffice]
+    ,[PlatformMerchantId]
+)
+SELECT TOP 1
+	@Id AS [Id],
+	@WHOrderNo AS [WHOrderNo],
+	@MerchantId AS [MerchantId],
+	@MerchantOrderNo AS [MerchantOrderNo],
+	@StockId AS [StockId],
+	@Status AS [Status],
+	@InventoryType AS [InventoryType],
+	@Type AS [Type],
+	@BatchCode AS [BatchCode],
+	@CCode AS [CCode],
+	@ExpressCompanyCode AS [ExpressCompanyCode],
+	@ExpressTrackingNo AS [ExpressTrackingNo],
+	@PaymentCompanyCode AS [PaymentCompanyCode],
+	@PaymentTransactionNo AS [PaymentTransactionNo],
+	@BuyerRegNo AS [BuyerRegNo],
+	@BuyerIdCardType AS [BuyerIdCardType],
+	@BuyerIdCardNo AS [BuyerIdCardNo],
+	@BuyerIdCardName AS [BuyerIdCardName],
+	@BuyerPhone AS [BuyerPhone],
+	@PayerIdCardType AS [PayerIdCardType],
+	@PayerIdCardNo AS [PayerIdCardNo],
+	@PayerIdCardName AS [PayerIdCardName],
+	@ReceiverName AS [ReceiverName],
+	@ReceiverProvince AS [ReceiverProvince],
+	@ReceiverCity AS [ReceiverCity],
+	@ReceiverDistrict AS [ReceiverDistrict],
+	@ReceiverStreetAddress AS [ReceiverStreetAddress],
+	@ReceiverZipCode AS [ReceiverZipCode],
+	@ReceiverPhone AS [ReceiverPhone],
+	@GoodsFeeAmt AS [GoodsFeeAmt],
+	@ShippingFeeAmt AS [ShippingFeeAmt],
+	@InsuredFeeAmt AS [InsuredFeeAmt],
+	@DiscountAmt AS [DiscountAmt],
+	@TaxFeeAmt AS [TaxFeeAmt],
+	@ActuralPaidAmt AS [ActuralPaidAmt],
+    @ItemPriceIncludeTax AS [ItemPriceIncludeTax],
+	@RemarkForCustoms AS [RemarkForCustoms],
+	@RemarkForWarehouse AS [RemarkForWarehouse],
+	@OriginalPackageState AS [OriginalPackageState],
+	@NeedFakedCode AS [NeedFakedCode],
+	@ExtensionFields AS [ExtensionFields],
+	@CreatedBy AS [CreatedBy],
+	GETDATE() AS [CreatedOn],
+    @MarkerPen AS [MarkerPen],
+    @ExchangeOffice AS [ExchangeOffice],
+    @PlatformMerchantId AS [PlatformMerchantId]
+WHERE
+	NOT EXISTS
+	(
+		SELECT TOP 1
+			1
+		FROM
+			[WMSLocal.Sales].[dbo].[SO] WITH(NOLOCK)
+		WHERE
+			[WHOrderNo]=@WHOrderNo
+			OR ([PlatformMerchantId]=@PlatformMerchantId AND [MerchantOrderNo]=@MerchantOrderNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [PaymentTransactionNo] IS NOT NULL AND @PaymentTransactionNo IS NOT NULL AND [PaymentTransactionNo]=@PaymentTransactionNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [ExpressTrackingNo] IS NOT NULL AND @ExpressTrackingNo IS NOT NULL AND [ExpressTrackingNo]=@ExpressTrackingNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [CCode] IS NOT NULL AND @CCode IS NOT NULL AND [CCode]=@CCode AND [Status]<>-1)
+	)
+IF @@ROWCOUNT>0
+BEGIN
+    INSERT INTO
+	    [WMSLocal.Sales].[dbo].[SOItem]
+    (
+	    [Id]
+	    ,[SOId]
+	    ,[ItemId]
+	    ,[UnitPrice]
+        ,[DeclaredUnitPrice]
+	    ,[Qty]
+        ,[TaxRate]
+        ,[SummaryTaxAmt]
+	    ,[MinExpiryDate]
+	    ,[MaxExpiryDate]
+	    ,[PickingPriority]
+        ,[RemarkForWarehouse]
+    )
+    SELECT
+        '9149af47-20c6-4feb-b5db-a16f92143638' AS [Id],
+        @Id AS [SOId],
+        '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId],
+        10.00 AS [UnitPrice],
+        10.00 AS [DeclaredUnitPrice],
+        2 AS [Qty],
+        0.091000 AS [TaxRate],
+        1.82 AS [SummaryTaxAmt],
+        NULL AS [MinExpiryDate],
+        NULL AS [MaxExpiryDate],
+        0 AS [PickingPriority],
+        '' AS [RemarkForWarehouse]
+END
+<<SQL Parameter(s)>> :
+@Id [Guid] : dc396034-d4ff-4350-af98-8d76a01c3bfd [System.Guid]
+@WHOrderNo [String] : Harry2019091700002 [System.String]
+@MerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+@MerchantOrderNo [String] : 111 [System.String]
+@StockId [Guid] : c64b4f64-7262-4b9a-9770-c82649042726 [System.Guid]
+@Status [Int32] : 1 [System.Int32]
+@InventoryType [Int32] : 0 [System.Int32]
+@Type [Int32] : 2 [System.Int32]
+@BatchCode [String] :  [System.DBNull]
+@CCode [String] : 5121147 [System.String]
+@ExpressCompanyCode [String] : YUNDA [System.String]
+@ExpressTrackingNo [String] :  [System.DBNull]
+@PaymentCompanyCode [String] : Alipay [System.String]
+@PaymentTransactionNo [String] : 2112323 [System.String]
+@BuyerRegNo [String] : 73cb3eef20264dfeafb407effab6ff01 [System.String]
+@BuyerIdCardType [String] : 1 [System.String]
+@BuyerIdCardNo [String] : 620422199311153212 [System.String]
+@BuyerIdCardName [String] : 驱蚊器 [System.String]
+@BuyerPhone [String] : 18012121212 [System.String]
+@PayerIdCardType [String] : 1 [System.String]
+@PayerIdCardNo [String] :  [System.DBNull]
+@PayerIdCardName [String] :  [System.DBNull]
+@ReceiverName [String] : 问问 [System.String]
+@ReceiverProvince [String] : 北京 [System.String]
+@ReceiverCity [String] : 北京市 [System.String]
+@ReceiverDistrict [String] : 西城区 [System.String]
+@ReceiverStreetAddress [String] : 11 [System.String]
+@ReceiverZipCode [String] :  [System.DBNull]
+@ReceiverPhone [String] : 18012121212 [System.String]
+@GoodsFeeAmt [Decimal] : 20.00 [System.Decimal]
+@ShippingFeeAmt [Decimal] : 0.00 [System.Decimal]
+@InsuredFeeAmt [Decimal] : 0.00 [System.Decimal]
+@DiscountAmt [Decimal] : 0.00 [System.Decimal]
+@TaxFeeAmt [Decimal] : 1.82 [System.Decimal]
+@ActuralPaidAmt [Decimal] : 21.82 [System.Decimal]
+@ItemPriceIncludeTax [Boolean] : False [System.Boolean]
+@RemarkForCustoms [String] :  [System.DBNull]
+@RemarkForWarehouse [String] :  [System.String]
+@OriginalPackageState [Int32] : 0 [System.Int32]
+@NeedFakedCode [Boolean] : False [System.Boolean]
+@ExtensionFields [String] :  [System.DBNull]
+@CreatedBy [Guid] : 5a4797a5-1e6c-4791-9b4f-c236f05172d3 [System.Guid]
+@MarkerPen [String] :  [System.DBNull]
+@ExchangeOffice [String] :  [System.DBNull]
+@PlatformMerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 364
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 127.0.0.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-10 09:28:12.620
+[ProcessID]: 7804
+[ProcessName]: w3wp
+[ThreadID]: 8
+[StackTrace]: 
+** [2019-10-10 09:28:12.620] - End ****************************************************************
+
+** [2019-10-10 11:09:09.959] - Begin **************************************************************
+[LogID]: e9ae8bea-197c-47ef-bda6-777c5f307cfb
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+	[WMSLocal.Sales].[dbo].[SO]
+(
+	[Id]
+	,[WHOrderNo]
+	,[MerchantId]
+	,[MerchantOrderNo]
+	,[StockId]
+	,[Status]
+	,[InventoryType]
+	,[Type]
+	,[BatchCode]
+	,[CCode]
+	,[ExpressCompanyCode]
+	,[ExpressTrackingNo]
+	,[PaymentCompanyCode]
+	,[PaymentTransactionNo]
+	,[BuyerRegNo]
+	,[BuyerIdCardType]
+	,[BuyerIdCardNo]
+	,[BuyerIdCardName]
+	,[BuyerPhone]
+	,[PayerIdCardType]
+	,[PayerIdCardNo]
+	,[PayerIdCardName]
+	,[ReceiverName]
+	,[ReceiverProvince]
+	,[ReceiverCity]
+	,[ReceiverDistrict]
+	,[ReceiverStreetAddress]
+	,[ReceiverZipCode]
+	,[ReceiverPhone]
+	,[GoodsFeeAmt]
+	,[ShippingFeeAmt]
+	,[InsuredFeeAmt]
+	,[DiscountAmt]
+	,[TaxFeeAmt]
+	,[ActuralPaidAmt]
+    ,[ItemPriceIncludeTax]
+	,[RemarkForCustoms]
+	,[RemarkForWarehouse]
+	,[OriginalPackageState]
+	,[NeedFakedCode]
+	,[ExtensionFields]
+	,[CreatedBy]
+	,[CreatedOn]
+    ,[MarkerPen]
+    ,[ExchangeOffice]
+    ,[PlatformMerchantId]
+)
+SELECT TOP 1
+	@Id AS [Id],
+	@WHOrderNo AS [WHOrderNo],
+	@MerchantId AS [MerchantId],
+	@MerchantOrderNo AS [MerchantOrderNo],
+	@StockId AS [StockId],
+	@Status AS [Status],
+	@InventoryType AS [InventoryType],
+	@Type AS [Type],
+	@BatchCode AS [BatchCode],
+	@CCode AS [CCode],
+	@ExpressCompanyCode AS [ExpressCompanyCode],
+	@ExpressTrackingNo AS [ExpressTrackingNo],
+	@PaymentCompanyCode AS [PaymentCompanyCode],
+	@PaymentTransactionNo AS [PaymentTransactionNo],
+	@BuyerRegNo AS [BuyerRegNo],
+	@BuyerIdCardType AS [BuyerIdCardType],
+	@BuyerIdCardNo AS [BuyerIdCardNo],
+	@BuyerIdCardName AS [BuyerIdCardName],
+	@BuyerPhone AS [BuyerPhone],
+	@PayerIdCardType AS [PayerIdCardType],
+	@PayerIdCardNo AS [PayerIdCardNo],
+	@PayerIdCardName AS [PayerIdCardName],
+	@ReceiverName AS [ReceiverName],
+	@ReceiverProvince AS [ReceiverProvince],
+	@ReceiverCity AS [ReceiverCity],
+	@ReceiverDistrict AS [ReceiverDistrict],
+	@ReceiverStreetAddress AS [ReceiverStreetAddress],
+	@ReceiverZipCode AS [ReceiverZipCode],
+	@ReceiverPhone AS [ReceiverPhone],
+	@GoodsFeeAmt AS [GoodsFeeAmt],
+	@ShippingFeeAmt AS [ShippingFeeAmt],
+	@InsuredFeeAmt AS [InsuredFeeAmt],
+	@DiscountAmt AS [DiscountAmt],
+	@TaxFeeAmt AS [TaxFeeAmt],
+	@ActuralPaidAmt AS [ActuralPaidAmt],
+    @ItemPriceIncludeTax AS [ItemPriceIncludeTax],
+	@RemarkForCustoms AS [RemarkForCustoms],
+	@RemarkForWarehouse AS [RemarkForWarehouse],
+	@OriginalPackageState AS [OriginalPackageState],
+	@NeedFakedCode AS [NeedFakedCode],
+	@ExtensionFields AS [ExtensionFields],
+	@CreatedBy AS [CreatedBy],
+	GETDATE() AS [CreatedOn],
+    @MarkerPen AS [MarkerPen],
+    @ExchangeOffice AS [ExchangeOffice],
+    @PlatformMerchantId AS [PlatformMerchantId]
+WHERE
+	NOT EXISTS
+	(
+		SELECT TOP 1
+			1
+		FROM
+			[WMSLocal.Sales].[dbo].[SO] WITH(NOLOCK)
+		WHERE
+			[WHOrderNo]=@WHOrderNo
+			OR ([PlatformMerchantId]=@PlatformMerchantId AND [MerchantOrderNo]=@MerchantOrderNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [PaymentTransactionNo] IS NOT NULL AND @PaymentTransactionNo IS NOT NULL AND [PaymentTransactionNo]=@PaymentTransactionNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [ExpressTrackingNo] IS NOT NULL AND @ExpressTrackingNo IS NOT NULL AND [ExpressTrackingNo]=@ExpressTrackingNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [CCode] IS NOT NULL AND @CCode IS NOT NULL AND [CCode]=@CCode AND [Status]<>-1)
+	)
+IF @@ROWCOUNT>0
+BEGIN
+    INSERT INTO
+	    [WMSLocal.Sales].[dbo].[SOItem]
+    (
+	    [Id]
+	    ,[SOId]
+	    ,[ItemId]
+	    ,[UnitPrice]
+        ,[DeclaredUnitPrice]
+	    ,[Qty]
+        ,[TaxRate]
+        ,[SummaryTaxAmt]
+	    ,[MinExpiryDate]
+	    ,[MaxExpiryDate]
+	    ,[PickingPriority]
+        ,[RemarkForWarehouse]
+    )
+    SELECT
+        '44a39172-f2db-4664-9318-b0f65f991606' AS [Id],
+        @Id AS [SOId],
+        '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId],
+        10.00 AS [UnitPrice],
+        10.00 AS [DeclaredUnitPrice],
+        5 AS [Qty],
+        0.091000 AS [TaxRate],
+        4.55 AS [SummaryTaxAmt],
+        NULL AS [MinExpiryDate],
+        NULL AS [MaxExpiryDate],
+        0 AS [PickingPriority],
+        '' AS [RemarkForWarehouse]
+END
+<<SQL Parameter(s)>> :
+@Id [Guid] : 77bbf095-4c35-45a6-8c33-7c6fdfea04e4 [System.Guid]
+@WHOrderNo [String] : Harry2019091800004 [System.String]
+@MerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+@MerchantOrderNo [String] : 998 [System.String]
+@StockId [Guid] : c64b4f64-7262-4b9a-9770-c82649042726 [System.Guid]
+@Status [Int32] : 1 [System.Int32]
+@InventoryType [Int32] : 0 [System.Int32]
+@Type [Int32] : 2 [System.Int32]
+@BatchCode [String] :  [System.DBNull]
+@CCode [String] : 517 [System.String]
+@ExpressCompanyCode [String] : YUNDA [System.String]
+@ExpressTrackingNo [String] :  [System.DBNull]
+@PaymentCompanyCode [String] : Alipay [System.String]
+@PaymentTransactionNo [String] : 13209 [System.String]
+@BuyerRegNo [String] : 1297deee4fb14d5997c664a17fb699e5 [System.String]
+@BuyerIdCardType [String] : 1 [System.String]
+@BuyerIdCardNo [String] : 620422199311153212 [System.String]
+@BuyerIdCardName [String] : 问问 [System.String]
+@BuyerPhone [String] : 18012122112 [System.String]
+@PayerIdCardType [String] : 1 [System.String]
+@PayerIdCardNo [String] :  [System.DBNull]
+@PayerIdCardName [String] :  [System.DBNull]
+@ReceiverName [String] : 我去去 [System.String]
+@ReceiverProvince [String] : 吉林省 [System.String]
+@ReceiverCity [String] : 吉林市 [System.String]
+@ReceiverDistrict [String] : 桦甸市 [System.String]
+@ReceiverStreetAddress [String] : 亲亲 [System.String]
+@ReceiverZipCode [String] :  [System.DBNull]
+@ReceiverPhone [String] : 18012122112 [System.String]
+@GoodsFeeAmt [Decimal] : 50.00 [System.Decimal]
+@ShippingFeeAmt [Decimal] : 0.00 [System.Decimal]
+@InsuredFeeAmt [Decimal] : 0.00 [System.Decimal]
+@DiscountAmt [Decimal] : 0.00 [System.Decimal]
+@TaxFeeAmt [Decimal] : 4.55 [System.Decimal]
+@ActuralPaidAmt [Decimal] : 54.55 [System.Decimal]
+@ItemPriceIncludeTax [Boolean] : False [System.Boolean]
+@RemarkForCustoms [String] :  [System.DBNull]
+@RemarkForWarehouse [String] :  [System.String]
+@OriginalPackageState [Int32] : 0 [System.Int32]
+@NeedFakedCode [Boolean] : False [System.Boolean]
+@ExtensionFields [String] :  [System.DBNull]
+@CreatedBy [Guid] : 5a4797a5-1e6c-4791-9b4f-c236f05172d3 [System.Guid]
+@MarkerPen [String] :  [System.DBNull]
+@ExchangeOffice [String] :  [System.DBNull]
+@PlatformMerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 364
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-10 11:09:09.878
+[ProcessID]: 868
+[ProcessName]: w3wp
+[ThreadID]: 6
+[StackTrace]: 
+** [2019-10-10 11:09:09.959] - End ****************************************************************
+
+** [2019-10-10 11:18:07.595] - Begin **************************************************************
+[LogID]: 2cf18157-9be8-4bb8-9a30-480cb60a53d7
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+	[WMSLocal.Sales].[dbo].[SO]
+(
+	[Id]
+	,[WHOrderNo]
+	,[MerchantId]
+	,[MerchantOrderNo]
+	,[StockId]
+	,[Status]
+	,[InventoryType]
+	,[Type]
+	,[BatchCode]
+	,[CCode]
+	,[ExpressCompanyCode]
+	,[ExpressTrackingNo]
+	,[PaymentCompanyCode]
+	,[PaymentTransactionNo]
+	,[BuyerRegNo]
+	,[BuyerIdCardType]
+	,[BuyerIdCardNo]
+	,[BuyerIdCardName]
+	,[BuyerPhone]
+	,[PayerIdCardType]
+	,[PayerIdCardNo]
+	,[PayerIdCardName]
+	,[ReceiverName]
+	,[ReceiverProvince]
+	,[ReceiverCity]
+	,[ReceiverDistrict]
+	,[ReceiverStreetAddress]
+	,[ReceiverZipCode]
+	,[ReceiverPhone]
+	,[GoodsFeeAmt]
+	,[ShippingFeeAmt]
+	,[InsuredFeeAmt]
+	,[DiscountAmt]
+	,[TaxFeeAmt]
+	,[ActuralPaidAmt]
+    ,[ItemPriceIncludeTax]
+	,[RemarkForCustoms]
+	,[RemarkForWarehouse]
+	,[OriginalPackageState]
+	,[NeedFakedCode]
+	,[ExtensionFields]
+	,[CreatedBy]
+	,[CreatedOn]
+    ,[MarkerPen]
+    ,[ExchangeOffice]
+    ,[PlatformMerchantId]
+)
+SELECT TOP 1
+	@Id AS [Id],
+	@WHOrderNo AS [WHOrderNo],
+	@MerchantId AS [MerchantId],
+	@MerchantOrderNo AS [MerchantOrderNo],
+	@StockId AS [StockId],
+	@Status AS [Status],
+	@InventoryType AS [InventoryType],
+	@Type AS [Type],
+	@BatchCode AS [BatchCode],
+	@CCode AS [CCode],
+	@ExpressCompanyCode AS [ExpressCompanyCode],
+	@ExpressTrackingNo AS [ExpressTrackingNo],
+	@PaymentCompanyCode AS [PaymentCompanyCode],
+	@PaymentTransactionNo AS [PaymentTransactionNo],
+	@BuyerRegNo AS [BuyerRegNo],
+	@BuyerIdCardType AS [BuyerIdCardType],
+	@BuyerIdCardNo AS [BuyerIdCardNo],
+	@BuyerIdCardName AS [BuyerIdCardName],
+	@BuyerPhone AS [BuyerPhone],
+	@PayerIdCardType AS [PayerIdCardType],
+	@PayerIdCardNo AS [PayerIdCardNo],
+	@PayerIdCardName AS [PayerIdCardName],
+	@ReceiverName AS [ReceiverName],
+	@ReceiverProvince AS [ReceiverProvince],
+	@ReceiverCity AS [ReceiverCity],
+	@ReceiverDistrict AS [ReceiverDistrict],
+	@ReceiverStreetAddress AS [ReceiverStreetAddress],
+	@ReceiverZipCode AS [ReceiverZipCode],
+	@ReceiverPhone AS [ReceiverPhone],
+	@GoodsFeeAmt AS [GoodsFeeAmt],
+	@ShippingFeeAmt AS [ShippingFeeAmt],
+	@InsuredFeeAmt AS [InsuredFeeAmt],
+	@DiscountAmt AS [DiscountAmt],
+	@TaxFeeAmt AS [TaxFeeAmt],
+	@ActuralPaidAmt AS [ActuralPaidAmt],
+    @ItemPriceIncludeTax AS [ItemPriceIncludeTax],
+	@RemarkForCustoms AS [RemarkForCustoms],
+	@RemarkForWarehouse AS [RemarkForWarehouse],
+	@OriginalPackageState AS [OriginalPackageState],
+	@NeedFakedCode AS [NeedFakedCode],
+	@ExtensionFields AS [ExtensionFields],
+	@CreatedBy AS [CreatedBy],
+	GETDATE() AS [CreatedOn],
+    @MarkerPen AS [MarkerPen],
+    @ExchangeOffice AS [ExchangeOffice],
+    @PlatformMerchantId AS [PlatformMerchantId]
+WHERE
+	NOT EXISTS
+	(
+		SELECT TOP 1
+			1
+		FROM
+			[WMSLocal.Sales].[dbo].[SO] WITH(NOLOCK)
+		WHERE
+			[WHOrderNo]=@WHOrderNo
+			OR ([PlatformMerchantId]=@PlatformMerchantId AND [MerchantOrderNo]=@MerchantOrderNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [PaymentTransactionNo] IS NOT NULL AND @PaymentTransactionNo IS NOT NULL AND [PaymentTransactionNo]=@PaymentTransactionNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [ExpressTrackingNo] IS NOT NULL AND @ExpressTrackingNo IS NOT NULL AND [ExpressTrackingNo]=@ExpressTrackingNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [CCode] IS NOT NULL AND @CCode IS NOT NULL AND [CCode]=@CCode AND [Status]<>-1)
+	)
+IF @@ROWCOUNT>0
+BEGIN
+    INSERT INTO
+	    [WMSLocal.Sales].[dbo].[SOItem]
+    (
+	    [Id]
+	    ,[SOId]
+	    ,[ItemId]
+	    ,[UnitPrice]
+        ,[DeclaredUnitPrice]
+	    ,[Qty]
+        ,[TaxRate]
+        ,[SummaryTaxAmt]
+	    ,[MinExpiryDate]
+	    ,[MaxExpiryDate]
+	    ,[PickingPriority]
+        ,[RemarkForWarehouse]
+    )
+    SELECT
+        '9149af47-20c6-4feb-b5db-a16f92143638' AS [Id],
+        @Id AS [SOId],
+        '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId],
+        10.00 AS [UnitPrice],
+        10.00 AS [DeclaredUnitPrice],
+        2 AS [Qty],
+        0.091000 AS [TaxRate],
+        1.82 AS [SummaryTaxAmt],
+        NULL AS [MinExpiryDate],
+        NULL AS [MaxExpiryDate],
+        0 AS [PickingPriority],
+        '' AS [RemarkForWarehouse]
+END
+<<SQL Parameter(s)>> :
+@Id [Guid] : dc396034-d4ff-4350-af98-8d76a01c3bfd [System.Guid]
+@WHOrderNo [String] : Harry2019091700002 [System.String]
+@MerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+@MerchantOrderNo [String] : 111 [System.String]
+@StockId [Guid] : c64b4f64-7262-4b9a-9770-c82649042726 [System.Guid]
+@Status [Int32] : 1 [System.Int32]
+@InventoryType [Int32] : 0 [System.Int32]
+@Type [Int32] : 2 [System.Int32]
+@BatchCode [String] :  [System.DBNull]
+@CCode [String] : 5121147 [System.String]
+@ExpressCompanyCode [String] : YUNDA [System.String]
+@ExpressTrackingNo [String] :  [System.DBNull]
+@PaymentCompanyCode [String] : Alipay [System.String]
+@PaymentTransactionNo [String] : 2112323 [System.String]
+@BuyerRegNo [String] : 73cb3eef20264dfeafb407effab6ff01 [System.String]
+@BuyerIdCardType [String] : 1 [System.String]
+@BuyerIdCardNo [String] : 620422199311153212 [System.String]
+@BuyerIdCardName [String] : 驱蚊器 [System.String]
+@BuyerPhone [String] : 18012121212 [System.String]
+@PayerIdCardType [String] : 1 [System.String]
+@PayerIdCardNo [String] :  [System.DBNull]
+@PayerIdCardName [String] :  [System.DBNull]
+@ReceiverName [String] : 问问 [System.String]
+@ReceiverProvince [String] : 北京 [System.String]
+@ReceiverCity [String] : 北京市 [System.String]
+@ReceiverDistrict [String] : 西城区 [System.String]
+@ReceiverStreetAddress [String] : 11 [System.String]
+@ReceiverZipCode [String] :  [System.DBNull]
+@ReceiverPhone [String] : 18012121212 [System.String]
+@GoodsFeeAmt [Decimal] : 20.00 [System.Decimal]
+@ShippingFeeAmt [Decimal] : 0.00 [System.Decimal]
+@InsuredFeeAmt [Decimal] : 0.00 [System.Decimal]
+@DiscountAmt [Decimal] : 0.00 [System.Decimal]
+@TaxFeeAmt [Decimal] : 1.82 [System.Decimal]
+@ActuralPaidAmt [Decimal] : 21.82 [System.Decimal]
+@ItemPriceIncludeTax [Boolean] : False [System.Boolean]
+@RemarkForCustoms [String] :  [System.DBNull]
+@RemarkForWarehouse [String] :  [System.String]
+@OriginalPackageState [Int32] : 0 [System.Int32]
+@NeedFakedCode [Boolean] : False [System.Boolean]
+@ExtensionFields [String] :  [System.DBNull]
+@CreatedBy [Guid] : 5a4797a5-1e6c-4791-9b4f-c236f05172d3 [System.Guid]
+@MarkerPen [String] :  [System.DBNull]
+@ExchangeOffice [String] :  [System.DBNull]
+@PlatformMerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 364
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-10 11:18:07.591
+[ProcessID]: 868
+[ProcessName]: w3wp
+[ThreadID]: 53
+[StackTrace]: 
+** [2019-10-10 11:18:07.595] - End ****************************************************************
+
+** [2019-10-10 12:51:10.748] - Begin **************************************************************
+[LogID]: a569761a-118c-4044-8abf-d3606b4bacf9
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+	[WMSLocal.Sales].[dbo].[SO]
+(
+	[Id]
+	,[WHOrderNo]
+	,[MerchantId]
+	,[MerchantOrderNo]
+	,[StockId]
+	,[Status]
+	,[InventoryType]
+	,[Type]
+	,[BatchCode]
+	,[CCode]
+	,[ExpressCompanyCode]
+	,[ExpressTrackingNo]
+	,[PaymentCompanyCode]
+	,[PaymentTransactionNo]
+	,[BuyerRegNo]
+	,[BuyerIdCardType]
+	,[BuyerIdCardNo]
+	,[BuyerIdCardName]
+	,[BuyerPhone]
+	,[PayerIdCardType]
+	,[PayerIdCardNo]
+	,[PayerIdCardName]
+	,[ReceiverName]
+	,[ReceiverProvince]
+	,[ReceiverCity]
+	,[ReceiverDistrict]
+	,[ReceiverStreetAddress]
+	,[ReceiverZipCode]
+	,[ReceiverPhone]
+	,[GoodsFeeAmt]
+	,[ShippingFeeAmt]
+	,[InsuredFeeAmt]
+	,[DiscountAmt]
+	,[TaxFeeAmt]
+	,[ActuralPaidAmt]
+    ,[ItemPriceIncludeTax]
+	,[RemarkForCustoms]
+	,[RemarkForWarehouse]
+	,[OriginalPackageState]
+	,[NeedFakedCode]
+	,[ExtensionFields]
+	,[CreatedBy]
+	,[CreatedOn]
+    ,[MarkerPen]
+    ,[ExchangeOffice]
+    ,[PlatformMerchantId]
+)
+SELECT TOP 1
+	@Id AS [Id],
+	@WHOrderNo AS [WHOrderNo],
+	@MerchantId AS [MerchantId],
+	@MerchantOrderNo AS [MerchantOrderNo],
+	@StockId AS [StockId],
+	@Status AS [Status],
+	@InventoryType AS [InventoryType],
+	@Type AS [Type],
+	@BatchCode AS [BatchCode],
+	@CCode AS [CCode],
+	@ExpressCompanyCode AS [ExpressCompanyCode],
+	@ExpressTrackingNo AS [ExpressTrackingNo],
+	@PaymentCompanyCode AS [PaymentCompanyCode],
+	@PaymentTransactionNo AS [PaymentTransactionNo],
+	@BuyerRegNo AS [BuyerRegNo],
+	@BuyerIdCardType AS [BuyerIdCardType],
+	@BuyerIdCardNo AS [BuyerIdCardNo],
+	@BuyerIdCardName AS [BuyerIdCardName],
+	@BuyerPhone AS [BuyerPhone],
+	@PayerIdCardType AS [PayerIdCardType],
+	@PayerIdCardNo AS [PayerIdCardNo],
+	@PayerIdCardName AS [PayerIdCardName],
+	@ReceiverName AS [ReceiverName],
+	@ReceiverProvince AS [ReceiverProvince],
+	@ReceiverCity AS [ReceiverCity],
+	@ReceiverDistrict AS [ReceiverDistrict],
+	@ReceiverStreetAddress AS [ReceiverStreetAddress],
+	@ReceiverZipCode AS [ReceiverZipCode],
+	@ReceiverPhone AS [ReceiverPhone],
+	@GoodsFeeAmt AS [GoodsFeeAmt],
+	@ShippingFeeAmt AS [ShippingFeeAmt],
+	@InsuredFeeAmt AS [InsuredFeeAmt],
+	@DiscountAmt AS [DiscountAmt],
+	@TaxFeeAmt AS [TaxFeeAmt],
+	@ActuralPaidAmt AS [ActuralPaidAmt],
+    @ItemPriceIncludeTax AS [ItemPriceIncludeTax],
+	@RemarkForCustoms AS [RemarkForCustoms],
+	@RemarkForWarehouse AS [RemarkForWarehouse],
+	@OriginalPackageState AS [OriginalPackageState],
+	@NeedFakedCode AS [NeedFakedCode],
+	@ExtensionFields AS [ExtensionFields],
+	@CreatedBy AS [CreatedBy],
+	GETDATE() AS [CreatedOn],
+    @MarkerPen AS [MarkerPen],
+    @ExchangeOffice AS [ExchangeOffice],
+    @PlatformMerchantId AS [PlatformMerchantId]
+WHERE
+	NOT EXISTS
+	(
+		SELECT TOP 1
+			1
+		FROM
+			[WMSLocal.Sales].[dbo].[SO] WITH(NOLOCK)
+		WHERE
+			[WHOrderNo]=@WHOrderNo
+			OR ([PlatformMerchantId]=@PlatformMerchantId AND [MerchantOrderNo]=@MerchantOrderNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [PaymentTransactionNo] IS NOT NULL AND @PaymentTransactionNo IS NOT NULL AND [PaymentTransactionNo]=@PaymentTransactionNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [ExpressTrackingNo] IS NOT NULL AND @ExpressTrackingNo IS NOT NULL AND [ExpressTrackingNo]=@ExpressTrackingNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [CCode] IS NOT NULL AND @CCode IS NOT NULL AND [CCode]=@CCode AND [Status]<>-1)
+	)
+IF @@ROWCOUNT>0
+BEGIN
+    INSERT INTO
+	    [WMSLocal.Sales].[dbo].[SOItem]
+    (
+	    [Id]
+	    ,[SOId]
+	    ,[ItemId]
+	    ,[UnitPrice]
+        ,[DeclaredUnitPrice]
+	    ,[Qty]
+        ,[TaxRate]
+        ,[SummaryTaxAmt]
+	    ,[MinExpiryDate]
+	    ,[MaxExpiryDate]
+	    ,[PickingPriority]
+        ,[RemarkForWarehouse]
+    )
+    SELECT
+        '44a39172-f2db-4664-9318-b0f65f991606' AS [Id],
+        @Id AS [SOId],
+        '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId],
+        10.00 AS [UnitPrice],
+        10.00 AS [DeclaredUnitPrice],
+        5 AS [Qty],
+        0.091000 AS [TaxRate],
+        4.55 AS [SummaryTaxAmt],
+        NULL AS [MinExpiryDate],
+        NULL AS [MaxExpiryDate],
+        0 AS [PickingPriority],
+        '' AS [RemarkForWarehouse]
+END
+<<SQL Parameter(s)>> :
+@Id [Guid] : 77bbf095-4c35-45a6-8c33-7c6fdfea04e4 [System.Guid]
+@WHOrderNo [String] : Harry2019091800004 [System.String]
+@MerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+@MerchantOrderNo [String] : 998 [System.String]
+@StockId [Guid] : c64b4f64-7262-4b9a-9770-c82649042726 [System.Guid]
+@Status [Int32] : 1 [System.Int32]
+@InventoryType [Int32] : 0 [System.Int32]
+@Type [Int32] : 2 [System.Int32]
+@BatchCode [String] :  [System.DBNull]
+@CCode [String] : 517 [System.String]
+@ExpressCompanyCode [String] : YUNDA [System.String]
+@ExpressTrackingNo [String] :  [System.DBNull]
+@PaymentCompanyCode [String] : Alipay [System.String]
+@PaymentTransactionNo [String] : 13209 [System.String]
+@BuyerRegNo [String] : 1297deee4fb14d5997c664a17fb699e5 [System.String]
+@BuyerIdCardType [String] : 1 [System.String]
+@BuyerIdCardNo [String] : 620422199311153212 [System.String]
+@BuyerIdCardName [String] : 问问 [System.String]
+@BuyerPhone [String] : 18012122112 [System.String]
+@PayerIdCardType [String] : 1 [System.String]
+@PayerIdCardNo [String] :  [System.DBNull]
+@PayerIdCardName [String] :  [System.DBNull]
+@ReceiverName [String] : 我去去 [System.String]
+@ReceiverProvince [String] : 吉林省 [System.String]
+@ReceiverCity [String] : 吉林市 [System.String]
+@ReceiverDistrict [String] : 桦甸市 [System.String]
+@ReceiverStreetAddress [String] : 亲亲 [System.String]
+@ReceiverZipCode [String] :  [System.DBNull]
+@ReceiverPhone [String] : 18012122112 [System.String]
+@GoodsFeeAmt [Decimal] : 50.00 [System.Decimal]
+@ShippingFeeAmt [Decimal] : 0.00 [System.Decimal]
+@InsuredFeeAmt [Decimal] : 0.00 [System.Decimal]
+@DiscountAmt [Decimal] : 0.00 [System.Decimal]
+@TaxFeeAmt [Decimal] : 4.55 [System.Decimal]
+@ActuralPaidAmt [Decimal] : 54.55 [System.Decimal]
+@ItemPriceIncludeTax [Boolean] : False [System.Boolean]
+@RemarkForCustoms [String] :  [System.DBNull]
+@RemarkForWarehouse [String] :  [System.String]
+@OriginalPackageState [Int32] : 0 [System.Int32]
+@NeedFakedCode [Boolean] : False [System.Boolean]
+@ExtensionFields [String] :  [System.DBNull]
+@CreatedBy [Guid] : 5a4797a5-1e6c-4791-9b4f-c236f05172d3 [System.Guid]
+@MarkerPen [String] :  [System.DBNull]
+@ExchangeOffice [String] :  [System.DBNull]
+@PlatformMerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 364
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-10 12:51:10.696
+[ProcessID]: 26380
+[ProcessName]: w3wp
+[ThreadID]: 10
+[StackTrace]: 
+** [2019-10-10 12:51:10.748] - End ****************************************************************
+
+** [2019-10-10 13:08:09.657] - Begin **************************************************************
+[LogID]: feb5955b-742e-415e-b80d-f7c8ad86db8a
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+	[WMSLocal.Sales].[dbo].[SO]
+(
+	[Id]
+	,[WHOrderNo]
+	,[MerchantId]
+	,[MerchantOrderNo]
+	,[StockId]
+	,[Status]
+	,[InventoryType]
+	,[Type]
+	,[BatchCode]
+	,[CCode]
+	,[ExpressCompanyCode]
+	,[ExpressTrackingNo]
+	,[PaymentCompanyCode]
+	,[PaymentTransactionNo]
+	,[BuyerRegNo]
+	,[BuyerIdCardType]
+	,[BuyerIdCardNo]
+	,[BuyerIdCardName]
+	,[BuyerPhone]
+	,[PayerIdCardType]
+	,[PayerIdCardNo]
+	,[PayerIdCardName]
+	,[ReceiverName]
+	,[ReceiverProvince]
+	,[ReceiverCity]
+	,[ReceiverDistrict]
+	,[ReceiverStreetAddress]
+	,[ReceiverZipCode]
+	,[ReceiverPhone]
+	,[GoodsFeeAmt]
+	,[ShippingFeeAmt]
+	,[InsuredFeeAmt]
+	,[DiscountAmt]
+	,[TaxFeeAmt]
+	,[ActuralPaidAmt]
+    ,[ItemPriceIncludeTax]
+	,[RemarkForCustoms]
+	,[RemarkForWarehouse]
+	,[OriginalPackageState]
+	,[NeedFakedCode]
+	,[ExtensionFields]
+	,[CreatedBy]
+	,[CreatedOn]
+    ,[MarkerPen]
+    ,[ExchangeOffice]
+    ,[PlatformMerchantId]
+)
+SELECT TOP 1
+	@Id AS [Id],
+	@WHOrderNo AS [WHOrderNo],
+	@MerchantId AS [MerchantId],
+	@MerchantOrderNo AS [MerchantOrderNo],
+	@StockId AS [StockId],
+	@Status AS [Status],
+	@InventoryType AS [InventoryType],
+	@Type AS [Type],
+	@BatchCode AS [BatchCode],
+	@CCode AS [CCode],
+	@ExpressCompanyCode AS [ExpressCompanyCode],
+	@ExpressTrackingNo AS [ExpressTrackingNo],
+	@PaymentCompanyCode AS [PaymentCompanyCode],
+	@PaymentTransactionNo AS [PaymentTransactionNo],
+	@BuyerRegNo AS [BuyerRegNo],
+	@BuyerIdCardType AS [BuyerIdCardType],
+	@BuyerIdCardNo AS [BuyerIdCardNo],
+	@BuyerIdCardName AS [BuyerIdCardName],
+	@BuyerPhone AS [BuyerPhone],
+	@PayerIdCardType AS [PayerIdCardType],
+	@PayerIdCardNo AS [PayerIdCardNo],
+	@PayerIdCardName AS [PayerIdCardName],
+	@ReceiverName AS [ReceiverName],
+	@ReceiverProvince AS [ReceiverProvince],
+	@ReceiverCity AS [ReceiverCity],
+	@ReceiverDistrict AS [ReceiverDistrict],
+	@ReceiverStreetAddress AS [ReceiverStreetAddress],
+	@ReceiverZipCode AS [ReceiverZipCode],
+	@ReceiverPhone AS [ReceiverPhone],
+	@GoodsFeeAmt AS [GoodsFeeAmt],
+	@ShippingFeeAmt AS [ShippingFeeAmt],
+	@InsuredFeeAmt AS [InsuredFeeAmt],
+	@DiscountAmt AS [DiscountAmt],
+	@TaxFeeAmt AS [TaxFeeAmt],
+	@ActuralPaidAmt AS [ActuralPaidAmt],
+    @ItemPriceIncludeTax AS [ItemPriceIncludeTax],
+	@RemarkForCustoms AS [RemarkForCustoms],
+	@RemarkForWarehouse AS [RemarkForWarehouse],
+	@OriginalPackageState AS [OriginalPackageState],
+	@NeedFakedCode AS [NeedFakedCode],
+	@ExtensionFields AS [ExtensionFields],
+	@CreatedBy AS [CreatedBy],
+	GETDATE() AS [CreatedOn],
+    @MarkerPen AS [MarkerPen],
+    @ExchangeOffice AS [ExchangeOffice],
+    @PlatformMerchantId AS [PlatformMerchantId]
+WHERE
+	NOT EXISTS
+	(
+		SELECT TOP 1
+			1
+		FROM
+			[WMSLocal.Sales].[dbo].[SO] WITH(NOLOCK)
+		WHERE
+			[WHOrderNo]=@WHOrderNo
+			OR ([PlatformMerchantId]=@PlatformMerchantId AND [MerchantOrderNo]=@MerchantOrderNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [PaymentTransactionNo] IS NOT NULL AND @PaymentTransactionNo IS NOT NULL AND [PaymentTransactionNo]=@PaymentTransactionNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [ExpressTrackingNo] IS NOT NULL AND @ExpressTrackingNo IS NOT NULL AND [ExpressTrackingNo]=@ExpressTrackingNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [CCode] IS NOT NULL AND @CCode IS NOT NULL AND [CCode]=@CCode AND [Status]<>-1)
+	)
+IF @@ROWCOUNT>0
+BEGIN
+    INSERT INTO
+	    [WMSLocal.Sales].[dbo].[SOItem]
+    (
+	    [Id]
+	    ,[SOId]
+	    ,[ItemId]
+	    ,[UnitPrice]
+        ,[DeclaredUnitPrice]
+	    ,[Qty]
+        ,[TaxRate]
+        ,[SummaryTaxAmt]
+	    ,[MinExpiryDate]
+	    ,[MaxExpiryDate]
+	    ,[PickingPriority]
+        ,[RemarkForWarehouse]
+    )
+    SELECT
+        '9149af47-20c6-4feb-b5db-a16f92143638' AS [Id],
+        @Id AS [SOId],
+        '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId],
+        10.00 AS [UnitPrice],
+        10.00 AS [DeclaredUnitPrice],
+        2 AS [Qty],
+        0.091000 AS [TaxRate],
+        1.82 AS [SummaryTaxAmt],
+        NULL AS [MinExpiryDate],
+        NULL AS [MaxExpiryDate],
+        0 AS [PickingPriority],
+        '' AS [RemarkForWarehouse]
+END
+<<SQL Parameter(s)>> :
+@Id [Guid] : dc396034-d4ff-4350-af98-8d76a01c3bfd [System.Guid]
+@WHOrderNo [String] : Harry2019091700002 [System.String]
+@MerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+@MerchantOrderNo [String] : 111 [System.String]
+@StockId [Guid] : c64b4f64-7262-4b9a-9770-c82649042726 [System.Guid]
+@Status [Int32] : 1 [System.Int32]
+@InventoryType [Int32] : 0 [System.Int32]
+@Type [Int32] : 2 [System.Int32]
+@BatchCode [String] :  [System.DBNull]
+@CCode [String] : 5121147 [System.String]
+@ExpressCompanyCode [String] : YUNDA [System.String]
+@ExpressTrackingNo [String] :  [System.DBNull]
+@PaymentCompanyCode [String] : Alipay [System.String]
+@PaymentTransactionNo [String] : 2112323 [System.String]
+@BuyerRegNo [String] : 73cb3eef20264dfeafb407effab6ff01 [System.String]
+@BuyerIdCardType [String] : 1 [System.String]
+@BuyerIdCardNo [String] : 620422199311153212 [System.String]
+@BuyerIdCardName [String] : 驱蚊器 [System.String]
+@BuyerPhone [String] : 18012121212 [System.String]
+@PayerIdCardType [String] : 1 [System.String]
+@PayerIdCardNo [String] :  [System.DBNull]
+@PayerIdCardName [String] :  [System.DBNull]
+@ReceiverName [String] : 问问 [System.String]
+@ReceiverProvince [String] : 北京 [System.String]
+@ReceiverCity [String] : 北京市 [System.String]
+@ReceiverDistrict [String] : 西城区 [System.String]
+@ReceiverStreetAddress [String] : 11 [System.String]
+@ReceiverZipCode [String] :  [System.DBNull]
+@ReceiverPhone [String] : 18012121212 [System.String]
+@GoodsFeeAmt [Decimal] : 20.00 [System.Decimal]
+@ShippingFeeAmt [Decimal] : 0.00 [System.Decimal]
+@InsuredFeeAmt [Decimal] : 0.00 [System.Decimal]
+@DiscountAmt [Decimal] : 0.00 [System.Decimal]
+@TaxFeeAmt [Decimal] : 1.82 [System.Decimal]
+@ActuralPaidAmt [Decimal] : 21.82 [System.Decimal]
+@ItemPriceIncludeTax [Boolean] : False [System.Boolean]
+@RemarkForCustoms [String] :  [System.DBNull]
+@RemarkForWarehouse [String] :  [System.String]
+@OriginalPackageState [Int32] : 0 [System.Int32]
+@NeedFakedCode [Boolean] : False [System.Boolean]
+@ExtensionFields [String] :  [System.DBNull]
+@CreatedBy [Guid] : 5a4797a5-1e6c-4791-9b4f-c236f05172d3 [System.Guid]
+@MarkerPen [String] :  [System.DBNull]
+@ExchangeOffice [String] :  [System.DBNull]
+@PlatformMerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 364
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-10 13:08:09.654
+[ProcessID]: 26380
+[ProcessName]: w3wp
+[ThreadID]: 83
+[StackTrace]: 
+** [2019-10-10 13:08:09.657] - End ****************************************************************
+
+** [2019-10-10 14:33:14.477] - Begin **************************************************************
+[LogID]: df151723-76db-4b58-b189-1eb1e6e83127
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+	[WMSLocal.Sales].[dbo].[SO]
+(
+	[Id]
+	,[WHOrderNo]
+	,[MerchantId]
+	,[MerchantOrderNo]
+	,[StockId]
+	,[Status]
+	,[InventoryType]
+	,[Type]
+	,[BatchCode]
+	,[CCode]
+	,[ExpressCompanyCode]
+	,[ExpressTrackingNo]
+	,[PaymentCompanyCode]
+	,[PaymentTransactionNo]
+	,[BuyerRegNo]
+	,[BuyerIdCardType]
+	,[BuyerIdCardNo]
+	,[BuyerIdCardName]
+	,[BuyerPhone]
+	,[PayerIdCardType]
+	,[PayerIdCardNo]
+	,[PayerIdCardName]
+	,[ReceiverName]
+	,[ReceiverProvince]
+	,[ReceiverCity]
+	,[ReceiverDistrict]
+	,[ReceiverStreetAddress]
+	,[ReceiverZipCode]
+	,[ReceiverPhone]
+	,[GoodsFeeAmt]
+	,[ShippingFeeAmt]
+	,[InsuredFeeAmt]
+	,[DiscountAmt]
+	,[TaxFeeAmt]
+	,[ActuralPaidAmt]
+    ,[ItemPriceIncludeTax]
+	,[RemarkForCustoms]
+	,[RemarkForWarehouse]
+	,[OriginalPackageState]
+	,[NeedFakedCode]
+	,[ExtensionFields]
+	,[CreatedBy]
+	,[CreatedOn]
+    ,[MarkerPen]
+    ,[ExchangeOffice]
+    ,[PlatformMerchantId]
+)
+SELECT TOP 1
+	@Id AS [Id],
+	@WHOrderNo AS [WHOrderNo],
+	@MerchantId AS [MerchantId],
+	@MerchantOrderNo AS [MerchantOrderNo],
+	@StockId AS [StockId],
+	@Status AS [Status],
+	@InventoryType AS [InventoryType],
+	@Type AS [Type],
+	@BatchCode AS [BatchCode],
+	@CCode AS [CCode],
+	@ExpressCompanyCode AS [ExpressCompanyCode],
+	@ExpressTrackingNo AS [ExpressTrackingNo],
+	@PaymentCompanyCode AS [PaymentCompanyCode],
+	@PaymentTransactionNo AS [PaymentTransactionNo],
+	@BuyerRegNo AS [BuyerRegNo],
+	@BuyerIdCardType AS [BuyerIdCardType],
+	@BuyerIdCardNo AS [BuyerIdCardNo],
+	@BuyerIdCardName AS [BuyerIdCardName],
+	@BuyerPhone AS [BuyerPhone],
+	@PayerIdCardType AS [PayerIdCardType],
+	@PayerIdCardNo AS [PayerIdCardNo],
+	@PayerIdCardName AS [PayerIdCardName],
+	@ReceiverName AS [ReceiverName],
+	@ReceiverProvince AS [ReceiverProvince],
+	@ReceiverCity AS [ReceiverCity],
+	@ReceiverDistrict AS [ReceiverDistrict],
+	@ReceiverStreetAddress AS [ReceiverStreetAddress],
+	@ReceiverZipCode AS [ReceiverZipCode],
+	@ReceiverPhone AS [ReceiverPhone],
+	@GoodsFeeAmt AS [GoodsFeeAmt],
+	@ShippingFeeAmt AS [ShippingFeeAmt],
+	@InsuredFeeAmt AS [InsuredFeeAmt],
+	@DiscountAmt AS [DiscountAmt],
+	@TaxFeeAmt AS [TaxFeeAmt],
+	@ActuralPaidAmt AS [ActuralPaidAmt],
+    @ItemPriceIncludeTax AS [ItemPriceIncludeTax],
+	@RemarkForCustoms AS [RemarkForCustoms],
+	@RemarkForWarehouse AS [RemarkForWarehouse],
+	@OriginalPackageState AS [OriginalPackageState],
+	@NeedFakedCode AS [NeedFakedCode],
+	@ExtensionFields AS [ExtensionFields],
+	@CreatedBy AS [CreatedBy],
+	GETDATE() AS [CreatedOn],
+    @MarkerPen AS [MarkerPen],
+    @ExchangeOffice AS [ExchangeOffice],
+    @PlatformMerchantId AS [PlatformMerchantId]
+WHERE
+	NOT EXISTS
+	(
+		SELECT TOP 1
+			1
+		FROM
+			[WMSLocal.Sales].[dbo].[SO] WITH(NOLOCK)
+		WHERE
+			[WHOrderNo]=@WHOrderNo
+			OR ([PlatformMerchantId]=@PlatformMerchantId AND [MerchantOrderNo]=@MerchantOrderNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [PaymentTransactionNo] IS NOT NULL AND @PaymentTransactionNo IS NOT NULL AND [PaymentTransactionNo]=@PaymentTransactionNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [ExpressTrackingNo] IS NOT NULL AND @ExpressTrackingNo IS NOT NULL AND [ExpressTrackingNo]=@ExpressTrackingNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [CCode] IS NOT NULL AND @CCode IS NOT NULL AND [CCode]=@CCode AND [Status]<>-1)
+	)
+IF @@ROWCOUNT>0
+BEGIN
+    INSERT INTO
+	    [WMSLocal.Sales].[dbo].[SOItem]
+    (
+	    [Id]
+	    ,[SOId]
+	    ,[ItemId]
+	    ,[UnitPrice]
+        ,[DeclaredUnitPrice]
+	    ,[Qty]
+        ,[TaxRate]
+        ,[SummaryTaxAmt]
+	    ,[MinExpiryDate]
+	    ,[MaxExpiryDate]
+	    ,[PickingPriority]
+        ,[RemarkForWarehouse]
+    )
+    SELECT
+        '44a39172-f2db-4664-9318-b0f65f991606' AS [Id],
+        @Id AS [SOId],
+        '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId],
+        10.00 AS [UnitPrice],
+        10.00 AS [DeclaredUnitPrice],
+        5 AS [Qty],
+        0.091000 AS [TaxRate],
+        4.55 AS [SummaryTaxAmt],
+        NULL AS [MinExpiryDate],
+        NULL AS [MaxExpiryDate],
+        0 AS [PickingPriority],
+        '' AS [RemarkForWarehouse]
+END
+<<SQL Parameter(s)>> :
+@Id [Guid] : 77bbf095-4c35-45a6-8c33-7c6fdfea04e4 [System.Guid]
+@WHOrderNo [String] : Harry2019091800004 [System.String]
+@MerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+@MerchantOrderNo [String] : 998 [System.String]
+@StockId [Guid] : c64b4f64-7262-4b9a-9770-c82649042726 [System.Guid]
+@Status [Int32] : 1 [System.Int32]
+@InventoryType [Int32] : 0 [System.Int32]
+@Type [Int32] : 2 [System.Int32]
+@BatchCode [String] :  [System.DBNull]
+@CCode [String] : 517 [System.String]
+@ExpressCompanyCode [String] : YUNDA [System.String]
+@ExpressTrackingNo [String] :  [System.DBNull]
+@PaymentCompanyCode [String] : Alipay [System.String]
+@PaymentTransactionNo [String] : 13209 [System.String]
+@BuyerRegNo [String] : 1297deee4fb14d5997c664a17fb699e5 [System.String]
+@BuyerIdCardType [String] : 1 [System.String]
+@BuyerIdCardNo [String] : 620422199311153212 [System.String]
+@BuyerIdCardName [String] : 问问 [System.String]
+@BuyerPhone [String] : 18012122112 [System.String]
+@PayerIdCardType [String] : 1 [System.String]
+@PayerIdCardNo [String] :  [System.DBNull]
+@PayerIdCardName [String] :  [System.DBNull]
+@ReceiverName [String] : 我去去 [System.String]
+@ReceiverProvince [String] : 吉林省 [System.String]
+@ReceiverCity [String] : 吉林市 [System.String]
+@ReceiverDistrict [String] : 桦甸市 [System.String]
+@ReceiverStreetAddress [String] : 亲亲 [System.String]
+@ReceiverZipCode [String] :  [System.DBNull]
+@ReceiverPhone [String] : 18012122112 [System.String]
+@GoodsFeeAmt [Decimal] : 50.00 [System.Decimal]
+@ShippingFeeAmt [Decimal] : 0.00 [System.Decimal]
+@InsuredFeeAmt [Decimal] : 0.00 [System.Decimal]
+@DiscountAmt [Decimal] : 0.00 [System.Decimal]
+@TaxFeeAmt [Decimal] : 4.55 [System.Decimal]
+@ActuralPaidAmt [Decimal] : 54.55 [System.Decimal]
+@ItemPriceIncludeTax [Boolean] : False [System.Boolean]
+@RemarkForCustoms [String] :  [System.DBNull]
+@RemarkForWarehouse [String] :  [System.String]
+@OriginalPackageState [Int32] : 0 [System.Int32]
+@NeedFakedCode [Boolean] : False [System.Boolean]
+@ExtensionFields [String] :  [System.DBNull]
+@CreatedBy [Guid] : 5a4797a5-1e6c-4791-9b4f-c236f05172d3 [System.Guid]
+@MarkerPen [String] :  [System.DBNull]
+@ExchangeOffice [String] :  [System.DBNull]
+@PlatformMerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 364
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-10 14:33:14.403
+[ProcessID]: 32580
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-10-10 14:33:14.477] - End ****************************************************************
+
+** [2019-10-10 14:59:14.415] - Begin **************************************************************
+[LogID]: 05737f61-26f9-4c9d-b1bb-a4deb5dad2fc
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+	[WMSLocal.Sales].[dbo].[SO]
+(
+	[Id]
+	,[WHOrderNo]
+	,[MerchantId]
+	,[MerchantOrderNo]
+	,[StockId]
+	,[Status]
+	,[InventoryType]
+	,[Type]
+	,[BatchCode]
+	,[CCode]
+	,[ExpressCompanyCode]
+	,[ExpressTrackingNo]
+	,[PaymentCompanyCode]
+	,[PaymentTransactionNo]
+	,[BuyerRegNo]
+	,[BuyerIdCardType]
+	,[BuyerIdCardNo]
+	,[BuyerIdCardName]
+	,[BuyerPhone]
+	,[PayerIdCardType]
+	,[PayerIdCardNo]
+	,[PayerIdCardName]
+	,[ReceiverName]
+	,[ReceiverProvince]
+	,[ReceiverCity]
+	,[ReceiverDistrict]
+	,[ReceiverStreetAddress]
+	,[ReceiverZipCode]
+	,[ReceiverPhone]
+	,[GoodsFeeAmt]
+	,[ShippingFeeAmt]
+	,[InsuredFeeAmt]
+	,[DiscountAmt]
+	,[TaxFeeAmt]
+	,[ActuralPaidAmt]
+    ,[ItemPriceIncludeTax]
+	,[RemarkForCustoms]
+	,[RemarkForWarehouse]
+	,[OriginalPackageState]
+	,[NeedFakedCode]
+	,[ExtensionFields]
+	,[CreatedBy]
+	,[CreatedOn]
+    ,[MarkerPen]
+    ,[ExchangeOffice]
+    ,[PlatformMerchantId]
+)
+SELECT TOP 1
+	@Id AS [Id],
+	@WHOrderNo AS [WHOrderNo],
+	@MerchantId AS [MerchantId],
+	@MerchantOrderNo AS [MerchantOrderNo],
+	@StockId AS [StockId],
+	@Status AS [Status],
+	@InventoryType AS [InventoryType],
+	@Type AS [Type],
+	@BatchCode AS [BatchCode],
+	@CCode AS [CCode],
+	@ExpressCompanyCode AS [ExpressCompanyCode],
+	@ExpressTrackingNo AS [ExpressTrackingNo],
+	@PaymentCompanyCode AS [PaymentCompanyCode],
+	@PaymentTransactionNo AS [PaymentTransactionNo],
+	@BuyerRegNo AS [BuyerRegNo],
+	@BuyerIdCardType AS [BuyerIdCardType],
+	@BuyerIdCardNo AS [BuyerIdCardNo],
+	@BuyerIdCardName AS [BuyerIdCardName],
+	@BuyerPhone AS [BuyerPhone],
+	@PayerIdCardType AS [PayerIdCardType],
+	@PayerIdCardNo AS [PayerIdCardNo],
+	@PayerIdCardName AS [PayerIdCardName],
+	@ReceiverName AS [ReceiverName],
+	@ReceiverProvince AS [ReceiverProvince],
+	@ReceiverCity AS [ReceiverCity],
+	@ReceiverDistrict AS [ReceiverDistrict],
+	@ReceiverStreetAddress AS [ReceiverStreetAddress],
+	@ReceiverZipCode AS [ReceiverZipCode],
+	@ReceiverPhone AS [ReceiverPhone],
+	@GoodsFeeAmt AS [GoodsFeeAmt],
+	@ShippingFeeAmt AS [ShippingFeeAmt],
+	@InsuredFeeAmt AS [InsuredFeeAmt],
+	@DiscountAmt AS [DiscountAmt],
+	@TaxFeeAmt AS [TaxFeeAmt],
+	@ActuralPaidAmt AS [ActuralPaidAmt],
+    @ItemPriceIncludeTax AS [ItemPriceIncludeTax],
+	@RemarkForCustoms AS [RemarkForCustoms],
+	@RemarkForWarehouse AS [RemarkForWarehouse],
+	@OriginalPackageState AS [OriginalPackageState],
+	@NeedFakedCode AS [NeedFakedCode],
+	@ExtensionFields AS [ExtensionFields],
+	@CreatedBy AS [CreatedBy],
+	GETDATE() AS [CreatedOn],
+    @MarkerPen AS [MarkerPen],
+    @ExchangeOffice AS [ExchangeOffice],
+    @PlatformMerchantId AS [PlatformMerchantId]
+WHERE
+	NOT EXISTS
+	(
+		SELECT TOP 1
+			1
+		FROM
+			[WMSLocal.Sales].[dbo].[SO] WITH(NOLOCK)
+		WHERE
+			[WHOrderNo]=@WHOrderNo
+			OR ([PlatformMerchantId]=@PlatformMerchantId AND [MerchantOrderNo]=@MerchantOrderNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [PaymentTransactionNo] IS NOT NULL AND @PaymentTransactionNo IS NOT NULL AND [PaymentTransactionNo]=@PaymentTransactionNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [ExpressTrackingNo] IS NOT NULL AND @ExpressTrackingNo IS NOT NULL AND [ExpressTrackingNo]=@ExpressTrackingNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [CCode] IS NOT NULL AND @CCode IS NOT NULL AND [CCode]=@CCode AND [Status]<>-1)
+	)
+IF @@ROWCOUNT>0
+BEGIN
+    INSERT INTO
+	    [WMSLocal.Sales].[dbo].[SOItem]
+    (
+	    [Id]
+	    ,[SOId]
+	    ,[ItemId]
+	    ,[UnitPrice]
+        ,[DeclaredUnitPrice]
+	    ,[Qty]
+        ,[TaxRate]
+        ,[SummaryTaxAmt]
+	    ,[MinExpiryDate]
+	    ,[MaxExpiryDate]
+	    ,[PickingPriority]
+        ,[RemarkForWarehouse]
+    )
+    SELECT
+        '9149af47-20c6-4feb-b5db-a16f92143638' AS [Id],
+        @Id AS [SOId],
+        '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId],
+        10.00 AS [UnitPrice],
+        10.00 AS [DeclaredUnitPrice],
+        2 AS [Qty],
+        0.091000 AS [TaxRate],
+        1.82 AS [SummaryTaxAmt],
+        NULL AS [MinExpiryDate],
+        NULL AS [MaxExpiryDate],
+        0 AS [PickingPriority],
+        '' AS [RemarkForWarehouse]
+END
+<<SQL Parameter(s)>> :
+@Id [Guid] : dc396034-d4ff-4350-af98-8d76a01c3bfd [System.Guid]
+@WHOrderNo [String] : Harry2019091700002 [System.String]
+@MerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+@MerchantOrderNo [String] : 111 [System.String]
+@StockId [Guid] : c64b4f64-7262-4b9a-9770-c82649042726 [System.Guid]
+@Status [Int32] : 1 [System.Int32]
+@InventoryType [Int32] : 0 [System.Int32]
+@Type [Int32] : 2 [System.Int32]
+@BatchCode [String] :  [System.DBNull]
+@CCode [String] : 5121147 [System.String]
+@ExpressCompanyCode [String] : YUNDA [System.String]
+@ExpressTrackingNo [String] :  [System.DBNull]
+@PaymentCompanyCode [String] : Alipay [System.String]
+@PaymentTransactionNo [String] : 2112323 [System.String]
+@BuyerRegNo [String] : 73cb3eef20264dfeafb407effab6ff01 [System.String]
+@BuyerIdCardType [String] : 1 [System.String]
+@BuyerIdCardNo [String] : 620422199311153212 [System.String]
+@BuyerIdCardName [String] : 驱蚊器 [System.String]
+@BuyerPhone [String] : 18012121212 [System.String]
+@PayerIdCardType [String] : 1 [System.String]
+@PayerIdCardNo [String] :  [System.DBNull]
+@PayerIdCardName [String] :  [System.DBNull]
+@ReceiverName [String] : 问问 [System.String]
+@ReceiverProvince [String] : 北京 [System.String]
+@ReceiverCity [String] : 北京市 [System.String]
+@ReceiverDistrict [String] : 西城区 [System.String]
+@ReceiverStreetAddress [String] : 11 [System.String]
+@ReceiverZipCode [String] :  [System.DBNull]
+@ReceiverPhone [String] : 18012121212 [System.String]
+@GoodsFeeAmt [Decimal] : 20.00 [System.Decimal]
+@ShippingFeeAmt [Decimal] : 0.00 [System.Decimal]
+@InsuredFeeAmt [Decimal] : 0.00 [System.Decimal]
+@DiscountAmt [Decimal] : 0.00 [System.Decimal]
+@TaxFeeAmt [Decimal] : 1.82 [System.Decimal]
+@ActuralPaidAmt [Decimal] : 21.82 [System.Decimal]
+@ItemPriceIncludeTax [Boolean] : False [System.Boolean]
+@RemarkForCustoms [String] :  [System.DBNull]
+@RemarkForWarehouse [String] :  [System.String]
+@OriginalPackageState [Int32] : 0 [System.Int32]
+@NeedFakedCode [Boolean] : False [System.Boolean]
+@ExtensionFields [String] :  [System.DBNull]
+@CreatedBy [Guid] : 5a4797a5-1e6c-4791-9b4f-c236f05172d3 [System.Guid]
+@MarkerPen [String] :  [System.DBNull]
+@ExchangeOffice [String] :  [System.DBNull]
+@PlatformMerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 364
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-10 14:59:14.341
+[ProcessID]: 34156
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-10-10 14:59:14.415] - End ****************************************************************
+
+** [2019-10-10 16:17:15.964] - Begin **************************************************************
+[LogID]: eea8db2d-fabb-4fc1-ba4a-db8c1b9e0bb8
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+	[WMSLocal.Sales].[dbo].[SO]
+(
+	[Id]
+	,[WHOrderNo]
+	,[MerchantId]
+	,[MerchantOrderNo]
+	,[StockId]
+	,[Status]
+	,[InventoryType]
+	,[Type]
+	,[BatchCode]
+	,[CCode]
+	,[ExpressCompanyCode]
+	,[ExpressTrackingNo]
+	,[PaymentCompanyCode]
+	,[PaymentTransactionNo]
+	,[BuyerRegNo]
+	,[BuyerIdCardType]
+	,[BuyerIdCardNo]
+	,[BuyerIdCardName]
+	,[BuyerPhone]
+	,[PayerIdCardType]
+	,[PayerIdCardNo]
+	,[PayerIdCardName]
+	,[ReceiverName]
+	,[ReceiverProvince]
+	,[ReceiverCity]
+	,[ReceiverDistrict]
+	,[ReceiverStreetAddress]
+	,[ReceiverZipCode]
+	,[ReceiverPhone]
+	,[GoodsFeeAmt]
+	,[ShippingFeeAmt]
+	,[InsuredFeeAmt]
+	,[DiscountAmt]
+	,[TaxFeeAmt]
+	,[ActuralPaidAmt]
+    ,[ItemPriceIncludeTax]
+	,[RemarkForCustoms]
+	,[RemarkForWarehouse]
+	,[OriginalPackageState]
+	,[NeedFakedCode]
+	,[ExtensionFields]
+	,[CreatedBy]
+	,[CreatedOn]
+    ,[MarkerPen]
+    ,[ExchangeOffice]
+    ,[PlatformMerchantId]
+)
+SELECT TOP 1
+	@Id AS [Id],
+	@WHOrderNo AS [WHOrderNo],
+	@MerchantId AS [MerchantId],
+	@MerchantOrderNo AS [MerchantOrderNo],
+	@StockId AS [StockId],
+	@Status AS [Status],
+	@InventoryType AS [InventoryType],
+	@Type AS [Type],
+	@BatchCode AS [BatchCode],
+	@CCode AS [CCode],
+	@ExpressCompanyCode AS [ExpressCompanyCode],
+	@ExpressTrackingNo AS [ExpressTrackingNo],
+	@PaymentCompanyCode AS [PaymentCompanyCode],
+	@PaymentTransactionNo AS [PaymentTransactionNo],
+	@BuyerRegNo AS [BuyerRegNo],
+	@BuyerIdCardType AS [BuyerIdCardType],
+	@BuyerIdCardNo AS [BuyerIdCardNo],
+	@BuyerIdCardName AS [BuyerIdCardName],
+	@BuyerPhone AS [BuyerPhone],
+	@PayerIdCardType AS [PayerIdCardType],
+	@PayerIdCardNo AS [PayerIdCardNo],
+	@PayerIdCardName AS [PayerIdCardName],
+	@ReceiverName AS [ReceiverName],
+	@ReceiverProvince AS [ReceiverProvince],
+	@ReceiverCity AS [ReceiverCity],
+	@ReceiverDistrict AS [ReceiverDistrict],
+	@ReceiverStreetAddress AS [ReceiverStreetAddress],
+	@ReceiverZipCode AS [ReceiverZipCode],
+	@ReceiverPhone AS [ReceiverPhone],
+	@GoodsFeeAmt AS [GoodsFeeAmt],
+	@ShippingFeeAmt AS [ShippingFeeAmt],
+	@InsuredFeeAmt AS [InsuredFeeAmt],
+	@DiscountAmt AS [DiscountAmt],
+	@TaxFeeAmt AS [TaxFeeAmt],
+	@ActuralPaidAmt AS [ActuralPaidAmt],
+    @ItemPriceIncludeTax AS [ItemPriceIncludeTax],
+	@RemarkForCustoms AS [RemarkForCustoms],
+	@RemarkForWarehouse AS [RemarkForWarehouse],
+	@OriginalPackageState AS [OriginalPackageState],
+	@NeedFakedCode AS [NeedFakedCode],
+	@ExtensionFields AS [ExtensionFields],
+	@CreatedBy AS [CreatedBy],
+	GETDATE() AS [CreatedOn],
+    @MarkerPen AS [MarkerPen],
+    @ExchangeOffice AS [ExchangeOffice],
+    @PlatformMerchantId AS [PlatformMerchantId]
+WHERE
+	NOT EXISTS
+	(
+		SELECT TOP 1
+			1
+		FROM
+			[WMSLocal.Sales].[dbo].[SO] WITH(NOLOCK)
+		WHERE
+			[WHOrderNo]=@WHOrderNo
+			OR ([PlatformMerchantId]=@PlatformMerchantId AND [MerchantOrderNo]=@MerchantOrderNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [PaymentTransactionNo] IS NOT NULL AND @PaymentTransactionNo IS NOT NULL AND [PaymentTransactionNo]=@PaymentTransactionNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [ExpressTrackingNo] IS NOT NULL AND @ExpressTrackingNo IS NOT NULL AND [ExpressTrackingNo]=@ExpressTrackingNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [CCode] IS NOT NULL AND @CCode IS NOT NULL AND [CCode]=@CCode AND [Status]<>-1)
+	)
+IF @@ROWCOUNT>0
+BEGIN
+    INSERT INTO
+	    [WMSLocal.Sales].[dbo].[SOItem]
+    (
+	    [Id]
+	    ,[SOId]
+	    ,[ItemId]
+	    ,[UnitPrice]
+        ,[DeclaredUnitPrice]
+	    ,[Qty]
+        ,[TaxRate]
+        ,[SummaryTaxAmt]
+	    ,[MinExpiryDate]
+	    ,[MaxExpiryDate]
+	    ,[PickingPriority]
+        ,[RemarkForWarehouse]
+    )
+    SELECT
+        '44a39172-f2db-4664-9318-b0f65f991606' AS [Id],
+        @Id AS [SOId],
+        '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId],
+        10.00 AS [UnitPrice],
+        10.00 AS [DeclaredUnitPrice],
+        5 AS [Qty],
+        0.091000 AS [TaxRate],
+        4.55 AS [SummaryTaxAmt],
+        NULL AS [MinExpiryDate],
+        NULL AS [MaxExpiryDate],
+        0 AS [PickingPriority],
+        '' AS [RemarkForWarehouse]
+END
+<<SQL Parameter(s)>> :
+@Id [Guid] : 77bbf095-4c35-45a6-8c33-7c6fdfea04e4 [System.Guid]
+@WHOrderNo [String] : Harry2019091800004 [System.String]
+@MerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+@MerchantOrderNo [String] : 998 [System.String]
+@StockId [Guid] : c64b4f64-7262-4b9a-9770-c82649042726 [System.Guid]
+@Status [Int32] : 1 [System.Int32]
+@InventoryType [Int32] : 0 [System.Int32]
+@Type [Int32] : 2 [System.Int32]
+@BatchCode [String] :  [System.DBNull]
+@CCode [String] : 517 [System.String]
+@ExpressCompanyCode [String] : YUNDA [System.String]
+@ExpressTrackingNo [String] :  [System.DBNull]
+@PaymentCompanyCode [String] : Alipay [System.String]
+@PaymentTransactionNo [String] : 13209 [System.String]
+@BuyerRegNo [String] : 1297deee4fb14d5997c664a17fb699e5 [System.String]
+@BuyerIdCardType [String] : 1 [System.String]
+@BuyerIdCardNo [String] : 620422199311153212 [System.String]
+@BuyerIdCardName [String] : 问问 [System.String]
+@BuyerPhone [String] : 18012122112 [System.String]
+@PayerIdCardType [String] : 1 [System.String]
+@PayerIdCardNo [String] :  [System.DBNull]
+@PayerIdCardName [String] :  [System.DBNull]
+@ReceiverName [String] : 我去去 [System.String]
+@ReceiverProvince [String] : 吉林省 [System.String]
+@ReceiverCity [String] : 吉林市 [System.String]
+@ReceiverDistrict [String] : 桦甸市 [System.String]
+@ReceiverStreetAddress [String] : 亲亲 [System.String]
+@ReceiverZipCode [String] :  [System.DBNull]
+@ReceiverPhone [String] : 18012122112 [System.String]
+@GoodsFeeAmt [Decimal] : 50.00 [System.Decimal]
+@ShippingFeeAmt [Decimal] : 0.00 [System.Decimal]
+@InsuredFeeAmt [Decimal] : 0.00 [System.Decimal]
+@DiscountAmt [Decimal] : 0.00 [System.Decimal]
+@TaxFeeAmt [Decimal] : 4.55 [System.Decimal]
+@ActuralPaidAmt [Decimal] : 54.55 [System.Decimal]
+@ItemPriceIncludeTax [Boolean] : False [System.Boolean]
+@RemarkForCustoms [String] :  [System.DBNull]
+@RemarkForWarehouse [String] :  [System.String]
+@OriginalPackageState [Int32] : 0 [System.Int32]
+@NeedFakedCode [Boolean] : False [System.Boolean]
+@ExtensionFields [String] :  [System.DBNull]
+@CreatedBy [Guid] : 5a4797a5-1e6c-4791-9b4f-c236f05172d3 [System.Guid]
+@MarkerPen [String] :  [System.DBNull]
+@ExchangeOffice [String] :  [System.DBNull]
+@PlatformMerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 364
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-10 16:17:15.873
+[ProcessID]: 33800
+[ProcessName]: w3wp
+[ThreadID]: 6
+[StackTrace]: 
+** [2019-10-10 16:17:15.964] - End ****************************************************************
+
+** [2019-10-10 16:51:16.428] - Begin **************************************************************
+[LogID]: 2511a540-dec0-4259-8b26-7eb1edfbc1aa
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+	[WMSLocal.Sales].[dbo].[SO]
+(
+	[Id]
+	,[WHOrderNo]
+	,[MerchantId]
+	,[MerchantOrderNo]
+	,[StockId]
+	,[Status]
+	,[InventoryType]
+	,[Type]
+	,[BatchCode]
+	,[CCode]
+	,[ExpressCompanyCode]
+	,[ExpressTrackingNo]
+	,[PaymentCompanyCode]
+	,[PaymentTransactionNo]
+	,[BuyerRegNo]
+	,[BuyerIdCardType]
+	,[BuyerIdCardNo]
+	,[BuyerIdCardName]
+	,[BuyerPhone]
+	,[PayerIdCardType]
+	,[PayerIdCardNo]
+	,[PayerIdCardName]
+	,[ReceiverName]
+	,[ReceiverProvince]
+	,[ReceiverCity]
+	,[ReceiverDistrict]
+	,[ReceiverStreetAddress]
+	,[ReceiverZipCode]
+	,[ReceiverPhone]
+	,[GoodsFeeAmt]
+	,[ShippingFeeAmt]
+	,[InsuredFeeAmt]
+	,[DiscountAmt]
+	,[TaxFeeAmt]
+	,[ActuralPaidAmt]
+    ,[ItemPriceIncludeTax]
+	,[RemarkForCustoms]
+	,[RemarkForWarehouse]
+	,[OriginalPackageState]
+	,[NeedFakedCode]
+	,[ExtensionFields]
+	,[CreatedBy]
+	,[CreatedOn]
+    ,[MarkerPen]
+    ,[ExchangeOffice]
+    ,[PlatformMerchantId]
+)
+SELECT TOP 1
+	@Id AS [Id],
+	@WHOrderNo AS [WHOrderNo],
+	@MerchantId AS [MerchantId],
+	@MerchantOrderNo AS [MerchantOrderNo],
+	@StockId AS [StockId],
+	@Status AS [Status],
+	@InventoryType AS [InventoryType],
+	@Type AS [Type],
+	@BatchCode AS [BatchCode],
+	@CCode AS [CCode],
+	@ExpressCompanyCode AS [ExpressCompanyCode],
+	@ExpressTrackingNo AS [ExpressTrackingNo],
+	@PaymentCompanyCode AS [PaymentCompanyCode],
+	@PaymentTransactionNo AS [PaymentTransactionNo],
+	@BuyerRegNo AS [BuyerRegNo],
+	@BuyerIdCardType AS [BuyerIdCardType],
+	@BuyerIdCardNo AS [BuyerIdCardNo],
+	@BuyerIdCardName AS [BuyerIdCardName],
+	@BuyerPhone AS [BuyerPhone],
+	@PayerIdCardType AS [PayerIdCardType],
+	@PayerIdCardNo AS [PayerIdCardNo],
+	@PayerIdCardName AS [PayerIdCardName],
+	@ReceiverName AS [ReceiverName],
+	@ReceiverProvince AS [ReceiverProvince],
+	@ReceiverCity AS [ReceiverCity],
+	@ReceiverDistrict AS [ReceiverDistrict],
+	@ReceiverStreetAddress AS [ReceiverStreetAddress],
+	@ReceiverZipCode AS [ReceiverZipCode],
+	@ReceiverPhone AS [ReceiverPhone],
+	@GoodsFeeAmt AS [GoodsFeeAmt],
+	@ShippingFeeAmt AS [ShippingFeeAmt],
+	@InsuredFeeAmt AS [InsuredFeeAmt],
+	@DiscountAmt AS [DiscountAmt],
+	@TaxFeeAmt AS [TaxFeeAmt],
+	@ActuralPaidAmt AS [ActuralPaidAmt],
+    @ItemPriceIncludeTax AS [ItemPriceIncludeTax],
+	@RemarkForCustoms AS [RemarkForCustoms],
+	@RemarkForWarehouse AS [RemarkForWarehouse],
+	@OriginalPackageState AS [OriginalPackageState],
+	@NeedFakedCode AS [NeedFakedCode],
+	@ExtensionFields AS [ExtensionFields],
+	@CreatedBy AS [CreatedBy],
+	GETDATE() AS [CreatedOn],
+    @MarkerPen AS [MarkerPen],
+    @ExchangeOffice AS [ExchangeOffice],
+    @PlatformMerchantId AS [PlatformMerchantId]
+WHERE
+	NOT EXISTS
+	(
+		SELECT TOP 1
+			1
+		FROM
+			[WMSLocal.Sales].[dbo].[SO] WITH(NOLOCK)
+		WHERE
+			[WHOrderNo]=@WHOrderNo
+			OR ([PlatformMerchantId]=@PlatformMerchantId AND [MerchantOrderNo]=@MerchantOrderNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [PaymentTransactionNo] IS NOT NULL AND @PaymentTransactionNo IS NOT NULL AND [PaymentTransactionNo]=@PaymentTransactionNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [ExpressTrackingNo] IS NOT NULL AND @ExpressTrackingNo IS NOT NULL AND [ExpressTrackingNo]=@ExpressTrackingNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [CCode] IS NOT NULL AND @CCode IS NOT NULL AND [CCode]=@CCode AND [Status]<>-1)
+	)
+IF @@ROWCOUNT>0
+BEGIN
+    INSERT INTO
+	    [WMSLocal.Sales].[dbo].[SOItem]
+    (
+	    [Id]
+	    ,[SOId]
+	    ,[ItemId]
+	    ,[UnitPrice]
+        ,[DeclaredUnitPrice]
+	    ,[Qty]
+        ,[TaxRate]
+        ,[SummaryTaxAmt]
+	    ,[MinExpiryDate]
+	    ,[MaxExpiryDate]
+	    ,[PickingPriority]
+        ,[RemarkForWarehouse]
+    )
+    SELECT
+        '9149af47-20c6-4feb-b5db-a16f92143638' AS [Id],
+        @Id AS [SOId],
+        '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId],
+        10.00 AS [UnitPrice],
+        10.00 AS [DeclaredUnitPrice],
+        2 AS [Qty],
+        0.091000 AS [TaxRate],
+        1.82 AS [SummaryTaxAmt],
+        NULL AS [MinExpiryDate],
+        NULL AS [MaxExpiryDate],
+        0 AS [PickingPriority],
+        '' AS [RemarkForWarehouse]
+END
+<<SQL Parameter(s)>> :
+@Id [Guid] : dc396034-d4ff-4350-af98-8d76a01c3bfd [System.Guid]
+@WHOrderNo [String] : Harry2019091700002 [System.String]
+@MerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+@MerchantOrderNo [String] : 111 [System.String]
+@StockId [Guid] : c64b4f64-7262-4b9a-9770-c82649042726 [System.Guid]
+@Status [Int32] : 1 [System.Int32]
+@InventoryType [Int32] : 0 [System.Int32]
+@Type [Int32] : 2 [System.Int32]
+@BatchCode [String] :  [System.DBNull]
+@CCode [String] : 5121147 [System.String]
+@ExpressCompanyCode [String] : YUNDA [System.String]
+@ExpressTrackingNo [String] :  [System.DBNull]
+@PaymentCompanyCode [String] : Alipay [System.String]
+@PaymentTransactionNo [String] : 2112323 [System.String]
+@BuyerRegNo [String] : 73cb3eef20264dfeafb407effab6ff01 [System.String]
+@BuyerIdCardType [String] : 1 [System.String]
+@BuyerIdCardNo [String] : 620422199311153212 [System.String]
+@BuyerIdCardName [String] : 驱蚊器 [System.String]
+@BuyerPhone [String] : 18012121212 [System.String]
+@PayerIdCardType [String] : 1 [System.String]
+@PayerIdCardNo [String] :  [System.DBNull]
+@PayerIdCardName [String] :  [System.DBNull]
+@ReceiverName [String] : 问问 [System.String]
+@ReceiverProvince [String] : 北京 [System.String]
+@ReceiverCity [String] : 北京市 [System.String]
+@ReceiverDistrict [String] : 西城区 [System.String]
+@ReceiverStreetAddress [String] : 11 [System.String]
+@ReceiverZipCode [String] :  [System.DBNull]
+@ReceiverPhone [String] : 18012121212 [System.String]
+@GoodsFeeAmt [Decimal] : 20.00 [System.Decimal]
+@ShippingFeeAmt [Decimal] : 0.00 [System.Decimal]
+@InsuredFeeAmt [Decimal] : 0.00 [System.Decimal]
+@DiscountAmt [Decimal] : 0.00 [System.Decimal]
+@TaxFeeAmt [Decimal] : 1.82 [System.Decimal]
+@ActuralPaidAmt [Decimal] : 21.82 [System.Decimal]
+@ItemPriceIncludeTax [Boolean] : False [System.Boolean]
+@RemarkForCustoms [String] :  [System.DBNull]
+@RemarkForWarehouse [String] :  [System.String]
+@OriginalPackageState [Int32] : 0 [System.Int32]
+@NeedFakedCode [Boolean] : False [System.Boolean]
+@ExtensionFields [String] :  [System.DBNull]
+@CreatedBy [Guid] : 5a4797a5-1e6c-4791-9b4f-c236f05172d3 [System.Guid]
+@MarkerPen [String] :  [System.DBNull]
+@ExchangeOffice [String] :  [System.DBNull]
+@PlatformMerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 364
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-10 16:51:16.370
+[ProcessID]: 30296
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-10-10 16:51:16.428] - End ****************************************************************
+
+** [2019-10-10 18:01:17.818] - Begin **************************************************************
+[LogID]: 002e1e42-5b2d-4fb3-8229-72654cf1576b
+[Source]: WMSLocal.WebService
+[Category]: Error
+[RequestUrl]: http://local.api.wmslocal.com/SO/Create
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [admin] Administrator
+[Content]: IBB360.Framework.SqlDbAccess.DaoSqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+<<Connection String>> : Data Source=localhost;Initial Catalog=WMSLocal.Queue;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123; Max Pool Size=4096; Min Pool Size=10
+<<SQL Script>> : 
+INSERT INTO
+	[WMSLocal.Sales].[dbo].[SO]
+(
+	[Id]
+	,[WHOrderNo]
+	,[MerchantId]
+	,[MerchantOrderNo]
+	,[StockId]
+	,[Status]
+	,[InventoryType]
+	,[Type]
+	,[BatchCode]
+	,[CCode]
+	,[ExpressCompanyCode]
+	,[ExpressTrackingNo]
+	,[PaymentCompanyCode]
+	,[PaymentTransactionNo]
+	,[BuyerRegNo]
+	,[BuyerIdCardType]
+	,[BuyerIdCardNo]
+	,[BuyerIdCardName]
+	,[BuyerPhone]
+	,[PayerIdCardType]
+	,[PayerIdCardNo]
+	,[PayerIdCardName]
+	,[ReceiverName]
+	,[ReceiverProvince]
+	,[ReceiverCity]
+	,[ReceiverDistrict]
+	,[ReceiverStreetAddress]
+	,[ReceiverZipCode]
+	,[ReceiverPhone]
+	,[GoodsFeeAmt]
+	,[ShippingFeeAmt]
+	,[InsuredFeeAmt]
+	,[DiscountAmt]
+	,[TaxFeeAmt]
+	,[ActuralPaidAmt]
+    ,[ItemPriceIncludeTax]
+	,[RemarkForCustoms]
+	,[RemarkForWarehouse]
+	,[OriginalPackageState]
+	,[NeedFakedCode]
+	,[ExtensionFields]
+	,[CreatedBy]
+	,[CreatedOn]
+    ,[MarkerPen]
+    ,[ExchangeOffice]
+    ,[PlatformMerchantId]
+)
+SELECT TOP 1
+	@Id AS [Id],
+	@WHOrderNo AS [WHOrderNo],
+	@MerchantId AS [MerchantId],
+	@MerchantOrderNo AS [MerchantOrderNo],
+	@StockId AS [StockId],
+	@Status AS [Status],
+	@InventoryType AS [InventoryType],
+	@Type AS [Type],
+	@BatchCode AS [BatchCode],
+	@CCode AS [CCode],
+	@ExpressCompanyCode AS [ExpressCompanyCode],
+	@ExpressTrackingNo AS [ExpressTrackingNo],
+	@PaymentCompanyCode AS [PaymentCompanyCode],
+	@PaymentTransactionNo AS [PaymentTransactionNo],
+	@BuyerRegNo AS [BuyerRegNo],
+	@BuyerIdCardType AS [BuyerIdCardType],
+	@BuyerIdCardNo AS [BuyerIdCardNo],
+	@BuyerIdCardName AS [BuyerIdCardName],
+	@BuyerPhone AS [BuyerPhone],
+	@PayerIdCardType AS [PayerIdCardType],
+	@PayerIdCardNo AS [PayerIdCardNo],
+	@PayerIdCardName AS [PayerIdCardName],
+	@ReceiverName AS [ReceiverName],
+	@ReceiverProvince AS [ReceiverProvince],
+	@ReceiverCity AS [ReceiverCity],
+	@ReceiverDistrict AS [ReceiverDistrict],
+	@ReceiverStreetAddress AS [ReceiverStreetAddress],
+	@ReceiverZipCode AS [ReceiverZipCode],
+	@ReceiverPhone AS [ReceiverPhone],
+	@GoodsFeeAmt AS [GoodsFeeAmt],
+	@ShippingFeeAmt AS [ShippingFeeAmt],
+	@InsuredFeeAmt AS [InsuredFeeAmt],
+	@DiscountAmt AS [DiscountAmt],
+	@TaxFeeAmt AS [TaxFeeAmt],
+	@ActuralPaidAmt AS [ActuralPaidAmt],
+    @ItemPriceIncludeTax AS [ItemPriceIncludeTax],
+	@RemarkForCustoms AS [RemarkForCustoms],
+	@RemarkForWarehouse AS [RemarkForWarehouse],
+	@OriginalPackageState AS [OriginalPackageState],
+	@NeedFakedCode AS [NeedFakedCode],
+	@ExtensionFields AS [ExtensionFields],
+	@CreatedBy AS [CreatedBy],
+	GETDATE() AS [CreatedOn],
+    @MarkerPen AS [MarkerPen],
+    @ExchangeOffice AS [ExchangeOffice],
+    @PlatformMerchantId AS [PlatformMerchantId]
+WHERE
+	NOT EXISTS
+	(
+		SELECT TOP 1
+			1
+		FROM
+			[WMSLocal.Sales].[dbo].[SO] WITH(NOLOCK)
+		WHERE
+			[WHOrderNo]=@WHOrderNo
+			OR ([PlatformMerchantId]=@PlatformMerchantId AND [MerchantOrderNo]=@MerchantOrderNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [PaymentTransactionNo] IS NOT NULL AND @PaymentTransactionNo IS NOT NULL AND [PaymentTransactionNo]=@PaymentTransactionNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [ExpressTrackingNo] IS NOT NULL AND @ExpressTrackingNo IS NOT NULL AND [ExpressTrackingNo]=@ExpressTrackingNo AND [Status]<>-1)
+			OR ([MerchantId]=@MerchantId AND [CCode] IS NOT NULL AND @CCode IS NOT NULL AND [CCode]=@CCode AND [Status]<>-1)
+	)
+IF @@ROWCOUNT>0
+BEGIN
+    INSERT INTO
+	    [WMSLocal.Sales].[dbo].[SOItem]
+    (
+	    [Id]
+	    ,[SOId]
+	    ,[ItemId]
+	    ,[UnitPrice]
+        ,[DeclaredUnitPrice]
+	    ,[Qty]
+        ,[TaxRate]
+        ,[SummaryTaxAmt]
+	    ,[MinExpiryDate]
+	    ,[MaxExpiryDate]
+	    ,[PickingPriority]
+        ,[RemarkForWarehouse]
+    )
+    SELECT
+        '44a39172-f2db-4664-9318-b0f65f991606' AS [Id],
+        @Id AS [SOId],
+        '57509a39-3501-46b4-8803-880842a8969b' AS [ItemId],
+        10.00 AS [UnitPrice],
+        10.00 AS [DeclaredUnitPrice],
+        5 AS [Qty],
+        0.091000 AS [TaxRate],
+        4.55 AS [SummaryTaxAmt],
+        NULL AS [MinExpiryDate],
+        NULL AS [MaxExpiryDate],
+        0 AS [PickingPriority],
+        '' AS [RemarkForWarehouse]
+END
+<<SQL Parameter(s)>> :
+@Id [Guid] : 77bbf095-4c35-45a6-8c33-7c6fdfea04e4 [System.Guid]
+@WHOrderNo [String] : Harry2019091800004 [System.String]
+@MerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+@MerchantOrderNo [String] : 998 [System.String]
+@StockId [Guid] : c64b4f64-7262-4b9a-9770-c82649042726 [System.Guid]
+@Status [Int32] : 1 [System.Int32]
+@InventoryType [Int32] : 0 [System.Int32]
+@Type [Int32] : 2 [System.Int32]
+@BatchCode [String] :  [System.DBNull]
+@CCode [String] : 517 [System.String]
+@ExpressCompanyCode [String] : YUNDA [System.String]
+@ExpressTrackingNo [String] :  [System.DBNull]
+@PaymentCompanyCode [String] : Alipay [System.String]
+@PaymentTransactionNo [String] : 13209 [System.String]
+@BuyerRegNo [String] : 1297deee4fb14d5997c664a17fb699e5 [System.String]
+@BuyerIdCardType [String] : 1 [System.String]
+@BuyerIdCardNo [String] : 620422199311153212 [System.String]
+@BuyerIdCardName [String] : 问问 [System.String]
+@BuyerPhone [String] : 18012122112 [System.String]
+@PayerIdCardType [String] : 1 [System.String]
+@PayerIdCardNo [String] :  [System.DBNull]
+@PayerIdCardName [String] :  [System.DBNull]
+@ReceiverName [String] : 我去去 [System.String]
+@ReceiverProvince [String] : 吉林省 [System.String]
+@ReceiverCity [String] : 吉林市 [System.String]
+@ReceiverDistrict [String] : 桦甸市 [System.String]
+@ReceiverStreetAddress [String] : 亲亲 [System.String]
+@ReceiverZipCode [String] :  [System.DBNull]
+@ReceiverPhone [String] : 18012122112 [System.String]
+@GoodsFeeAmt [Decimal] : 50.00 [System.Decimal]
+@ShippingFeeAmt [Decimal] : 0.00 [System.Decimal]
+@InsuredFeeAmt [Decimal] : 0.00 [System.Decimal]
+@DiscountAmt [Decimal] : 0.00 [System.Decimal]
+@TaxFeeAmt [Decimal] : 4.55 [System.Decimal]
+@ActuralPaidAmt [Decimal] : 54.55 [System.Decimal]
+@ItemPriceIncludeTax [Boolean] : False [System.Boolean]
+@RemarkForCustoms [String] :  [System.DBNull]
+@RemarkForWarehouse [String] :  [System.String]
+@OriginalPackageState [Int32] : 0 [System.Int32]
+@NeedFakedCode [Boolean] : False [System.Boolean]
+@ExtensionFields [String] :  [System.DBNull]
+@CreatedBy [Guid] : 5a4797a5-1e6c-4791-9b4f-c236f05172d3 [System.Guid]
+@MarkerPen [String] :  [System.DBNull]
+@ExchangeOffice [String] :  [System.DBNull]
+@PlatformMerchantId [Guid] : 97f203ce-1979-4e52-874c-0366c95e117e [System.Guid]
+ ---> System.Data.SqlClient.SqlException: 列名 'PlatformMerchantId' 无效。
+列名 'PlatformMerchantId' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(String connStrKey, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteBySpecifiedConnStrKey.cs:行号 30
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, CommandType cmdType, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 13
+   在 IBB360.Framework.SqlDbAccess.SqlHelper.ExecuteNonQuery(DbInstance instance, String cmdText, Object parameter) 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.SqlDbAccess\SqlHelper_ExecuteByDefaultConnStrKey.cs:行号 18
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.Create(SO so) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 364
+   在 IBB360.WMSLocal.WebService.Controllers.SOController.Create(RestfulMessage msg) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.WebService\Controllers\SOController.cs:行号 21
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-10-10 18:01:17.766
+[ProcessID]: 34648
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-10-10 18:01:17.818] - End ****************************************************************

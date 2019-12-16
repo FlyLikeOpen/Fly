@@ -1,0 +1,14 @@
+﻿#page-login.page-wrapper {
+	margin-top: 120px;
+	background: inherit;
+}
+#page-login .login-panel {
+	padding: 20px;
+	border: 1px #8BB6F5 solid;
+	border-radius: 5px;
+}
+#page-login .login-panel .heading {
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px #8BB6F5 solid;
+}

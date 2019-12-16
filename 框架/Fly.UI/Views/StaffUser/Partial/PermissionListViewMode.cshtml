@@ -1,0 +1,55 @@
+﻿@{
+	// 只会显示已有的权限
+	List<string> selectedPermissions = ParseModel<List<string>>("Selected");
+    IList<PermissionKey> allPermissions = Api<IStaffPermissionKeyApi>.Instance.GetAllPermissionKeys();
+}
+
+<div class="permission-list">
+	@foreach (var per in allPermissions)
+	{
+		@BuildPermission(per, selectedPermissions)
+	}
+</div>
+
+@helper BuildPermission(PermissionKey per, List<string> selectedPermissions)
+{
+    if (per.PermissionKeys != null && per.PermissionKeys.Count > 0)
+	{
+		bool containSub = false;
+        foreach (PermissionKey sub in per.PermissionKeys)
+		{
+			if (string.IsNullOrWhiteSpace(sub.Value) == false && selectedPermissions.Contains(sub.Value))
+			{
+				containSub = true;
+				break;
+			}
+		}
+		if (containSub)
+		{
+			<div class="sub-list">
+				<div class="head">
+					<div class="checkbox">
+						<label><input type="checkbox" class="chk-permission" value="" disabled /> @per.Text</label>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="body">
+					@foreach (PermissionKey pp in per.PermissionKeys)
+					{
+						@BuildPermission(pp, selectedPermissions);
+					}
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		}
+	}
+	else
+	{
+		if (string.IsNullOrWhiteSpace(per.Value) == false && selectedPermissions.Contains(per.Value))
+		{
+			<div class="checkbox">
+				<label><input type="checkbox" class="chk-permission" value="@per.Value" checked disabled /> @per.Text</label>
+			</div>
+		}
+	}
+}

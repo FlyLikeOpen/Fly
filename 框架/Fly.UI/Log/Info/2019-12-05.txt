@@ -1,0 +1,133 @@
+
+** [2019-12-05 12:02:27.014] - Begin **************************************************************
+[LogID]: bede530d-adc5-4c93-ba3f-58348d5ea142
+[Source]: WMSLocal
+[Category]: Info
+[RequestUrl]: http://local.wmslocal.com/so/ajaxprint/
+[RequestReferer]: http://local.wmslocal.com/so/print/?LocationCode=A-01-26
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: w121
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 12:02:26.995
+[ProcessID]: 23692
+[ProcessName]: w3wp
+[ThreadID]: 8
+[StackTrace]: 
+** [2019-12-05 12:02:27.014] - End ****************************************************************
+
+** [2019-12-05 19:39:07.633] - Begin **************************************************************
+[LogID]: 28d222b2-cb5f-4111-a36a-e427f5f2901f
+[Source]: WMSLocal
+[Category]: Info
+[RequestUrl]: http://local.wmslocal.com/so/ajaxprint/
+[RequestReferer]: http://local.wmslocal.com/so/print/?LocationCode=A-01-25
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: 1113332wa
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 19:39:07.603
+[ProcessID]: 21524
+[ProcessName]: w3wp
+[ThreadID]: 5
+[StackTrace]: 
+** [2019-12-05 19:39:07.633] - End ****************************************************************
+
+** [2019-12-05 20:05:27.941] - Begin **************************************************************
+[LogID]: c3b746ff-0622-4d11-bdb9-63520b389dbe
+[Source]: WMSLocal
+[Category]: Info
+[RequestUrl]: http://local.wmslocal.com/so/ajaxprint/
+[RequestReferer]: http://local.wmslocal.com/so/print/?LocationCode=A-01-25
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: 1113332wa
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 20:05:27.927
+[ProcessID]: 21524
+[ProcessName]: w3wp
+[ThreadID]: 23
+[StackTrace]: 
+** [2019-12-05 20:05:27.941] - End ****************************************************************
+
+** [2019-12-05 20:05:31.937] - Begin **************************************************************
+[LogID]: 168cdb9f-e951-4096-9b9e-5a63fa2f67ad
+[Source]: WMSLocal
+[Category]: Info
+[RequestUrl]: http://local.wmslocal.com/so/ajaxprint/
+[RequestReferer]: http://local.wmslocal.com/so/print/?LocationCode=A-01-25
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: 1113332wa
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 20:05:31.930
+[ProcessID]: 21524
+[ProcessName]: w3wp
+[ThreadID]: 28
+[StackTrace]: 
+** [2019-12-05 20:05:31.937] - End ****************************************************************
+
+** [2019-12-05 20:07:56.486] - Begin **************************************************************
+[LogID]: 062da1de-c0b2-4023-bc0c-2f5ccaad148c
+[Source]: WMSLocal
+[Category]: Info
+[RequestUrl]: http://local.wmslocal.com/so/ajaxprint/
+[RequestReferer]: http://local.wmslocal.com/so/print/?LocationCode=A-01-24
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: 1113332221
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 20:07:56.480
+[ProcessID]: 21524
+[ProcessName]: w3wp
+[ThreadID]: 22
+[StackTrace]: 
+** [2019-12-05 20:07:56.486] - End ****************************************************************
+
+** [2019-12-05 20:10:54.758] - Begin **************************************************************
+[LogID]: 7395a622-c9ea-4042-99f5-dc3665a1f823
+[Source]: WMSLocal
+[Category]: Info
+[RequestUrl]: http://local.wmslocal.com/so/ajaxprint/
+[RequestReferer]: http://local.wmslocal.com/so/print/?LocationCode=A-01-24
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: 1113332221
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 20:10:54.754
+[ProcessID]: 21524
+[ProcessName]: w3wp
+[ThreadID]: 28
+[StackTrace]: 
+** [2019-12-05 20:10:54.758] - End ****************************************************************
+
+** [2019-12-05 20:13:33.047] - Begin **************************************************************
+[LogID]: 88440efa-a3cf-43c9-9bf2-bae1c1c51070
+[Source]: WMSLocal
+[Category]: Info
+[RequestUrl]: http://local.wmslocal.com/so/ajaxprint/
+[RequestReferer]: http://local.wmslocal.com/so/print/?LocationCode=A-01-24
+[UserHostName]: 127.0.0.1
+[UserHostAddress]: 127.0.0.1
+[OperatorUser]: [Harry] harry
+[Content]: 1113332221
+[ServerIP]: 192.168.137.1
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-05 20:13:33.043
+[ProcessID]: 21524
+[ProcessName]: w3wp
+[ThreadID]: 20
+[StackTrace]: 
+** [2019-12-05 20:13:33.047] - End ****************************************************************

@@ -1,0 +1,147 @@
+﻿@{
+	bool multiple = Utility.ParseFormVal<bool?>("multiple").GetValueOrDefault();
+	bool? isSearch = Utility.ParseFormVal<bool?>("isSearch");
+	string keyword = Utility.ParseFormVal<string>("keyword");
+
+	IList<PermissionKey> allPermissions = Api<IStaffPermissionKeyApi>.Instance.GetAllPermissionKeys();
+}
+
+@if (isSearch.GetValueOrDefault())
+{
+	@BuildPermissionList(allPermissions, multiple, keyword)
+}
+else
+{
+	<div class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog" style="width:900px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title"><i class="fa fa-map-marker"></i> 选择权限</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">权限关键字</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control ipt-keyword" />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-sm-12">
+								<div class="permission-wrap" style="height:350px; overflow-y:scroll;">
+									@BuildPermissionList(allPermissions, multiple, null)
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary btn-confirm">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+}
+
+@helper BuildPermissionList(IList<PermissionKey> permissionList, bool multiple, string keyword)
+{
+	<div class="permission-list">
+		@foreach (var per in permissionList)
+		{
+			@BuildPermission(per, multiple, keyword)
+		}
+	</div>
+}
+
+@helper BuildPermission(PermissionKey per, bool multiple, string keyword)
+{
+	if (per.PermissionKeys != null && per.PermissionKeys.Count > 0)
+	{
+		bool containSub = true;
+		if (string.IsNullOrWhiteSpace(keyword) == false)
+		{
+			containSub = false;
+			foreach (var sub in per.PermissionKeys)
+			{
+				if (string.IsNullOrWhiteSpace(sub.Text) == false
+					&& string.IsNullOrWhiteSpace(sub.Value) == false
+					&& sub.Text.Contains(keyword))
+				{
+					containSub = true;
+					break;
+				}
+			}
+		}
+
+		if (containSub)
+		{
+			<div class="sub-list">
+				<div class="head">
+					<div class="checkbox">@per.Text</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="body">
+					@foreach (var pp in per.PermissionKeys)
+					{
+						@BuildPermission(pp, multiple, keyword);
+					}
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		}
+	}
+	else
+	{
+		if (string.IsNullOrWhiteSpace(per.Text) == false
+			&& string.IsNullOrWhiteSpace(per.Value) == false
+			&& (string.IsNullOrWhiteSpace(keyword) || per.Text.Contains(keyword)))
+		{
+			<div class="radio checkbox">
+				<label>
+					@if (multiple)
+					{
+						<input type="checkbox" name="checkbox-permission" class="chk-permission" value="@per.Value" data-text="@per.Text" />
+					}
+					else
+					{
+						<input type="radio" name="radio-permission" class="chk-permission" value="@per.Value" data-text="@per.Text" />
+					}
+					<span>@Html.Raw(HighLightKeyword(per.Text, keyword))</span>
+				</label>
+			</div>
+		}
+
+	}
+}
+
+@functions {
+	string HighLightKeyword(string text, string keyword)
+	{
+		if (string.IsNullOrWhiteSpace(text) == false)
+		{
+			if (string.IsNullOrWhiteSpace(keyword) == false)
+			{
+				if (text.Contains(keyword))
+				{
+					string rpl = string.Format("<span style='background:yellow;'>{0}</span>", keyword);
+					return text.Replace(keyword, rpl);
+				}
+				else
+				{
+					return text;
+				}
+			}
+			else
+			{
+				return text;
+			}
+		}
+		else
+		{
+			return null;
+		}
+	}
+}

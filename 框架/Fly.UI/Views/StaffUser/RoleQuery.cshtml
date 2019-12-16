@@ -1,0 +1,124 @@
+﻿@{
+	this.PageTitle = "查询系统角色";
+
+	string roleNameKey = "name";
+	string roleName = Utility.ParseQueryStringVal<string>(roleNameKey);
+
+	string containUserIdKey = "userId";
+	Guid? containUserId = Utility.ParseQueryStringVal<Guid?>(containUserIdKey);
+	StaffUser selectedUser = null;
+	if (containUserId.HasValue)
+	{
+		selectedUser = Api<IStaffUserApi>.Instance.Get(containUserId.Value);
+	}
+
+	string containPermissionKey = "permission";
+	string containPermission = Utility.ParseQueryStringVal<string>(containPermissionKey);
+	PermissionKey selectedPermission = null;
+	if (string.IsNullOrWhiteSpace(containPermission) == false)
+	{
+        IList<PermissionKey> allPermissions = Api<IStaffPermissionKeyApi>.Instance.GetAllPermissionKeys();
+        selectedPermission = allPermissions.Where(x => string.IsNullOrWhiteSpace(x.Value) == false).Union(allPermissions.SelectMany(x => x.PermissionKeys)).FirstOrDefault(x => string.Equals(x.Value, containPermission.Trim(), StringComparison.OrdinalIgnoreCase));
+	}
+
+    int pageIndex = Html.GetCurrentPageNumber() - 1;
+    int pageSize = 50;
+    int total = 0;
+    IList<StaffRole> list = Api<IStaffRoleApi>.Instance.Query(roleName, containUserId, containPermission, pageIndex, pageSize, out total);
+    var userDict = Api<IStaffRoleApi>.Instance.GetUsers(list.Select(x => x.Id));
+}
+
+@section PageButtons {
+	<a class="btn btn-sm btn-primary" href="@LinkUrl("StaffUser/RoleNew")"><i class="fa fa-plus"></i> 新增系统角色</a>
+}
+
+<div id="p-StaffUser-queryrole">
+	<div class="query-panel collapsed">
+		<div class="query-tab">
+			<a class="show-form"><i class="fa fa-search-plus"></i> 搜索</a>
+		</div>
+		<div class="query-form">
+			<form class="form-horizontal" action="@Request.Url.LocalPath" method="get">
+				<div class="common-fields">
+					<div class="form-group">
+						<label class="col-md-3 control-label">角色名</label>
+						<div class="col-md-5">
+							<input type="text" class="form-control" name="@roleNameKey">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-3 control-label">角色包含该用户</label>
+						<div class="col-md-5">
+							@Html.UserSelector(containUserIdKey, selectedUser)
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-3 control-label">角色包含该权限</label>
+						<div class="col-md-5">
+							<input type="text" class="form-control ipt-perText" value="@(selectedPermission == null ? "" : selectedPermission.Text)" readonly>
+							<input type="hidden" class="ipt-perValue" name="@containPermissionKey" value="@(selectedPermission == null ? "" : selectedPermission.Value)">
+						</div>
+						<div class="col-sm-4">
+							<button type="button" class="btn btn-primary btn-select-permission">选择权限</button>
+							<button type="button" class="btn btn-primary btn-clear-permission">清除权限</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-3 control-label"></label>
+					<div class="col-md-5">
+						<button type="submit" class="btn btn-primary">搜索</button>
+						<a href="@Request.Url.LocalPath" class="btn btn-warning">重置</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="grid-panel">
+		<table class="table">
+			<thead>
+				<tr>
+					<th style="width:20%;">角色名</th>
+					<th style="width:auto;">关联用户</th>
+					<th style="width:100px;">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var role in list)
+				{
+                    string url = LinkUrl("StaffUser/RoleDetail", new { id = role.Id });
+                    IList<Guid> staffUserIdList;
+                    userDict.TryGetValue(role.Id, out staffUserIdList);
+					<tr>
+						<td>@role.Name</td>
+						<td>
+							@if (staffUserIdList != null && staffUserIdList.Count > 0)
+							{
+                                var users = Api<IStaffUserApi>.Instance.Get(staffUserIdList);
+                                foreach (StaffUser user in users)
+								{
+									if (user.Status != DataStatus.Enabled)
+									{
+										continue;
+									}
+									<a href="@LinkUrl("StaffUser/UserDetail", new { id = user.Id })" target="_blank" style="margin-right:15px;">
+										<i class="fa fa-user"></i>
+										<span>@user.DisplayName</span>
+									</a>
+								}
+							}
+						</td>
+						<td>
+							<a class="btn btn-xs btn-primary" href="@url">查看详情</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+        @Html.Pagination(total, pageSize)
+	</div>
+</div>

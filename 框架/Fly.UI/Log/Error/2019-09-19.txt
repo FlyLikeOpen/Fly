@@ -1,0 +1,149 @@
+
+** [2019-09-19 09:37:59.958] - Begin **************************************************************
+[LogID]: 83dd344a-dfa1-47f5-a775-d197fc2bf9e6
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-19 09:37:59.884
+[ProcessID]: 99212
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-09-19 09:37:59.958] - End ****************************************************************
+
+** [2019-09-19 14:18:58.993] - Begin **************************************************************
+[LogID]: 9ba4a42a-f0ac-4422-84aa-732a6b306bfc
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.ApplicationException: 订单Id为dd09ffb9-f23e-4a21-a89d-c67c01ff36f3中，有包裹并没有找到快递单号信息
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.<>c__DisplayClass18_0.<PackageToSOShippingPackage>b__1(Package r) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 366
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Linq.Enumerable.Any[TSource](IEnumerable`1 source)
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 398
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 394
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.SOOutStock(Guid soId, IEnumerable`1 packages, Nullable`1 userId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 1102
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.SOOutStock(IEnumerable`1 soOutStockDTOs) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 1005
+   在 IBB360.Framework.Common.TaskPool.<>c__DisplayClass7_1`1.<RegisterQueue>b__2()
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-19 14:18:58.917
+[ProcessID]: 7776
+[ProcessName]: w3wp
+[ThreadID]: 8
+[StackTrace]: 
+** [2019-09-19 14:18:58.993] - End ****************************************************************
+
+** [2019-09-19 14:21:36.152] - Begin **************************************************************
+[LogID]: c6e7cddb-9dea-40ee-81e1-6aabe6ea702a
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-19 14:21:36.138
+[ProcessID]: 7776
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-09-19 14:21:36.152] - End ****************************************************************
+
+** [2019-09-19 14:23:11.439] - Begin **************************************************************
+[LogID]: 1c4f3bbc-b62b-492b-8b66-21044277724a
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.ApplicationException: 订单Id为dd09ffb9-f23e-4a21-a89d-c67c01ff36f3中，有包裹并没有找到快递单号信息
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.<>c__DisplayClass18_0.<PackageToSOShippingPackage>b__1(Package r) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 366
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Linq.Enumerable.Any[TSource](IEnumerable`1 source)
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 398
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 394
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.SOOutStock(Guid soId, IEnumerable`1 packages, Nullable`1 userId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 1102
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.SOOutStock(IEnumerable`1 soOutStockDTOs) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 1005
+   在 IBB360.Framework.Common.TaskPool.<>c__DisplayClass7_1`1.<RegisterQueue>b__2() 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Common\AsynQueue\TaskPool.cs:行号 61
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-19 14:23:11.409
+[ProcessID]: 7776
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-09-19 14:23:11.439] - End ****************************************************************
+
+** [2019-09-19 14:28:05.226] - Begin **************************************************************
+[LogID]: cfbecbf2-5641-408e-81ca-abd05c57c9a1
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.ApplicationException: 订单Id为dd09ffb9-f23e-4a21-a89d-c67c01ff36f3中，有包裹并没有找到快递单号信息
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.<>c__DisplayClass18_0.<PackageToSOShippingPackage>b__1(Package r) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 366
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Linq.Enumerable.Any[TSource](IEnumerable`1 source)
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 398
+   在 IBB360.WMSLocal.APIImpls.Sales.SOShippingPackageApi.CreateShippingPackage(Guid soId, IEnumerable`1 packages) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOShippingPackageApi.cs:行号 394
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.SOOutStock(Guid soId, IEnumerable`1 packages, Nullable`1 userId) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 1102
+   在 IBB360.WMSLocal.APIImpls.Sales.SOApi.SOOutStock(IEnumerable`1 soOutStockDTOs) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Sales\SOApi.cs:行号 1005
+   在 IBB360.Framework.Common.TaskPool.<>c__DisplayClass7_1`1.<RegisterQueue>b__2() 位置 D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Common\AsynQueue\TaskPool.cs:行号 61
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-19 14:28:05.212
+[ProcessID]: 7776
+[ProcessName]: w3wp
+[ThreadID]: 9
+[StackTrace]: 
+** [2019-09-19 14:28:05.226] - End ****************************************************************
+
+** [2019-09-19 14:49:05.804] - Begin **************************************************************
+[LogID]: a2359e1d-101c-48b9-9589-29fe570e52ab
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-19 14:49:05.791
+[ProcessID]: 7776
+[ProcessName]: w3wp
+[ThreadID]: 11
+[StackTrace]: 
+** [2019-09-19 14:49:05.804] - End ****************************************************************
+
+** [2019-09-19 17:20:02.507] - Begin **************************************************************
+[LogID]: 8b6b1512-1f20-45d6-84f5-f719de7fa862
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 00000000-0000-0000-0000-000000000000
+[Content]: System.Net.Sockets.SocketException (0x80004005): 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Accept()
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServer.StartServer() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 182
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 63
+   在 IBB360.WMSLocal.APIImpls.Common.WebSocketServerManager.Start(Int32 serverPort) 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.APIImpls\Common\WebSocketServerManager.cs:行号 44
+   在 IBB360.WMSLocal.UI.Global.<>c__DisplayClass8_0.<StartSocketServer>b__0() 位置 D:\公司源码\trunk\ibb360\source_code\IBB360.WMSLocal\IBB360.WMSLocal.UI\Global.asax.cs:行号 128
+[ServerIP]: 192.168.0.160
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-09-19 17:20:02.469
+[ProcessID]: 93756
+[ProcessName]: w3wp
+[ThreadID]: 7
+[StackTrace]: 
+** [2019-09-19 17:20:02.507] - End ****************************************************************

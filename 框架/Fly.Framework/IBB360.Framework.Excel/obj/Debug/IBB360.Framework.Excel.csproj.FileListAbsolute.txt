@@ -1,0 +1,14 @@
+D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Excel\bin\Debug\IBB360.Framework.Excel.dll
+D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Excel\bin\Debug\IBB360.Framework.Excel.pdb
+D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Excel\bin\Debug\MyXls.SL2.dll
+D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\IBB360.Framework.Excel.csproj.CoreCompileInputs.cache
+D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\IBB360.Framework.Excel.csproj.CopyComplete
+D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\IBB360.Framework.Excel.dll
+D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\IBB360.Framework.Excel.pdb
+D:\公司源码\trunk\ibb360\src\new\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\IBB360.Framework.Excel.csprojAssemblyReference.cache
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\bin\Debug\IBB360.Framework.Excel.dll
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\bin\Debug\IBB360.Framework.Excel.pdb
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\IBB360.Framework.Excel.csproj.CoreCompileInputs.cache
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\IBB360.Framework.Excel.csproj.CopyComplete
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\IBB360.Framework.Excel.dll
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\IBB360.Framework.Excel.pdb

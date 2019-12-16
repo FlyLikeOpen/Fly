@@ -1,0 +1,14 @@
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\bin\Debug\Fly.Framework.Excel.dll
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\bin\Debug\Fly.Framework.Excel.pdb
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\Fly.Framework.Excel.csprojAssemblyReference.cache
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\Fly.Framework.Excel.csproj.CoreCompileInputs.cache
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\Fly.Framework.Excel.csproj.CopyComplete
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\Fly.Framework.Excel.dll
+D:\ACADSOC\框架\IBB360.Framework\IBB360.Framework.Excel\obj\Debug\Fly.Framework.Excel.pdb
+D:\ACADSOC\框架\Fly.Framework\IBB360.Framework.Excel\bin\Debug\Fly.Framework.Excel.dll
+D:\ACADSOC\框架\Fly.Framework\IBB360.Framework.Excel\bin\Debug\Fly.Framework.Excel.pdb
+D:\ACADSOC\框架\Fly.Framework\IBB360.Framework.Excel\obj\Debug\Fly.Framework.Excel.csproj.CoreCompileInputs.cache
+D:\ACADSOC\框架\Fly.Framework\IBB360.Framework.Excel\obj\Debug\Fly.Framework.Excel.csproj.CopyComplete
+D:\ACADSOC\框架\Fly.Framework\IBB360.Framework.Excel\obj\Debug\Fly.Framework.Excel.dll
+D:\ACADSOC\框架\Fly.Framework\IBB360.Framework.Excel\obj\Debug\Fly.Framework.Excel.pdb
+D:\ACADSOC\框架\Fly.Framework\IBB360.Framework.Excel\obj\Debug\Fly.Framework.Excel.csprojAssemblyReference.cache
