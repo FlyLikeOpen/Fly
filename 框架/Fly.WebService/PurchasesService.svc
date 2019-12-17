@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="IBB360.WMSLocal.WebService.PurchasesService" CodeBehind="PurchasesService.svc.cs" %>
