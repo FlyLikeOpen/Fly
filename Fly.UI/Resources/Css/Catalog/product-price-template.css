@@ -1,0 +1,20 @@
+﻿#p-price-template table tr.item-tpl { display: none; }
+#p-price-template table th { text-align: center; }
+
+#p-price-template table .c-name { width: 105px; }
+#p-price-template table .c-status { width: 65px; text-align: center; }
+#p-price-template table .c-act { width: 115px; }
+
+#p-price-template table input {
+	display: block;
+	margin: 0 auto;
+}
+#p-price-template table input.ipt-name { width: 90px; }
+#p-price-template table input.ipt-price { width: 40px; }
+
+#p-price-template table .c-qtytitle { position: relative; }
+#p-price-template table .c-qtytitle .btn-addqty {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+}

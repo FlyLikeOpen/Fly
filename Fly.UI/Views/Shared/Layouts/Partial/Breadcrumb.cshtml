@@ -1,0 +1,44 @@
+﻿@helper BuildMenuLink(MenuItem item)
+{
+	if (string.IsNullOrWhiteSpace(item.Url) == false)
+	{
+		<li><a href="@item.Url"><i class="fa @item.Icon"></i><span> @(item.Title)</span></a></li>
+		return;
+	}
+	<li><i class="fa @item.Icon"></i><span> @(item.Title)</span></li>
+}
+
+@{
+	var list = Menu.GetBreadcrumb();
+	int index = 0;
+}
+
+<ol class="breadcrumb">
+	@if (list != null && list.Count > 0)
+	{
+		foreach (var item in list)
+		{
+			index++;
+			if (index == list.Count && Response.StatusCode == 200)
+			{
+				<li class="active"><i class="fa @item.Icon"></i><span> @(item.Title)</span></li>
+			}
+			else
+			{
+				@BuildMenuLink(item)
+			}
+		}
+	}
+	@if (Response.StatusCode == 500)
+	{
+		<li class="active"><i class="fa fa-bug"></i><span> @("发生错误")</span></li>
+	}
+	else if (Response.StatusCode == 404)
+	{
+		<li class="active"><i class="fa fa-paw"></i><span> @("找不到页面")</span></li>
+	}
+	else if (Response.StatusCode == 401)
+	{
+		<li class="active"><i class="fa fa-times-circle"></i><span> @("没有权限")</span></li>
+	}
+</ol>

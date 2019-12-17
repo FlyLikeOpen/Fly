@@ -1,0 +1,47 @@
+﻿.role-user-list .checkbox {
+	float: left;
+	width: 20%;
+	margin: 0;
+	padding: 6px 0;
+}
+
+.permission-list .checkbox {
+	margin: 0;
+	padding: 6px 0;
+}
+.permission-list > .checkbox { margin-left: 5px; }
+
+.permission-list .sub-list { padding: 5px 0; }
+.permission-list .sub-list .head { background: #EEE; }
+.permission-list .sub-list .head,
+.permission-list .sub-list .body {
+	padding: 0 5px;
+}
+.permission-list .sub-list .checkbox {
+	float: left;
+	width: 20%;
+}
+
+.temp-permission-table .col-perkey .per-list .permission {
+	margin-bottom: 10px;
+}
+.temp-permission-table .col-fromto .vrow label {
+	float: left;
+}
+.temp-permission-table .col-fromto .vrow input[type="radio"] {
+	float: left;
+	margin-top: 9px;
+}
+.temp-permission-table .col-fromto .vrow .txt {
+	float: left;
+	line-height: 30px;
+	margin: 0 5px;
+}
+.temp-permission-table .col-fromto .vrow1 input[type="text"] {
+	float: left;
+	width: 50px;
+}
+.temp-permission-table .col-fromto .vrow2 .input-group {
+	float: left;
+	width: 180px;
+}

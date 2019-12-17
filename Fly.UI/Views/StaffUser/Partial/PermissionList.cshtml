@@ -1,0 +1,44 @@
+﻿@{
+	List<string> selectedPermissions = ParseModel<List<string>>("Selected");
+    IList<PermissionKey> allPermissions = Api<IStaffPermissionKeyApi>.Instance.GetAllPermissionKeys();
+}
+
+<div class="permission-list">
+	@foreach (var per in allPermissions)
+	{
+		@BuildPermission(per, selectedPermissions)
+	}
+</div>
+
+@helper BuildPermission(PermissionKey per, List<string> selectedPermissions)
+{
+	if (per.PermissionKeys != null && per.PermissionKeys.Count > 0)
+	{
+		<div class="sub-list">
+			<div class="head">
+				<div class="checkbox">
+					<label><input type="checkbox" class="chk-permission" value="" /> @per.Text</label>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="body">
+				@foreach (var pp in per.PermissionKeys)
+				{
+					@BuildPermission(pp, selectedPermissions);
+				}
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	}
+	else
+	{
+		string checked1 = "";
+		if (string.IsNullOrWhiteSpace(per.Value) == false && selectedPermissions.Contains(per.Value))
+		{
+			checked1 = "checked";
+		}
+		<div class="checkbox">
+			<label><input type="checkbox" class="chk-permission" value="@per.Value" data-text="@per.Text" @checked1 /> @per.Text</label>
+		</div>
+	}
+}
