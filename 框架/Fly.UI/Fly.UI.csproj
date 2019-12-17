@@ -738,6 +738,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fly.APIImpls\Fly.APIImpls.csproj">
+      <Project>{68d71bc2-662b-445f-a809-0a51a5c969a4}</Project>
+      <Name>Fly.APIImpls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Fly.Framework\IBB360.Framework.Common\Fly.Framework.Common.csproj">
       <Project>{fc9a59c4-7d25-4e3b-9c1c-82652410ffa1}</Project>
       <Name>Fly.Framework.Common</Name>
@@ -749,6 +753,10 @@
     <ProjectReference Include="..\Fly.APIs\Fly.APIs.csproj">
       <Project>{1971d98c-56df-4032-a102-40036a1c779d}</Project>
       <Name>Fly.APIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fly.Framework\IBB360.Framework.SqlDbAccess\Fly.Framework.SqlDbAccess.csproj">
+      <Project>{4682fdd7-d4d9-436b-8bc4-1afd41b4c740}</Project>
+      <Name>Fly.Framework.SqlDbAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Fly.Objects\Fly.Objects.csproj">
       <Project>{9847e7d8-f605-4436-82ec-f7a0c8b458bf}</Project>

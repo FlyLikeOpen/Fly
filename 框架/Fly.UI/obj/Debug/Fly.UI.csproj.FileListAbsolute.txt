@@ -92,11 +92,9 @@ D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.UI.dll.config
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.UI.dll
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.UI.pdb
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Antlr3.Runtime.dll
-D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.APIImpls.dll
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.APIs.dll
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.Framework.Common.dll
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.Framework.Excel.dll
-D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.Framework.SqlDbAccess.dll
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.Objects.dll
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Microsoft.Web.Infrastructure.dll
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Newtonsoft.Json.dll
@@ -112,11 +110,9 @@ D:\ACADSOC\Fly\框架\Fly.UI\bin\PanGu.dll
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Jil.dll
 D:\ACADSOC\Fly\框架\Fly.UI\bin\MyXls.SL2.dll
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Sigil.dll
-D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.APIImpls.pdb
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.Framework.Common.pdb
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.Framework.Excel.pdb
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.APIs.pdb
-D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.Framework.SqlDbAccess.pdb
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.Objects.pdb
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Antlr3.Runtime.pdb
 D:\ACADSOC\Fly\框架\Fly.UI\bin\Newtonsoft.Json.xml
@@ -135,3 +131,7 @@ D:\ACADSOC\Fly\框架\Fly.UI\obj\Debug\Fly.UI.csproj.CoreCompileInputs.cache
 D:\ACADSOC\Fly\框架\Fly.UI\obj\Debug\Fly.UI.csproj.CopyComplete
 D:\ACADSOC\Fly\框架\Fly.UI\obj\Debug\Fly.UI.dll
 D:\ACADSOC\Fly\框架\Fly.UI\obj\Debug\Fly.UI.pdb
+D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.APIImpls.dll
+D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.Framework.SqlDbAccess.dll
+D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.APIImpls.pdb
+D:\ACADSOC\Fly\框架\Fly.UI\bin\Fly.Framework.SqlDbAccess.pdb

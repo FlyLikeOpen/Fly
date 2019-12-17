@@ -539,3 +539,404 @@ WHERE
 [ThreadID]: 13
 [StackTrace]: 
 ** [2019-12-16 13:59:37.765] - End ****************************************************************
+
+** [2019-12-16 20:46:14.123] - Begin **************************************************************
+[LogID]: cc1138e0-0612-4f30-a509-d2f5ee4f6de3
+[Source]: WMSLocal
+[Category]: Error
+[OperatorUser]: 
+[Content]: System.IO.FileNotFoundException: 未能加载文件或程序集“Fly.APIImpls”或它的某一个依赖项。系统找不到指定的文件。
+文件名:“Fly.APIImpls”
+   在 System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   在 System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   在 System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   在 System.Type.GetType(String typeName, Boolean throwOnError)
+   在 Fly.Framework.Common.Api`1.Register(String name, String implClassTypeName) 位置 D:\ACADSOC\框架\Fly.Framework\IBB360.Framework.Common\Api.cs:行号 87
+   在 Fly.UI.Global.RegisterApis() 位置 D:\ACADSOC\Fly\框架\Fly.UI\Global.asax.cs:行号 71
+   在 Fly.UI.Global.Application_Start(Object sender, EventArgs e) 位置 D:\ACADSOC\Fly\框架\Fly.UI\Global.asax.cs:行号 27
+
+=== 预绑定状态信息 ===
+日志: DisplayName = Fly.APIImpls
+ (Partial)
+警告: 为程序集提供了部分绑定信息:
+警告: 程序集名称: Fly.APIImpls | 域 ID: 2
+警告: 当仅提供程序集显示名称的一部分时，将发生部分绑定。
+警告: 这可能导致联编程序加载错误的程序集。
+警告: 建议为程序集提供完全指定的文字标识，
+警告: 并由简单名称、版本、区域性和公钥标记组成。
+警告: 有关此问题的详细信息和常见解决方案，请参见白皮书 http://go.microsoft.com/fwlink/?LinkId=109270。
+日志: Appbase = file:///D:/ACADSOC/Fly/框架/Fly.UI/
+日志: 初始 PrivatePath = D:\ACADSOC\Fly\框架\Fly.UI\bin
+调用程序集: Fly.Framework.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null。
+===
+日志: 此绑定从 default 加载上下文开始。
+日志: 正在使用应用程序配置文件: D:\ACADSOC\Fly\框架\Fly.UI\web.config
+日志: 使用主机配置文件: C:\Users\bmhqg\Documents\IISExpress\config\aspnet.config
+日志: 使用 C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config 的计算机配置文件。
+日志: 此时没有为引用应用策略(私有、自定义、分部或基于位置的程序集绑定)。
+日志: 尝试下载新的 URL file:///C:/Users/bmhqg/AppData/Local/Temp/Temporary ASP.NET Files/vs/ded67351/e7c13748/Fly.APIImpls.DLL。
+日志: 尝试下载新的 URL file:///C:/Users/bmhqg/AppData/Local/Temp/Temporary ASP.NET Files/vs/ded67351/e7c13748/Fly.APIImpls/Fly.APIImpls.DLL。
+日志: 尝试下载新的 URL file:///D:/ACADSOC/Fly/框架/Fly.UI/bin/Fly.APIImpls.DLL。
+日志: 尝试下载新的 URL file:///D:/ACADSOC/Fly/框架/Fly.UI/bin/Fly.APIImpls/Fly.APIImpls.DLL。
+日志: 尝试下载新的 URL file:///C:/Users/bmhqg/AppData/Local/Temp/Temporary ASP.NET Files/vs/ded67351/e7c13748/Fly.APIImpls.EXE。
+日志: 尝试下载新的 URL file:///C:/Users/bmhqg/AppData/Local/Temp/Temporary ASP.NET Files/vs/ded67351/e7c13748/Fly.APIImpls/Fly.APIImpls.EXE。
+日志: 尝试下载新的 URL file:///D:/ACADSOC/Fly/框架/Fly.UI/bin/Fly.APIImpls.EXE。
+日志: 尝试下载新的 URL file:///D:/ACADSOC/Fly/框架/Fly.UI/bin/Fly.APIImpls/Fly.APIImpls.EXE。
+
+[ServerIP]: 192.168.0.110
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-16 20:46:13.951
+[ProcessID]: 5500
+[ProcessName]: iisexpress
+[ThreadID]: 1
+[StackTrace]: 
+** [2019-12-16 20:46:14.123] - End ****************************************************************
+
+** [2019-12-16 20:51:41.144] - Begin **************************************************************
+[LogID]: 1619715a-2ca4-4d04-981c-550745edbf38
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://localhost:34742/staffuser/usernew/
+[RequestReferer]: http://localhost:34742/staffuser/userquery/
+[UserHostName]: ::1
+[UserHostAddress]: ::1
+[OperatorUser]: [admin] 超级管理员
+[Content]: System.ApplicationException: 没有找到name为StaffUser/New（不区分大小写）的Route配置。
+   在 Fly.Framework.Common.RouteHelper.InnerBuildUrl(String routeName, RouteValueDictionary routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 257
+   在 Fly.Framework.Common.RouteHelper.BuildUrl(String routeName, IDictionary`2 routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 249
+   在 Fly.UI.Common.BaseWebViewPage`1.LinkUrl(String routeName, Object routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.UI\Common\BaseWebViewPage.cs:行号 46
+   在 ASP._Page_Views_StaffUser_UserNew_cshtml.<Execute>b__0() 位置 c:\Users\bmhqg\AppData\Local\Temp\Temporary ASP.NET Files\vs\ded67351\e7c13748\App_Web_npwfw3cr.0.cs:行号 0
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderSection>b__5(TextWriter tw)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 ASP._Page_Views_Shared_Layouts__Layout_cshtml.Execute() 位置 d:\ACADSOC\Fly\框架\Fly.UI\Views\Shared\Layouts\_Layout.cshtml:行号 31
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.110
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-16 20:51:41.108
+[ProcessID]: 50040
+[ProcessName]: iisexpress
+[ThreadID]: 11
+[StackTrace]: 
+** [2019-12-16 20:51:41.144] - End ****************************************************************
+
+** [2019-12-16 21:09:36.940] - Begin **************************************************************
+[LogID]: 4fac4489-47bf-4d80-9d4c-47bc21b07c1f
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://localhost:34742/staffuser/new/
+[RequestReferer]: http://localhost:34742/staffuser/usernew/
+[UserHostName]: ::1
+[UserHostAddress]: ::1
+[OperatorUser]: [admin] 超级管理员
+[Content]: System.ApplicationException: 没有找到name为StaffUser/Query（不区分大小写）的Route配置。
+   在 Fly.Framework.Common.RouteHelper.InnerBuildUrl(String routeName, RouteValueDictionary routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 257
+   在 Fly.Framework.Common.RouteHelper.BuildUrl(String routeName, IDictionary`2 routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 249
+   在 Fly.UI.Common.BaseWebViewPage`1.LinkUrl(String routeName, Object routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.UI\Common\BaseWebViewPage.cs:行号 46
+   在 ASP._Page_Views_StaffUser_New_cshtml.<Execute>b__0() 位置 c:\Users\bmhqg\AppData\Local\Temp\Temporary ASP.NET Files\vs\ded67351\e7c13748\App_Web_3hls24nt.6.cs:行号 0
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderSection>b__5(TextWriter tw)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 ASP._Page_Views_Shared_Layouts__Layout_cshtml.Execute() 位置 d:\ACADSOC\Fly\框架\Fly.UI\Views\Shared\Layouts\_Layout.cshtml:行号 31
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.110
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-16 21:09:36.906
+[ProcessID]: 38012
+[ProcessName]: iisexpress
+[ThreadID]: 8
+[StackTrace]: 
+** [2019-12-16 21:09:36.940] - End ****************************************************************
+
+** [2019-12-16 21:09:56.866] - Begin **************************************************************
+[LogID]: 4bfff143-2729-4bea-a6c4-d941c2281da3
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://localhost:34742/staffuser/new/
+[RequestReferer]: http://localhost:34742/staffuser/usernew/
+[UserHostName]: ::1
+[UserHostAddress]: ::1
+[OperatorUser]: [admin] 超级管理员
+[Content]: System.ApplicationException: 没有找到name为StaffUser/Query（不区分大小写）的Route配置。
+   在 Fly.Framework.Common.RouteHelper.InnerBuildUrl(String routeName, RouteValueDictionary routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 257
+   在 Fly.Framework.Common.RouteHelper.BuildUrl(String routeName, IDictionary`2 routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 249
+   在 Fly.UI.Common.BaseWebViewPage`1.LinkUrl(String routeName, Object routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.UI\Common\BaseWebViewPage.cs:行号 46
+   在 ASP._Page_Views_StaffUser_New_cshtml.<Execute>b__0() 位置 c:\Users\bmhqg\AppData\Local\Temp\Temporary ASP.NET Files\vs\ded67351\e7c13748\App_Web_3hls24nt.6.cs:行号 0
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderSection>b__5(TextWriter tw)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 ASP._Page_Views_Shared_Layouts__Layout_cshtml.Execute() 位置 d:\ACADSOC\Fly\框架\Fly.UI\Views\Shared\Layouts\_Layout.cshtml:行号 31
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.110
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-16 21:09:56.858
+[ProcessID]: 38012
+[ProcessName]: iisexpress
+[ThreadID]: 8
+[StackTrace]: 
+** [2019-12-16 21:09:56.866] - End ****************************************************************
+
+** [2019-12-16 21:16:43.729] - Begin **************************************************************
+[LogID]: 7ff6895d-4004-452b-8a70-02d08bb51d45
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://localhost:34742/staffuser/new/
+[UserHostName]: ::1
+[UserHostAddress]: ::1
+[OperatorUser]: [admin] 超级管理员
+[Content]: System.ApplicationException: 没有找到name为StaffUser/Query（不区分大小写）的Route配置。
+   在 Fly.Framework.Common.RouteHelper.InnerBuildUrl(String routeName, RouteValueDictionary routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 257
+   在 Fly.Framework.Common.RouteHelper.BuildUrl(String routeName, IDictionary`2 routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 249
+   在 Fly.UI.Common.BaseWebViewPage`1.LinkUrl(String routeName, Object routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.UI\Common\BaseWebViewPage.cs:行号 46
+   在 ASP._Page_Views_StaffUser_New_cshtml.<Execute>b__0() 位置 c:\Users\bmhqg\AppData\Local\Temp\Temporary ASP.NET Files\vs\ded67351\e7c13748\App_Web_4p00xmu2.3.cs:行号 0
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderSection>b__5(TextWriter tw)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 ASP._Page_Views_Shared_Layouts__Layout_cshtml.Execute() 位置 d:\ACADSOC\Fly\框架\Fly.UI\Views\Shared\Layouts\_Layout.cshtml:行号 31
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.110
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-16 21:16:43.699
+[ProcessID]: 39924
+[ProcessName]: iisexpress
+[ThreadID]: 8
+[StackTrace]: 
+** [2019-12-16 21:16:43.729] - End ****************************************************************
+
+** [2019-12-16 21:32:27.655] - Begin **************************************************************
+[LogID]: 8e57943a-cabb-4425-8b47-698293ba1b66
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://localhost:34742/staffuser/new/
+[RequestReferer]: http://localhost:34742/staffuser/usernew/
+[UserHostName]: ::1
+[UserHostAddress]: ::1
+[OperatorUser]: [admin] 超级管理员
+[Content]: System.ApplicationException: 没有找到name为StaffUser/Query（不区分大小写）的Route配置。
+   在 Fly.Framework.Common.RouteHelper.InnerBuildUrl(String routeName, RouteValueDictionary routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 257
+   在 Fly.Framework.Common.RouteHelper.BuildUrl(String routeName, IDictionary`2 routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 249
+   在 Fly.UI.Common.BaseWebViewPage`1.LinkUrl(String routeName, Object routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.UI\Common\BaseWebViewPage.cs:行号 46
+   在 ASP._Page_Views_StaffUser_New_cshtml.<Execute>b__0() 位置 c:\Users\bmhqg\AppData\Local\Temp\Temporary ASP.NET Files\vs\ded67351\e7c13748\App_Web_hiuurb4z.9.cs:行号 0
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderSection>b__5(TextWriter tw)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 ASP._Page_Views_Shared_Layouts__Layout_cshtml.Execute() 位置 d:\ACADSOC\Fly\框架\Fly.UI\Views\Shared\Layouts\_Layout.cshtml:行号 31
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.110
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-16 21:32:27.615
+[ProcessID]: 42080
+[ProcessName]: iisexpress
+[ThreadID]: 9
+[StackTrace]: 
+** [2019-12-16 21:32:27.655] - End ****************************************************************
+
+** [2019-12-16 21:41:42.461] - Begin **************************************************************
+[LogID]: 12182c90-5f08-45bc-a455-d7a33180d9a9
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://localhost:34742/staffuser/new/
+[RequestReferer]: http://localhost:34742/staffuser/usernew/
+[UserHostName]: ::1
+[UserHostAddress]: ::1
+[OperatorUser]: [admin] 超级管理员
+[Content]: System.ApplicationException: 没有找到name为StaffUser/Query（不区分大小写）的Route配置。
+   在 Fly.Framework.Common.RouteHelper.InnerBuildUrl(String routeName, RouteValueDictionary routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 257
+   在 Fly.Framework.Common.RouteHelper.BuildUrl(String routeName, IDictionary`2 routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 249
+   在 Fly.UI.Common.BaseWebViewPage`1.LinkUrl(String routeName, Object routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.UI\Common\BaseWebViewPage.cs:行号 46
+   在 ASP._Page_Views_StaffUser_New_cshtml.<Execute>b__0() 位置 c:\Users\bmhqg\AppData\Local\Temp\Temporary ASP.NET Files\vs\ded67351\e7c13748\App_Web_hiuurb4z.9.cs:行号 0
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderSection>b__5(TextWriter tw)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 ASP._Page_Views_Shared_Layouts__Layout_cshtml.Execute() 位置 d:\ACADSOC\Fly\框架\Fly.UI\Views\Shared\Layouts\_Layout.cshtml:行号 31
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.110
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-16 21:41:42.427
+[ProcessID]: 48316
+[ProcessName]: iisexpress
+[ThreadID]: 11
+[StackTrace]: 
+** [2019-12-16 21:41:42.461] - End ****************************************************************
+
+** [2019-12-16 21:43:07.426] - Begin **************************************************************
+[LogID]: 900cafd1-0bf2-45a5-927b-9ff2e9c034a9
+[Source]: WMSLocal
+[Category]: Error
+[RequestUrl]: http://localhost:34742/staffuser/new/
+[RequestReferer]: http://localhost:34742/staffuser/usernew/
+[UserHostName]: ::1
+[UserHostAddress]: ::1
+[OperatorUser]: [admin] 超级管理员
+[Content]: System.ApplicationException: 没有找到name为StaffUser/Query（不区分大小写）的Route配置。
+   在 Fly.Framework.Common.RouteHelper.InnerBuildUrl(String routeName, RouteValueDictionary routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 257
+   在 Fly.Framework.Common.RouteHelper.BuildUrl(String routeName, IDictionary`2 routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.Framework\IBB360.Framework.Common\Web\Router\RouteHelper.cs:行号 249
+   在 Fly.UI.Common.BaseWebViewPage`1.LinkUrl(String routeName, Object routeValues) 位置 D:\ACADSOC\Fly\框架\Fly.UI\Common\BaseWebViewPage.cs:行号 46
+   在 ASP._Page_Views_StaffUser_New_cshtml.<Execute>b__0() 位置 c:\Users\bmhqg\AppData\Local\Temp\Temporary ASP.NET Files\vs\ded67351\e7c13748\App_Web_hiuurb4z.9.cs:行号 0
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderSection>b__5(TextWriter tw)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 ASP._Page_Views_Shared_Layouts__Layout_cshtml.Execute() 位置 d:\ACADSOC\Fly\框架\Fly.UI\Views\Shared\Layouts\_Layout.cshtml:行号 31
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[ServerIP]: 192.168.0.110
+[ServerName]: DESKTOP-03QPLOV
+[ServerTime]: 2019-12-16 21:43:07.419
+[ProcessID]: 48316
+[ProcessName]: iisexpress
+[ThreadID]: 15
+[StackTrace]: 
+** [2019-12-16 21:43:07.426] - End ****************************************************************
